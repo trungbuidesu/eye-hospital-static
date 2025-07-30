@@ -1,1 +1,2 @@
-# eye-hospital-static
+# Static files used in Eye Hospital Management
+

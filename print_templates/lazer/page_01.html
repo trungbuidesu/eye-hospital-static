@@ -1,0 +1,269 @@
+<div
+  class="a4-page"
+  id="page_1"
+  data-page-index="1"
+>
+  <div class="w-100 d-flex flex-column">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+      
+      <div class="d-flex flex-column">
+        <img class="align-self-center" width="100px" src="http://localhost:8088/public/assets/images/logo_02.webp" />
+        <div class="text-center">BỆNH VIỆN MẮT VIỆT NHẬT</div>
+      </div>
+      
+      <div class="d-flex flex-column">
+        <div>
+          Địa chỉ: 122 Triệu Việt Vương, Hai Bà Trưng, Hà Nội
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+          <div class="justify-items-start">
+            Tel: (04) 3974 8308
+          </div>
+          <div class="justify-items-end">
+            Fax: (04) 39743636
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <table style="border: none !important;">
+      <colgroup>
+        <col style="width: 50%;" />
+        <col style="width: 50%;" />
+      </colgroup>
+      <tr>
+        <td></td>
+        <td
+          style="height: 120px;"
+          class="border border-dark"
+        >
+          <div class="text-center">
+            <div class="fw-bold">MÃ BỆNH NHÂN</div>
+            <span
+              data-field="patientCode"
+              data-type="text"
+              data-suggestion="mã-bệnh-nhân"
+              data-caption="Mã Bệnh Nhân"
+            ></span>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class="my-4"></div>
+
+    <!-- -->
+    <div class="text-center d-flex flex-column">
+      <div class="fw-bold" style="font-size: 60px;">BỆNH ÁN</div>
+      <div class="fw-bold" style="font-size: 60px;">PHẪU THUẬT KHÚC XẠ</div>
+      <span
+        class="fw-bold"
+        style="font-size: 1.5rem;"
+      >
+        NĂM:
+        <span
+          class="fw-bold"
+          style="font-size: 1.5rem;"
+          data-field="yearOfTreatment"
+          data-type="text"
+          data-caption="Năm Khám Bệnh"
+        ></span>
+      </span>
+    </div>
+    <div class="my-4"></div>
+
+    <table>
+      <colgroup>
+        <col style="width: 75%;" />
+        <col style="width: 25%;" />
+      </colgroup>
+
+      <tr>
+        <td>
+          <span>HỌ TÊN:</span>
+          <span
+            class="text-uppercase"
+            data-field="patientFullName"
+            data-type="text"
+            data-suggestion="tên-bệnh-nhân"
+            data-caption="Tên bệnh nhân"
+          ></span>
+        </td>
+        <td>
+          <span>TUỔI:</span>
+          <span
+            data-field="patientAge"
+            data-type="text"
+            data-suggestion="tuổi"
+            data-caption="Tuổi bệnh nhân"
+          ></span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <span>ĐỊA CHỈ:</span>
+          <span
+            data-field="patientAddress"
+            data-type="text"
+            data-suggestion="địa-chỉ-bệnh-nhân"
+            data-caption="Địa chỉ bệnh nhân"
+          ></span>
+        </td>
+      </tr>
+    </table>
+    
+    <div class="my-4"></div>
+
+    <table style="border: none !important;">
+      <colgroup>
+        <col style="width: 33.33%;" />
+        <col style="width: 33.33%;" />
+        <col style="width: 33.33%;" />
+      </colgroup>
+      <tr>
+        <td colspan="4">
+          <div class="d-flex row">
+            <!-- Cột 1 -->
+            <div class="col border border-dark p-2 me-2 align-self-start">
+              <div class="text-center">NHẬP VIỆN/KHOA</div>
+              <div
+                data-field="hospitalDepartmentAdmission"
+                data-type="text"
+                data-caption="Nhập viện/Khoa"
+                data-suggestion="viện-khoa"
+                data-default-value=""
+                class="text-center"
+              ></div>
+              <div>Ngày:
+                <span
+                  data-field="dateOfAdmission"
+                  data-type="text"
+                  data-suggestion="ngày"
+                  data-caption="Ngày nhập viện/Khoa"
+                ></span>
+              </div>
+              <div>Giường:
+                <span
+                  data-field="bedOfAdmission"
+                  data-type="text"
+                  data-suggestion="giường"
+                  data-caption="Giường (Nhập viện/Khoa)"
+                ></span>
+              </div>
+            </div>
+
+            <!-- Cột giữa -->
+            <div class="col d-flex flex-column me-2">
+              <div class="border border-dark p-2 mb-2">
+                <div class="text-center">CHUYỂN VIỆN/KHOA</div>
+                <div
+                  data-field="hospitalDepartmentTransfer"
+                  data-type="text"
+                  data-suggestion="viện-khoa"
+                  data-caption="Chuyển viện/Khoa"
+                  class="text-center"
+                ></div>
+                <div>Ngày:
+                  <span
+                    data-field="dateOfTransfer1"
+                    data-type="text"
+                    data-suggestion="ngày"
+                    data-caption="Ngày chuyển viện/Khoa 1"
+                  ></span>
+                </div>
+                <div>Giường:
+                  <span
+                    data-suggestion="giường"
+                    data-field="bedTransferNo1"
+                    data-type="text"
+                    data-caption="Giường 1 (Chuyển viện/Khoa)"
+                  ></span>
+                </div>
+
+                <div>Ngày:
+                  <span
+                    data-suggestion="ngày"
+                    data-field="dateOfTransfer2"
+                    data-type="text"
+                    data-caption="Ngày chuyển viện/Khoa 2"
+                  ></span>
+                </div>
+                <div>Giường:
+                  <span
+                    data-suggestion="giường"
+                    data-field="bedTransferNo2"
+                    data-type="text"
+                    data-caption="Giường 2 (Chuyển viện/Khoa)"
+                  ></span>
+                </div>
+              </div>
+              <div class="border border-dark p-2">
+                <div>MÃ BỆNH:
+                  <span
+                    data-field="diagnosisCode"
+                    data-type="text"
+                    data-suggestion="mã-bệnh"
+                    data-caption="Mã bệnh"
+                  ></span>
+                </div>
+                <div>Số phim XQ:
+                  <span
+                    data-field="numberOfXrayFilms"
+                    data-type="text"
+                    data-suggestion="số-phim-xq"
+                    data-caption="Số phim XQ"
+                  ></span>
+                </div>
+                <div>Số phim CT:
+                  <span
+                    data-field="numberOfCtFilms"
+                    data-type="text"
+                    data-suggestion="số-phim-ct"
+                    data-caption="Số phim CT"
+                  ></span>
+                </div>
+                <div>Số phim khác:
+                 <span
+                    data-field="numberOfOtherFilms"
+                    data-type="text"
+                    data-suggestion="số-phim-khác"
+                    data-caption="Số phim khác"
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cột 3 -->
+            <div class="col border border-dark p-2 align-self-start">
+              <div class="text-center">XUẤT VIỆN/KHOA</div>
+              <div
+                data-field="hospitalDepartmentDischarge"
+                data-type="text"
+                data-suggestion="viện-khoa"
+                data-caption="Xuất viện/Khoa"
+                class="text-center"
+              ></div>
+              <div>Ngày:
+                <span
+                  data-suggestion="ngày"
+                  data-field="dateOfDischarge"
+                  data-type="text"
+                  data-caption="Ngày xuất viện/Khoa"
+                ></span>
+              </div>
+              <div>Giường:
+                <span
+                  data-suggestion="giường"
+                  data-field="bedDischargeNo1"
+                  data-type="text"
+                  data-caption="Giường (Xuất viện/Khoa)"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
