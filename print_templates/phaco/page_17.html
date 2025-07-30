@@ -1,163 +1,86 @@
+<div
+  class="a4-page"
+  id="page_19"
+  data-page-index="19"
+>
+  <div class="d-grid gap-4">
+    <div class="d-flex">
+      <div class="col-3">- Tiêu hóa:</div>
+      <div class="col-9">
+        <label class="d-flex">Bình thường<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+        <label class="d-flex">Có bệnh<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="col-3">- Cơ xương khớp:</div>
+      <div class="col-9">
+        <label class="d-flex">Bình thường<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+        <label class="d-flex">Có bệnh<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="col-3">- Tiết niệu, sinh dục:</div>
+      <div class="col-9">
+        <label class="d-flex">Bình thường<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+        <label class="d-flex">Có bệnh<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+      </div>
+    </div>
+    <div style="min-height: 100px;">
+      <span class="me-1">Khác:</span>
+    </div>
+  </div>
 
+  <div class="fw-bold" style="min-height: 100px;">5. Xét nghiệm:</div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <style>
-      .a4-page {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-    </style>
+  <div class="my-3"></div>
+  <div class="fw-bold" style="min-height: 100px;">6. Kết luận</div>
+  <div class="me-1">Chẩn đoán chính:</div>
+  <div class="me-1">Chẩn đoán kèm theo:</div>
+  <div class="me-1">Chẩn đoán phân biệt (nếu có):</div>
+  <div class="fw-bold" style="min-height: 50px;">7. Tiên lượng</div>
+  <div class="fw-bold" style="min-height: 50px;">8. Hướng điều trị</div>
 
-    </script>
-  </head>
+  <div class="row" style="min-height: 100px;">
+    <div class="col-4">
+      <div class="fw-bold">9. Chế độ ăn uống bệnh lý:</div>
+    </div>
+    <div class="col-8">
+      <div class="row">
+        <div class="col-3">
+          <label class="d-flex">Lỏng<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+          <label class="d-flex">a. Kiêng<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+        </div>
+        <div class="col-3">
+          <label class="d-flex">Lỏng<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+          <label class="d-flex">b. Muối<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+        </div>
+        <div class="col-3">
+          <label class="d-flex">Lỏng<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+          <label class="d-flex">c. Đường<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+        </div>
+        <div class="col-3">
+          <label class="d-flex">Lỏng<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+          <label class="d-flex">d. Khác<input type="checkbox" class="custom-checkbox align-self-center ms-1" /></label>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <body data-view-mode="browser">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
-      integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+  <div class="my-2"></div>
 
-    <style>
-      @font-face {
-          font-family: 'Tinos';
-          src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
-          font-weight: normal;
-        }
-
-        /* @font-face {
-          font-family: 'Times New Roman';
-          src: url('/fonts/times_new_roman/time-new-roman.ttf') format('truetype');
-          font-weight: normal;
-        } */
-
-      body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #eee;
-        font-family: 'Times New Roman', serif;
-      }
-
-      .a4-page {
-        width: 210mm;
-        height: 297mm;
-        padding: 5mm 10mm;
-        margin: 10mm auto;
-        background: white;
-        box-sizing: border-box;
-      }
-
-      .a4-page:last-child {
-        margin-top: 10mm !important;
-        margin-bottom: 0 !important;
-      }
-
-      .a4-page:first-child {
-        margin-top: 0 !important;
-      }
-
-      .square {
-        width: 10px;
-        height: 10px;
-        background-color: transparent;
-        border: 1px solid black;
-      }
-
-      .custom-checkbox {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 20px;
-        height: 20px;
-        border: 1px solid #000;
-        border-radius: 2px;
-        cursor: pointer;
-        position: relative;
-        background-color: transparent;
-      }
-
-      .custom-checkbox:checked::after {
-        content: "✔";
-        position: absolute;
-        top: -11px;
-        left: -1px;
-        font-size: 20px;
-        color: black;
-        pointer-events: none;
-        transform-origin: bottom right;
-        transform: translate(3px, 5px);
-      }
-
-      /* Textbox vuông */
-      .square-input {
-        width: 20px;
-        height: 20px;
-        box-sizing: border-box;
-        font-size: 16px;
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      .square-input:focus {
-        outline: none !important;
-        box-shadow: none !important;
-      }
-
-
-      .custom-radio {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 20px;
-        height: 20px;
-        border: 1px solid #000;
-        cursor: pointer;
-        position: relative;
-        background-color: transparent;
-      }
-
-      .custom-radio:checked::after {
-        content: "✔";
-        position: absolute;
-        top: -6px;
-        left: -1px;
-        font-size: 20px;
-        color: black;
-        pointer-events: none;
-        transform-origin: bottom right;
-        transform: translate(3px, 5px);
-        border-radius: 0 !important;
-      }
-
-      @media print {
-        img {
-          display: block !important;
-          visibility: visible !important;
-        }
-
-        .a4-page {
-          width: 100%;
-          padding-top: 6mm !important;
-          padding-bottom: 6mm !important;
-          padding-right: 10mm !important;
-          padding-left: 10mm !important;
-          margin: 0 auto !important;
-        }
-
-        @page {
-          padding: 0 !important;
-          margin: 0 !important;
-        }
-      }
-    </style>
-    <div class="content-container">
-
-
-
-
-
-
-
+  <div class="row">
+    <div class="col-6"></div>
+    <div class="col-6 text-center">
+      <div class="">
+        <span
+          data-field="todayDate"
+          data-suggestion="ngày-tháng-năm"
+          data-type="text"
+          data-caption="Ngày làm bệnh án"
+        >  
+        </span>
+      </div>
+      <div class="fw-bold">Bác sỹ làm bệnh án</div>
+    </div>
+  </div>
 </div>
-  </body>
-</html>
