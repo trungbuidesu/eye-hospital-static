@@ -1,7 +1,13 @@
-<div class="a4-page d-flex flex-column" style="font-size: 13px;" id="page_14">
+<div
+  class="a4-page d-flex flex-column"
+  style="font-size: 13px;"
+  id="page_10"
+  data-page-index="10"
+>
   <style>
-    table, th, tr,
-    table th tr {
+    #page10-table,
+    #page10-table th,
+    #page10-table tr {
       height: 5px;
     }
   </style>
@@ -21,22 +27,52 @@
   <div class="my-2"></div>
 
   <div class="d-grid gap-1 px-4">
-    <div class="d-flex">
-      <div class="flex-grow-1">-&nbsp;Họ tên người bệnh:</div>
-      <div style="min-width: 100px;">Tuổi:</div>
-      <div>Giới tính: Nam/Nữ</div>
+    <div class="row">
+      <div class="col-8">- Họ và tên người bệnh:
+        <span
+          class="text-uppercase"
+          data-field="patientFullName"
+          data-type="text"
+          data-suggestion="tên-bệnh-nhân"
+          data-caption="Tên bệnh nhân"
+        ></span>
+      </div>
+      <div class="col-2">Tuổi:
+        <span
+          data-field="patientAge"
+          data-type="text"
+          data-suggestion="tuổi"
+          data-caption="Tuổi bệnh nhân"
+        ></span>
+      </div>
+      <div class="col-2">Giới tính:
+        <span
+          data-field="patientGender"
+          data-type="text"
+          data-suggestion="giới-tính"
+          data-caption="Giới tính"
+        ></span>
+      </div>
     </div>
-    <div class="d-flex">
-      <div class="flex-grow-1">-&nbsp;Số giường:</div>
-      <div style="width: 150px;">Buồng:</div>
+    <div class="me-2">- Ngày sinh:
+      <span
+        data-field="patientDob"
+        data-type="text"
+        data-suggestion="ngày-sinh"
+        data-caption="Ngày sinh"
+      ></span>
     </div>
-    <div class="d-flex">-&nbsp;Chẩn đoán:</div>
+    <div class="row">
+      <div class="col-4">- Số giường:</div>
+      <div class="col-8">Buồng:</div>
+    </div>
+    <div class="me-1">- Chẩn đoán:</div>
   </div>
 
   <div class="my-2"></div>
 
   <div class="flex-grow-1">
-    <table class="w-100 h-100 border border-dark">
+    <table class="w-100 h-100 border border-dark" id="page10-table">
       <colgroup>
         <col style="width: 5%;"/>
         <col style="width: 5%;"/>
