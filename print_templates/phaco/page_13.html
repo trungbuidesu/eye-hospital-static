@@ -1,8 +1,13 @@
-<div class="a4-page d-flex flex-column" style="font-size: 13px;" id="page_15">
+<div
+  class="a4-page d-flex flex-column"
+  id="page_15"
+  data-page-index="15"
+>
   <style>
-    table, th, td,
-    table th td {
-      padding: 4px;
+    #page11-table,
+    #page11-table th,
+    #page11-table td {
+      padding: 10px;
     }
   </style>
   <div class="row">
@@ -15,31 +20,82 @@
     </div>
   </div>
   <div class="my-4"></div>
-  <h5 class="fw-bold text-center">PHIẾU ĐÁNH GIÁ TÌNH TRẠNG DINH DƯỠNG</h5>
+  <h5 class="fw-bold text-center">PHIẾU ĐÁNH GIÁ TÌNH TRẠNG DINH DƯỠNG (NRS)</h5>
   <div class="my-4"></div>        
   <div class="d-grid gap-1 px-4">
-    <div class="d-flex">
-      <div class="flex-grow-1">Họ tên bệnh nhân:</div>
-      <div style="min-width: 100px;">Giới tính:</div>
+    <div class="row">
+      <div class="col-8">Họ tên bệnh nhân:
+        <span
+          class="text-uppercase"
+          data-field="patientFullName"
+          data-type="text"
+          data-suggestion="tên-bệnh-nhân"
+          data-caption="Tên bệnh nhân"
+        ></span>
+      </div>
+      <div class="col-4">Giới tính:
+        <span
+          data-field="patientGender"
+          data-type="text"
+          data-suggestion="giới-tính"
+          data-caption="Giới tính"
+        ></span>
+      </div>
     </div>
-    <div class="d-flex">
-      <div class="flex-grow-1">Nghề nghiệp:</div>
-      <div style="min-width: 100px;">Năm sinh:</div>
+    <div class="row">
+      <div class="col-8">Nghề nghiệp:
+        <span
+          data-field="patientCareer"
+          data-type="text"
+          data-suggestion="nghề-nghiệp"
+          data-caption="Nghề nghiệp bệnh nhân"
+        ></span>
+      </div>
+      <div class="col-4">Năm sinh:
+        <span
+          data-field="patientDobYear"
+          data-type="text"
+          data-suggestion="năm-sinh"
+          data-caption="Năm sinh"
+        ></span>
+      </div>
     </div>
     <div>Mã bệnh án:</div>
-    <div>Địa chỉ:</div>
-    <div>Ngày vào viện:</div>
+    <div>
+      <span class="me-1">Địa chỉ:</span>
+      <span
+        data-field="patientAddress"
+        data-type="text"
+        data-suggestion="địa-chỉ-bệnh-nhân"
+        data-caption="Địa chỉ bệnh nhân"
+      ></span>
+    </div>
+    <div>
+      <span me-1>Ngày vào viện:</span>
+      <span
+        data-field="patientAdmissionDate"
+        data-type="text"
+        data-suggestion="ngày-vào-viện"
+        data-caption="Ngày vào viện"
+      ></span>
+    </div>
     <div>Chẩn đoán bệnh:</div>
-    <div class="d-flex">
-      <div class="flex-grow-1">Chiều cao (m):</div>
-      <div style="min-width: 200px;">Cân nặng (kg):</div>
-      <div style="min-width: 200px;">BMI:</div>
+    <div class="row">
+      <div class="col-6">
+        <div class="me-1">Chiều cao (m):</div>
+      </div>
+      <div class="col-3">
+        <div class="me-1">Cân nặng (kg):</div>
+      </div>
+      <div class="col-3">
+        <div class="me-1">BMI:</div>
+      </div>
     </div>
   </div>
 
   <div class="my-2"></div>
 
-  <table class="border border-dark">
+  <table class="border border-dark" id="page11-table">
     <colgroup>
       <col style="width: 5%;" />
       <col style="width: 75%;" />
