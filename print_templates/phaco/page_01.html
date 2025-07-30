@@ -1,3 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .a4-page {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+
+    </script>
+  </head>
+
+  <body data-view-mode="browser">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+      integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+    <style>
+      @font-face {
+          font-family: 'Tinos';
+          src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
+          font-weight: normal;
+        }
+
+        /* @font-face {
+          font-family: 'Times New Roman';
+          src: url('/fonts/times_new_roman/time-new-roman.ttf') format('truetype');
+          font-weight: normal;
+        } */
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #eee;
+        font-family: 'Times New Roman', serif;
+      }
+
+      .a4-page {
+        width: 210mm;
+        height: 297mm;
+        padding: 5mm 10mm;
+        margin: 10mm auto;
+        background: white;
+        box-sizing: border-box;
+      }
+
+      .a4-page:last-child {
+        margin-top: 10mm !important;
+        margin-bottom: 0 !important;
+      }
+
+      .a4-page:first-child {
+        margin-top: 0 !important;
+      }
+
+      .square {
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: 1px solid black;
+      }
+
+      .custom-checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #000;
+        border-radius: 2px;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+      }
+
+      .custom-checkbox:checked::after {
+        content: "✔";
+        position: absolute;
+        top: -11px;
+        left: -1px;
+        font-size: 20px;
+        color: black;
+        pointer-events: none;
+        transform-origin: bottom right;
+        transform: translate(3px, 5px);
+      }
+
+      /* Textbox vuông */
+      .square-input {
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .square-input:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+
+      .custom-radio {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #000;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+      }
+
+      .custom-radio:checked::after {
+        content: "✔";
+        position: absolute;
+        top: -6px;
+        left: -1px;
+        font-size: 20px;
+        color: black;
+        pointer-events: none;
+        transform-origin: bottom right;
+        transform: translate(3px, 5px);
+        border-radius: 0 !important;
+      }
+
+      @media print {
+        img {
+          display: block !important;
+          visibility: visible !important;
+        }
+
+        .a4-page {
+          width: 100%;
+          padding-top: 6mm !important;
+          padding-bottom: 6mm !important;
+          padding-right: 10mm !important;
+          padding-left: 10mm !important;
+          margin: 0 auto !important;
+        }
+
+        @page {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+    </style>
+    <div class="content-container">
+
+
+
+
+
 <div
   class="a4-page"
   id="page_1"
@@ -7,7 +163,7 @@
     <div class="d-flex flex-row justify-content-between align-items-center">
       
       <div class="d-flex flex-column">
-        <img class="align-self-center" width="100px" src="{BASE_STATIC_HOST}images/logo_02.webp" />
+        <img class="align-self-center" width="100px" src="{BASE_STATIC_HOST}/images/logo_02.webp" />
         <div class="text-center">BỆNH VIỆN MẮT VIỆT NHẬT</div>
       </div>
       
@@ -46,7 +202,6 @@
               data-type="text"
               data-suggestion="mã-bệnh-nhân"
               data-caption="Mã Bệnh Nhân"
-              data-default-value=""
             ></span>
           </div>
         </td>
@@ -56,7 +211,7 @@
 
     <!-- -->
     <div class="text-center d-flex flex-column">
-      <span class="fw-bold" style="font-size: 6rem;">BỆNH ÁN</span>
+      <div class="fw-bold" style="font-size: 6rem;">BỆNH ÁN</div>
       <span
         class="fw-bold"
         style="font-size: 1.5rem;"
@@ -67,7 +222,6 @@
           style="font-size: 1.5rem;"
           data-field="yearOfTreatment"
           data-type="text"
-          data-suggestion=""
           data-caption="Năm Khám Bệnh"
         ></span>
       </span>
@@ -96,7 +250,7 @@
           <span
             data-field="patientAge"
             data-type="text"
-            data-suggestion="tuổi-bệnh-nhân"
+            data-suggestion="tuổi"
             data-caption="Tuổi bệnh nhân"
           ></span>
         </td>
@@ -133,6 +287,7 @@
                 data-type="text"
                 data-caption="Nhập viện/Khoa"
                 data-suggestion="viện-khoa"
+                data-default-value=""
                 class="text-center"
               ></div>
               <div>Ngày:
@@ -267,3 +422,13 @@
     </table>
   </div>
 </div>
+
+
+
+
+
+
+
+</div>
+  </body>
+</html>
