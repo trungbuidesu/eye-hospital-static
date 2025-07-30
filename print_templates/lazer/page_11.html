@@ -1,30 +1,25 @@
 <div
   class="a4-page d-flex flex-column"
-  id="page_11"
-  data-page-index="11"
+  id="page_13"
+  data-page-index="13"
 >
-  <style>
-    #page11-table,
-    #page11-table th,
-    #page11-table td {
-      padding: 10px;
-    }
-  </style>
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-6 text-center">
-      <h6>BỆNH VIỆN MẮT VIỆT NHẬT</h6>
-      <div class="fw-bold"><u>TỔ DINH DƯỠNG</u></div>
+      <div class="fw-bold">SỞ Y TẾ HÀ NỘI</div>
+      <div class="fw-bold">BỆNH VIỆN MẮT VIỆT NHẬT</div>
     </div>
-    <div class="col-6 text-end">
-      <div>BM.DD.01</div>
+    <div class="col-6">
     </div>
   </div>
-  <div class="my-4"></div>
-  <h5 class="fw-bold text-center">PHIẾU ĐÁNH GIÁ TÌNH TRẠNG DINH DƯỠNG (NRS)</h5>
-  <div class="my-4"></div>        
-  <div class="d-grid gap-1 px-4">
+  
+  <div>
+    <h4 class="text-center fw-bold mb-2">PHIẾU PHẪU THUẬT TRANS - PRK<h4>
+  </div>
+
+  <div class="px-4 d-grid gap-2">
     <div class="row">
-      <div class="col-8">Họ tên bệnh nhân:
+      <div class="col-8 d-flex">
+        <div class="me-1">Họ và tên người bệnh:</div>
         <span
           class="text-uppercase"
           data-field="patientFullName"
@@ -33,7 +28,17 @@
           data-caption="Tên bệnh nhân"
         ></span>
       </div>
-      <div class="col-4">Giới tính:
+      <div class="col-2 d-flex">
+        <div class="me-1">Tuổi:</div>
+        <span
+          data-field="patientAge"
+          data-type="text"
+          data-suggestion="tuổi"
+          data-caption="Tuổi bệnh nhân"
+        ></span>
+      </div>
+      <div class="col-2 d-flex">
+        <div class="me-1">Giới tính:</div>
         <span
           data-field="patientGender"
           data-type="text"
@@ -42,27 +47,8 @@
         ></span>
       </div>
     </div>
-    <div class="row">
-      <div class="col-8">Nghề nghiệp:
-        <span
-          data-field="patientCareer"
-          data-type="text"
-          data-suggestion="nghề-nghiệp"
-          data-caption="Nghề nghiệp bệnh nhân"
-        ></span>
-      </div>
-      <div class="col-4">Năm sinh:
-        <span
-          data-field="patientDobYear"
-          data-type="text"
-          data-suggestion="năm-sinh"
-          data-caption="Năm sinh"
-        ></span>
-      </div>
-    </div>
-    <div>Mã bệnh án:</div>
-    <div>
-      <span class="me-1">Địa chỉ:</span>
+    <div class="d-flex">
+      <div class="me-1">Địa chỉ:</div>
       <span
         data-field="patientAddress"
         data-type="text"
@@ -70,77 +56,108 @@
         data-caption="Địa chỉ bệnh nhân"
       ></span>
     </div>
-    <div>
-      <span me-1>Ngày vào viện</span>
-      <span
-        data-field="patientAdmissionDate"
-        data-type="text"
-        data-suggestion="ngày-vào-viện"
-        data-caption="Ngày vào viện"
-      ></span>
+    <div class="d-flex">
+      <div class="me-1">Số phòng:</div>
     </div>
-    <div>Chẩn đoán bệnh:</div>
+    <div class="d-flex">
+      <div class="me-1">Vào viện lúc:</div>
+    </div>
+    <div class="d-flex">
+      <div class="me-1">Phẫu thuật lúc:</div>
+    </div>
+    <div>
+      <div class="me-1">Chẩn đoán:</div>
+      <div class="px-4">
+        <div class="me-1">- Vào khoa:</div>
+      </div>
+      <div class="px-4">
+        <div class="me-1">- Trước phẫu thuật:</div>
+      </div>
+      <div class="px-4">
+        <div class="me-1">- Sau phẫu thuật:</div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="me-1">Phương pháp phẫu thuật: TRANS PRK</div>
+    </div>
+
     <div class="row">
-      <div class="col-6">
-        <div class="me-1">Chiều cao (m):</div>
+      <div class="col-7 d-flex">
+        <div class="me-1">Loại phẫu thuật:</div>
       </div>
-      <div class="col-3">
-        <div class="me-1">Cân nặng (kg):</div>
+      <div class="col-5 d-flex">
+        <div class="me-1">Đại phẫu thuật:</div>
       </div>
-      <div class="col-3">
-        <div class="me-1">BMI:</div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 d-flex">
+        <div class="me-1">Phương pháp vô cảm:</div>
+      </div>
+      <div class="col-6 d-flex">
+        <div class="me-1">Tê bề mặt:</div>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="me-1">Phẫu thuật viên:</div>
+    </div>
+    <div class="d-flex">
+      <div class="me-1">Phụ phẫu thuật:</div>
+    </div>
+    <div class="d-flex">
+      <div class="me-1">Bác sĩ gây mê hồi phục:</div>
+    </div>
+
+    <table class="w-100 border border-dark">
+      <colgroup>
+        <col style="width: 35%;" />
+        <col style="width: 65%;" />
+      </colgroup>
+      <thead>
+        <tr>
+          <td class="border border-dark text-center">LƯỢC ĐỒ PHẪU THUẬT</td>
+          <td class="border border-dark text-center">TRÌNH TỰ PHẪU THUẬT</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td class="border border-dark">
+            <div class="p-1">
+              <div>Lần lượt phẫu thuật từng mắt (MP -> MT) theo các bước sau</div>
+              <div>1. Tra thuốc tê bề mặt</div>
+              <div>2. Dán mi, đặt vành mi, rửa mắt</div>
+              <div>3. Cắt bỏ biểu mô giác mạc bằng tia laser trên máy Schwind Amaris 750</div>
+              <div>4. Chuyển sang chiếu tia laser</div>
+              <div>5. Rửa lại giác mạc</div>
+              <div>6. Đặt kính tiếp xúc</div>
+              <div>7. Tra thuốc sau mổ</div>
+              <div>8. Tháo bỏ vành mi và dán mi</div>
+              <div>9. Kết thúc phẫu thuật an toàn</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mt-2">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <div class="text-center">
+            <span
+              data-field="todayDate"
+              data-suggestion="ngày-tháng-năm"
+              data-type="text"
+              data-caption="Ngày viết phiếu"
+            >
+            </span>
+          </div>
+          <div class="text-center fw-bold">PHẪU THUẬT VIÊN</div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="my-2"></div>
-
-  <table class="border border-dark" id="page11-table">
-    <colgroup>
-      <col style="width: 5%;" />
-      <col style="width: 75%;" />
-      <col style="width: 10%;" />
-      <col style="width: 10%;" />
-    </colgroup>
-    <thead>
-      <tr>
-        <th colspan="2" class="fw-bold border border-dark">Bảng 1: Sàng lọc ban đầu</th>
-        <th class="fw-bold border border-dark text-center">Có</th>
-        <th class="fw-bold border border-dark text-center">Không</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="border border-dark text-center">1</td>
-        <td class="border border-dark">Chỉ số BMI của bệnh nhân có dưới mức 20,5 không?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
-      </tr>
-      <tr>
-        <td class="border border-dark text-center">2</td>
-        <td class="border border-dark">Bệnh nhân có sụt cân trong vòng 3 tháng qua không ?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
-      </tr>
-      <tr>
-        <td class="border border-dark text-center">3</td>
-        <td class="border border-dark">Ăn uống của bệnh nhân có sụt giảm trong vòng 1 tuần qua không ?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
-      </tr>
-      <tr>
-        <td class="border border-dark text-center">4</td>
-        <td class="border border-dark">Tình trạng bệnh của bệnh nhân có nặng không?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
-      </tr>
-      <tr>
-        <td colspan="4" class="border border-dark">
-          <div class="fst-italic">Nếu trả lời "<strong>có</strong>" cho bất kỳ câu hỏi nào ở trên, thì thực hiện sàng lọc giai đoạn 2 (bảng 2).</div>
-          <div class="fst-italic">Nếu câu trả lời "<strong>không</strong>" cho tất cả câu hỏi trên thì  bệnh nhân nên được đánh giá lại sau mỗi tuần.</div>
-          <div class="fst-italic">Nếu bệnh nhân được lên lịch trình mổ lớn, nên xây dựng "<strong>kế hoạch chăm sóc dinh dưỡng</strong>" nhằm phòng tránh các yếu tố nguy cơ.</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>        
+  
+  </div>
 </div>
