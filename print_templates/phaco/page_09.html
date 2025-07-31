@@ -20,9 +20,13 @@
       </td>
       <td class="text-center">
         <h4 class="fw-bold">PHIẾU SIÊU ÂM</h4>
-        <div>(Lần thứ:......)</div>
+        <div class="text-center">
+          <span class="me-1">(Lần thứ:</span>
+          <span></span>
+          <span class="me-1">)</span>
+        </div>
       </td>
-      <td>Số SA:......</td>
+      <td>Số SA:</td>
     </tr>
   </table>
   <div class="my-1"></div>
@@ -39,20 +43,47 @@
   <div class="my-1"></div>
   
   <div class="d-grid gap-2">
-    <div class="d-flex">
-      <div class="flex-grow-1">-&nbsp;Họ tên người bệnh:</div>
-      <div style="min-width: 100px;">Tuổi:</div>
-      <div>Nam/Nữ</div>
+    <div class="row">
+      <div class="col-8">
+        <span class="me-1">- Họ tên người bệnh:</span>
+        <span
+          data-field="patientFullName"
+          data-type="text"
+          data-suggestion="họ-tên"
+          data-caption="Họ tên người bệnh"
+        ></span>
+      </div>
+      <div class="col-2">
+        <span class="me-1">Tuổi:</span>
+        <span
+          data-field="patientAge"
+          data-type="text"
+          data-suggestion="họ-tên"
+          data-caption="Họ tên người bệnh"
+        ></span>
+      </div>
+      <div class="col-2">
+        <span class="me-1">Giới tính:</span>
+        <span
+          data-field="patientGender"
+          data-type="text"
+          data-suggestion="giới-tính"
+          data-caption="Giới tính"
+        ></span>
+      </div>
     </div>
-    <div class="d-flex">
-      <div class="flex-grow-1">-&nbsp;Địa chỉ:</div>
-      <div style="width: 100px;">Sổ BHYT:</div>
+
+    <div class="row">
+      <div class="col-7">- Địa chỉ:</div>
+      <div class="col-5">Số BHYT:</div>
     </div>
-    <div class="d-flex">
-      <div class="flex-grow-1">-&nbsp;Khoa:</div>
-      <div style="width: 150px;">Buồng:</div>
-      <div style="width: 150px;">Giường:</div>
+
+    <div class="row">
+      <div class="col-6">- Khoa:</div>
+      <div class="col-3">Buồng:</div>
+      <div class="col-3">Giường:</div>
     </div>
+
     <div class="row d-flex">
       <div class="col-7 d-flex">
         <div class="">-&nbsp;Thị lực:&nbsp;</div>
@@ -108,10 +139,18 @@
         </table>
       </div>
       <div class="col-5 d-flex flex-column">
-        <div class="text-center">Ngày...tháng...năm 20..</div>
+        <div class="text-center">
+          <span
+            data-field="todayDate"
+            data-suggestion="ngày-tháng-năm"
+            data-type="text"
+            data-caption="Ngày làm bệnh án"
+          >  
+          </span>
+        </div>
         <div class="fw-bold text-center">BÁC SĨ ĐIỀU TRỊ</div>
         <div class="flex-grow-1"></div>
-        <div>Họ tên:.........</div>
+        <div>Họ tên:</div>
       </div>
     </div>
   </div>
@@ -132,7 +171,15 @@
   <div class="row">
     <div class="col-8"></div>
     <div class="col-4">
-      <div class="text-center">Ngày...tháng...năm...</div>
+      <div class="text-center">
+        <!-- <span
+          data-field="todayDate"
+          data-suggestion="ngày-tháng-năm"
+          data-type="text"
+          data-caption="Ngày làm bệnh án"
+        >  
+        </span> -->
+      </div>
       <div class="fw-bold text-center">BÁC SĨ CHUYÊN KHOA MẮT</div>
       <div style="height: 70px;"></div>
       <div>Họ tên:</div>
