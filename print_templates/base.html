@@ -149,17 +149,5 @@
       }
     </style>
     <div class="content-container"></div>
-    <script>
-      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-        cb.addEventListener('change', (e) => {
-          const checkbox = e.target;
-          window.parent.postMessage({
-            type: 'checkbox-change',
-            fieldName: checkbox.getAttribute('data-field-name'),
-            checked: checkbox.checked,
-          }, '*');
-        });
-      });
-    </script>
   </body>
 </html>
