@@ -102,13 +102,21 @@
       </div>
       <div class="me-2">Ngày vào viện:
         <span
-          data-field="patientAdmissionDate"
+          data-field="dateOfAdmission"
           data-type="text"
           data-suggestion="ngày-vào-viện"
           data-caption="Ngày vào viện"
+          data-shared="dateOfAdmission"
         ></span>
       </div>
-      <div class="me-2">Nơi giới thiệu:</div>
+      <div class="me-2">Nơi giới thiệu:
+        <span
+          data-field="referralSource"
+          data-type="text"
+          data-suggestion="nơi-giới-thiệu"
+          data-caption="Nơi giới thiệu"
+        ></span>
+      </div>
       <div class="mt-2"></div>
       <div class="fw-bold">HỎI BỆNH</div>
       <div class="mb-2">Toàn thân:</div>
@@ -130,16 +138,46 @@
         </div>
       </div>
       <div class="mt-1"></div>
-      <div class="me-2">Đang điều trị thuốc:</div>
+      <div class="me-2">Đang điều trị thuốc:
+        <span
+          data-field="currentMeds"
+          data-type="text"
+          data-suggestion="thuốc"
+          data-caption="Đang điều trị thuốc"
+        ></span>
+      </div>
       <div class="row">
         <div class="col-3">Tiền sử dị ứng:</div>
-        <label class="col-7 d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" />Có (ghi rõ tên thuốc):</label>
+        <label class="col-7 d-flex">
+          <input type="checkbox" class="custom-checkbox align-self-center me-2" />Có (ghi rõ tên thuốc):
+          <span
+            data-field="currentMedsDetail"
+            data-type="text"
+            data-suggestion="thuốc"
+            data-caption="Tên thuốc"
+          ></span>
+        </label>
         <label class="col-2 d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" />Không</label>
       </div>
-      <div class="me-2">Đang dùng thuốc tránh thai:</div>
+      <div class="me-2">Đang dùng thuốc tránh thai:
+        <span
+          data-field="currentBirthControl"
+          data-type="text"
+          data-suggestion="thuốc tránh thai"
+          data-caption="Đang dùng thuốc tránh thai"
+        ></span>
+      </div>
       <div class="row">
         <div class="col-6 d-flex justify-content-center">
-          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" />Có (ghi rõ tên thuốc):</label>
+          <label class="d-flex">
+            <input type="checkbox" class="custom-checkbox align-self-center me-2" />Có (ghi rõ tên thuốc):
+            <span
+              data-field="currentBirthControlDetail"
+              data-type="text"
+              data-suggestion="thuốc"
+              data-caption="Tên thuốc tránh thai"
+            ></span>
+          </label>
         </div>
         <div class="col-6 d-flex justify-content-center">
           <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" />Không</label>
