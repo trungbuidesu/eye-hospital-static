@@ -18,7 +18,7 @@
 
   <div class="px-4 d-grid gap-2">
     <div class="row">
-      <div class="col-8 d-flex">
+      <div class="col-6 d-flex">
         <div class="me-1">Họ và tên người bệnh:</div>
         <span
           class="text-uppercase"
@@ -26,24 +26,27 @@
           data-type="text"
           data-suggestion="tên-bệnh-nhân"
           data-caption="Tên bệnh nhân"
+          data-shared="patientFullName"
         ></span>
       </div>
-      <div class="col-2 d-flex">
+      <div class="col-3 d-flex">
         <div class="me-1">Tuổi:</div>
         <span
           data-field="patientAge"
           data-type="text"
           data-suggestion="tuổi"
           data-caption="Tuổi bệnh nhân"
+          data-shared="patientAge"
         ></span>
       </div>
-      <div class="col-2 d-flex">
+      <div class="col-3 d-flex">
         <div class="me-1">Giới tính:</div>
         <span
           data-field="patientGender"
           data-type="text"
           data-suggestion="giới-tính"
           data-caption="Giới tính"
+          data-shared="patientGender"
         ></span>
       </div>
     </div>
@@ -54,6 +57,7 @@
         data-type="text"
         data-suggestion="địa-chỉ-bệnh-nhân"
         data-caption="Địa chỉ bệnh nhân"
+        data-shared="patientAddress"
       ></span>
     </div>
     <div class="d-flex">
@@ -146,10 +150,11 @@
         <div class="col-6">
           <div class="text-center">
             <span
-              data-field="todayDate"
+              data-field="todayDateFull"
               data-suggestion="ngày-tháng-năm"
               data-type="text"
               data-caption="Ngày viết phiếu"
+              data-shared="todayDateFull"
             >
             </span>
           </div>
