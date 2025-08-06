@@ -127,6 +127,30 @@
         border-radius: 0 !important;
       }
 
+      .custom-checkbox-small {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #000;
+        border-radius: 2px;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+      }
+
+      .custom-checkbox-small:checked::after {
+        content: "✔";
+        position: absolute;
+        top: -11px;
+        left: -1px;
+        font-size: 15px;
+        color: black;
+        pointer-events: none;
+        transform-origin: bottom right;
+        transform: translate(3px, 5px);
+      }
+
       @media print {
         img {
           display: block !important;
