@@ -52,18 +52,37 @@
     <h5 class="text-center fw-bold">PHIẾU THEO DÕI PHẪU THUẬT</h5>
 
     <div class="d-grid gap-1">
-      <div class="d-flex">
-        <div class="me-1">Họ và tên:</div>
+      <div>
+        <span class="me-1">Họ và tên:</span>
         <span
           class="text-uppercase"
           data-field="patientFullName"
           data-type="text"
-          data-suggestion="tên-bệnh-nhân"
+          data-suggestion="họ-tên"
           data-caption="Tên bệnh nhân"
+          data-shared="patientFullName"
         ></span>
       </div>
-      <div>Phẫu thuật:</div>
-      <div>Bác sĩ phẫu thuật:</div>
+      <div>
+        <span class="me-1">Phẫu thuật:</span>
+        <span
+          class="text-uppercase"
+          data-field="2946c98c-8608-4107-920f-07447285d88f"
+          data-type="text"
+          data-suggestion="phẫu-thuật"
+          data-caption="Phẫu thuật"
+        ></span>
+      </div>
+      <div>
+        <span class="me-1">Bác sĩ phẫu thuật:</span>
+        <span
+          class="text-uppercase"
+          data-field="30f6d6c4-b78f-402a-9777-67ae4b87569b"
+          data-type="text"
+          data-suggestion="bs-phẫu-thuật"
+          data-caption="Bác sĩ phẫu thuật"
+        ></span>
+      </div>
     </div>
 
     <div class="my-2"></div>
@@ -118,15 +137,25 @@
       <div class="col-6">
         <div class="text-center">
           <span
-            data-field="todayDate"
-            data-suggestion="ngày-tháng-năm"
+            data-field="e405e315-9988-4444-a160-c3d3a04a6015"
+            data-suggestion="ngày-viết-phiếu"
             data-type="text"
             data-caption="Ngày viết phiếu"
+            data-field-ref="todayDateFull"
           >
           </span>
         </div>
         <div class="text-center fw-bold">BÁC SĨ GÂY MÊ, HỒI SỨC</div>
-        <div class="mt-5">Họ tên:</div>
+        <div class="mt-5">
+          <span class="me-1">Họ tên:</span>
+          <span
+            data-field="f4d5b91e-a12d-4c3e-86b1-91a7c8d9e6f3"
+            data-suggestion="họ-tên"
+            data-type="text"
+            data-caption="Họ tên bác sỹ"
+          >
+          </span>
+        </div>
       </div>
     </div>
   </div>
