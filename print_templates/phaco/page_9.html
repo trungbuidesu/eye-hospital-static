@@ -48,24 +48,27 @@
         <span class="me-1">- Họ tên người bệnh:</span>
         <span
           data-field="patientFullName"
+          data-shared="patientFullName"
           data-type="text"
           data-suggestion="họ-tên"
           data-caption="Họ tên người bệnh"
         ></span>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <span class="me-1">Tuổi:</span>
         <span
           data-field="patientAge"
+          data-shared="patientAge"
           data-type="text"
-          data-suggestion="họ-tên"
-          data-caption="Họ tên người bệnh"
+          data-suggestion="tuổi"
+          data-caption="Tuổi bệnh nhân"
         ></span>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <span class="me-1">Giới tính:</span>
         <span
           data-field="patientGender"
+          data-shared="patientGender"
           data-type="text"
           data-suggestion="giới-tính"
           data-caption="Giới tính"
@@ -74,7 +77,16 @@
     </div>
 
     <div class="row">
-      <div class="col-7">- Địa chỉ:</div>
+      <div class="col-7">
+        <span class="me-1">-Địa chỉ:</span>
+        <span
+          data-field="patientAddress"
+          data-shared="patientAddress"
+          data-type="text"
+          data-suggestion="địa-chỉ"
+          data-caption="Địa chỉ"
+        ></span>
+      </div>
       <div class="col-5">Số BHYT:</div>
     </div>
 
@@ -141,10 +153,11 @@
       <div class="col-5 d-flex flex-column">
         <div class="text-center">
           <span
-            data-field="todayDate"
+            data-field="32c7ed8c-8c0c-4e8c-8438-d698184d0b13"
             data-suggestion="ngày-tháng-năm"
             data-type="text"
             data-caption="Ngày làm bệnh án"
+            data-field-ref="todayDateFull"
           >  
           </span>
         </div>
@@ -172,13 +185,14 @@
     <div class="col-8"></div>
     <div class="col-4">
       <div class="text-center">
-        <!-- <span
-          data-field="todayDate"
+        <span
+          data-field="0d540292-66b4-4b53-b91c-99d8d1e3d09a"
           data-suggestion="ngày-tháng-năm"
           data-type="text"
           data-caption="Ngày làm bệnh án"
+          data-field-ref="todayDateFull"
         >  
-        </span> -->
+        </span>
       </div>
       <div class="fw-bold text-center">BÁC SĨ CHUYÊN KHOA MẮT</div>
       <div style="height: 70px;"></div>
