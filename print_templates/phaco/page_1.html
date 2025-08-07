@@ -1,7 +1,6 @@
 <div
   class="a4-page"
   id="page_1"
-  
   data-page-index="1"
 >
   <div class="w-100 d-flex flex-column">
@@ -43,7 +42,7 @@
           <div class="text-center">
             <div class="fw-bold">MÃ BỆNH NHÂN</div>
             <span
-              data-field="patientCode"
+              data-field="1d2e3f4a-5b6c-47d8-8e9f-a1b2c3d4e5f6"
               data-type="text"
               data-suggestion="mã-bệnh-nhân"
               data-caption="Mã Bệnh Nhân"
@@ -54,22 +53,19 @@
     </table>
     <div class="my-4"></div>
 
-    <!-- -->
     <div class="text-center d-flex flex-column">
       <div class="fw-bold" style="font-size: 6rem;">BỆNH ÁN</div>
-      <span
-        class="fw-bold"
-        style="font-size: 1.5rem;"
-      >
-        NĂM:
+      <div>
+        <span class="fw-bold me-1" style="font-size: 1.5rem;" >NĂM:</span>
         <span
           class="fw-bold"
           style="font-size: 1.5rem;"
-          data-field="yearOfTreatment"
+          data-field="6c5b9e8f-41d3-4a7c-9e2f-0b3a4d5c6e7f"
           data-type="text"
-          data-caption="Năm Khám Bệnh"
+          data-caption="Năm khám bệnh"
+          data-shared="yearOfTreatment"
         ></span>
-      </span>
+      </div>
     </div>
     <div class="my-4"></div>
 
@@ -81,33 +77,36 @@
 
       <tr>
         <td>
-          <span>HỌ TÊN:</span>
+          <span class="me-1">HỌ TÊN:</span>
           <span
             class="text-uppercase"
             data-field="patientFullName"
             data-type="text"
-            data-suggestion="tên-bệnh-nhân"
-            data-caption="Tên bệnh nhân"
+            data-suggestion="họ-tên"
+            data-caption="Họ tên bệnh nhân"
+            data-shared="patientFullName"
           ></span>
         </td>
         <td>
-          <span>TUỔI:</span>
+          <span class="me-1">TUỔI:</span>
           <span
             data-field="patientAge"
             data-type="text"
             data-suggestion="tuổi"
             data-caption="Tuổi bệnh nhân"
+            data-shared="patientAge"
           ></span>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <span>ĐỊA CHỈ:</span>
+          <span class="me-1">ĐỊA CHỈ:</span>
           <span
             data-field="patientAddress"
             data-type="text"
-            data-suggestion="địa-chỉ-bệnh-nhân"
+            data-suggestion="địa-chỉ"
             data-caption="Địa chỉ bệnh nhân"
+            data-shared="patientAddress"
           ></span>
         </td>
       </tr>
@@ -124,20 +123,19 @@
       <tr>
         <td colspan="4">
           <div class="d-flex row">
-            <!-- Cột 1 -->
             <div class="col border border-dark p-2 me-2 align-self-start">
               <div class="text-center">NHẬP VIỆN/KHOA</div>
               <div
-                data-field="hospitalDepartmentAdmission"
+                data-field="a5e9f7d3-1b2c-408a-8e6f-9c1b2d3a4e5f"
                 data-type="text"
                 data-caption="Nhập viện/Khoa"
                 data-suggestion="viện-khoa"
-                data-default-value=""
                 class="text-center"
               ></div>
               <div>Ngày:
                 <span
-                  data-field="dateOfAdmission"
+                  data-field="f1c3d5a7-b9e8-46f4-a0b9-1d8f2e7a4b6c"
+                  data-field-ref="todayDate"
                   data-type="text"
                   data-suggestion="ngày"
                   data-caption="Ngày nhập viện/Khoa"
@@ -145,7 +143,7 @@
               </div>
               <div>Giường:
                 <span
-                  data-field="bedOfAdmission"
+                  data-field="6a8c7b9f-4e1d-402a-9f3b-5c4e6a8d7b9c"
                   data-type="text"
                   data-suggestion="giường"
                   data-caption="Giường (Nhập viện/Khoa)"
@@ -153,12 +151,11 @@
               </div>
             </div>
 
-            <!-- Cột giữa -->
             <div class="col d-flex flex-column me-2">
               <div class="border border-dark p-2 mb-2">
                 <div class="text-center">CHUYỂN VIỆN/KHOA</div>
                 <div
-                  data-field="hospitalDepartmentTransfer"
+                  data-field="d5b7a9e1-f3c4-46e8-b1a7-9c2d4e5f6a8b"
                   data-type="text"
                   data-suggestion="viện-khoa"
                   data-caption="Chuyển viện/Khoa"
@@ -166,7 +163,7 @@
                 ></div>
                 <div>Ngày:
                   <span
-                    data-field="dateOfTransfer1"
+                    data-field="e9f1a8c7-b5d3-46c8-8e2b-1c3d5e7f9a1c"
                     data-type="text"
                     data-suggestion="ngày"
                     data-caption="Ngày chuyển viện/Khoa 1"
@@ -175,7 +172,7 @@
                 <div>Giường:
                   <span
                     data-suggestion="giường"
-                    data-field="bedTransferNo1"
+                    data-field="a0b1c2d3-e4f5-46a7-8b9c-1d2e3f4a5b6c"
                     data-type="text"
                     data-caption="Giường 1 (Chuyển viện/Khoa)"
                   ></span>
@@ -184,7 +181,7 @@
                 <div>Ngày:
                   <span
                     data-suggestion="ngày"
-                    data-field="dateOfTransfer2"
+                    data-field="b1c2d3e4-f5a6-47b8-8c9d-1e2f3a4b5c6d"
                     data-type="text"
                     data-caption="Ngày chuyển viện/Khoa 2"
                   ></span>
@@ -192,7 +189,7 @@
                 <div>Giường:
                   <span
                     data-suggestion="giường"
-                    data-field="bedTransferNo2"
+                    data-field="c3d4e5f6-a7b8-49c0-9d1e-2f3a4b5c6d7e"
                     data-type="text"
                     data-caption="Giường 2 (Chuyển viện/Khoa)"
                   ></span>
@@ -201,7 +198,7 @@
               <div class="border border-dark p-2">
                 <div>MÃ BỆNH:
                   <span
-                    data-field="diagnosisCode"
+                    data-field="d5e6f7a8-b9c0-41d2-9e3f-4a5b6c7d8e9f"
                     data-type="text"
                     data-suggestion="mã-bệnh"
                     data-caption="Mã bệnh"
@@ -209,7 +206,7 @@
                 </div>
                 <div>Số phim XQ:
                   <span
-                    data-field="numberOfXrayFilms"
+                    data-field="e7f8a9b0-c1d2-4e3f-8a4b-5c6d7e8f9a0b"
                     data-type="text"
                     data-suggestion="số-phim-xq"
                     data-caption="Số phim XQ"
@@ -217,28 +214,27 @@
                 </div>
                 <div>Số phim CT:
                   <span
-                    data-field="numberOfCtFilms"
+                    data-field="f9a0b1c2-d3e4-4f5a-8b6c-7d8e9f0a1b2c"
                     data-type="text"
                     data-suggestion="số-phim-ct"
                     data-caption="Số phim CT"
                   ></span>
                 </div>
                 <div>Số phim khác:
-                 <span
-                    data-field="numberOfOtherFilms"
+                   <span
+                    data-field="1a2b3c4d-5e6f-47a8-9b0c-1d2e3f4a5b6c"
                     data-type="text"
                     data-suggestion="số-phim-khác"
                     data-caption="Số phim khác"
-                  ></span>
+                   ></span>
                 </div>
               </div>
             </div>
 
-            <!-- Cột 3 -->
             <div class="col border border-dark p-2 align-self-start">
               <div class="text-center">XUẤT VIỆN/KHOA</div>
               <div
-                data-field="hospitalDepartmentDischarge"
+                data-field="2d3e4f5a-6b7c-48d9-9e0f-1a2b3c4d5e6f"
                 data-type="text"
                 data-suggestion="viện-khoa"
                 data-caption="Xuất viện/Khoa"
@@ -247,7 +243,7 @@
               <div>Ngày:
                 <span
                   data-suggestion="ngày"
-                  data-field="dateOfDischarge"
+                  data-field="3b4c5d6e-7f8a-49c1-8d2e-3f4a5b6c7d8e"
                   data-type="text"
                   data-caption="Ngày xuất viện/Khoa"
                 ></span>
@@ -255,7 +251,7 @@
               <div>Giường:
                 <span
                   data-suggestion="giường"
-                  data-field="bedDischargeNo1"
+                  data-field="4c5d6e7f-8a9b-41c2-8d3e-4f5a6b7c8d9e"
                   data-type="text"
                   data-caption="Giường (Xuất viện/Khoa)"
                 ></span>

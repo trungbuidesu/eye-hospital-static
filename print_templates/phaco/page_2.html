@@ -1,0 +1,431 @@
+<div
+  class="a4-page"
+  id="page_2"
+  style="font-size: 11px;"
+  data-page-index="2"
+>
+  <table class="table table-bordered border-dark w-100 table-layout-fixed">
+    <colgroup>
+      <col style="width: 33.33%">
+      <col style="width: 33.33%">
+      <col style="width: 33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <td>
+          <div>Nhận dạng bệnh nhân</div>
+          <div>Họ, tên:
+            <span
+              class="text-uppercase"
+              data-field="patientFullName"
+              data-type="text"
+              data-suggestion="họ-tên"
+              data-caption="Tên bệnh nhân"
+              data-shared="patientFullName"
+            ></span>
+          </div>
+          <div>Ngày sinh, tuổi:
+            <span
+              data-field="patientDobAge"
+              data-type="text"
+              data-suggestion="ngày-sinh-tuổi"
+              data-caption="Ngày sinh, tuổi bệnh nhân"
+              data-shared="patientDobAge"
+            ></span>
+          </div>
+          <div>Giới tính:
+            <span
+              data-field="patientGender"
+              data-type="text"
+              data-suggestion="giới-tính"
+              data-caption="Giới tính"
+              data-shared="patientGender"
+            ></span>
+          </div>
+          <div>Mã số bệnh án:
+            <span
+              data-field="1b5f9e8d-4c7a-4a3e-8b1d-9f5e6d2c4a7b"
+              data-type="text"
+              data-suggestion="mã-số-bệnh-án"
+              data-caption="Mã số bệnh án"
+            ></span>
+          </div>
+        </td>
+        <td class="text-center align-middle" colspan="1">
+          <div>
+            <strong>BẢNG KIỂM TRA AN TOÀN PHẪU THUẬT, THỦ THUẬT</strong>
+          </div>
+          <img class="align-self-center" width="100px" src="{BASE_STATIC_HOST}/images/logo_02.webp" />
+        </td>
+        <td>
+          <div>Khu phẫu thuật:
+            <span
+              data-field="f8e91b5d-225e-4c7a-97a1-8d2e6b5f4c9a"
+              data-type="text"
+              data-suggestion="khu-phẫu-thuật"
+              data-caption="Khu phẫu thuật"
+            ></span>
+          </div>
+          <div>Ngày phẫu thuật:
+            <span
+              data-field="7c4a1e9d-6b8f-4d3a-b1c9-5e8f3d4a6b2c"
+              data-type="text"
+              data-suggestion="ngày"
+              data-caption="Ngày phẫu thuật"
+              data-field-ref="todayDate"
+              class="mr-0.5"
+            ></span>
+            Giờ:
+            <span
+              data-field="a3e8b1d9-c5f2-4e8a-8d1b-3f4c6a9e7d2f"
+              data-type="text"
+              data-suggestion="giờ"
+              data-caption="Giờ phẫu thuật"
+            ></span>
+          </div>
+          <div>Phẫu thuật viên:
+            <span
+              data-field="6d2e9a8b-4f1c-4b5a-9e8d-7c2a1b5f6e3c"
+              data-type="text"
+              data-suggestion="phẫu-thuật-viên"
+              data-caption="Phẫu thuật viên"
+            ></span>
+          </div>
+          <div>Bác sĩ gây mê:
+            <span
+              data-field="3c8e5d1a-7b2f-4a9c-8e3d-1f5a7c2e9b4d"
+              data-type="text"
+              data-suggestion="bs-gây-mê"
+              data-caption="Bác sĩ gây mê"
+            ></span>
+          </div>
+          <div>Người kiểm soát:
+            <span
+              data-field="5a1d4c8e-2f7b-4a6c-9e1b-8d3f4c5e9a2b"
+              data-type="text"
+              data-suggestion="người-kiểm-soát"
+              data-caption="Người kiểm soát"
+            ></span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="my-2"></div>
+
+  <table class="table table-bordered border-dark w-100 table-layout-fixed">
+    <colgroup>
+      <col style="width: 33.33%">
+      <col style="width: 33.33%">
+      <col style="width: 33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="text-center">
+          <strong>TRƯỚC KHI GÂY MÊ/GÂY TÊ</strong><br />
+          Thời gian trước khi gây mê/gây tê
+        </td>
+        <td class="text-center">
+          <strong>TRƯỚC KHI TIẾN HÀNH PHẪU THUẬT</strong><br />
+          Thời gian chờ trước khi phẫu thuật
+        </td>
+        <td class="text-center">
+          <strong>SAU PHẪU THUẬT</strong><br />
+          Thời gian chờ trước khi ra khỏi phòng mổ
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            1. Xác nhận có đúng bệnh nhân:
+          </div>
+          <div class="d-flex d-grid gap-4 justify-content-center">
+            <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="e405e315-9988-4444-a160-c3d3a04a6015" data-type="checkbox" />Có</label>
+            <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="30f6d6c4-b78f-402a-9777-67ae4b87569b" data-type="checkbox" />Không</label>
+          </div>
+          <div>
+            - Giấy cam đoan (do bệnh nhân hoặc người khác ký):
+          </div>
+          <div class="d-flex d-grid gap-4 justify-content-center">
+            <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="32c7ed8c-8c0c-4e8c-8438-d698184d0b13" data-type="checkbox" />Có</label>
+            <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="1c841c13-a75e-4c7b-944a-9310892a0614" data-type="checkbox" />Không*</label>
+          </div>
+        </td>
+        <td>
+          <div>7. Kiểm tra chéo lần cuối trong cả nhóm với sự có mặt của phẩu thuật viên và bác sỹ gây mê:</div>
+          <div>
+            - Xác nhận đúng BN:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="2946c98c-8608-4107-920f-07447285d88f" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="0d540292-66b4-4b53-b91c-99d8d1e3d09a" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Phương pháp phẫu thuật:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="864a7541-657c-40ea-9080-60b61e27a7c9" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="0ff2384a-10f8-450f-96a6-f2b7f5255474" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Đã đánh dấu mắt mổ:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="92415175-c54d-4c38-8c50-d796695275e5" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="87e2467d-d816-4664-9f86-9a2cf11107f9" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            <div>- Kính nội nhãn (loại kính, công suất):</div>
+            <div
+              data-field="d4a1c5e9-f8b3-4c6a-8e2d-7b5f1e9d6c4a"
+              data-type="text"
+              data-suggestion="kính-nội-nhãn"
+              data-caption="Kính nội nhãn (loại kính, công suất)"
+            >
+            </div>
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="4260a92d-7049-4ef0-949f-b7008a0d9e5b" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="5607548b-3023-455a-b9c1-4b11f67f22a7" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="c394c489-3286-4f49-b005-728b78cfc01d" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>10. Khẳng định qua lời nói trong kíp mổ:</div>
+          <div>
+            - Phẫu thuật đã ghi nhận:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="a9568910-c11f-4903-b09e-73c3327f3299" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="46b4122d-6060-449e-b816-b1030e4663c6" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Dụng cụ đủ:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="0d321591-6387-4340-9a8c-f093158c3a9f" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="57497216-921c-43f1-9b16-43e5c924cf3c" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Mẫu bệnh phẩm đã dán nhãn:
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="36a0d4c1-6b80-4965-b152-32b0051174d1" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="411a0115-3733-402a-9e2e-8519e917d478" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="86419515-3644-468e-9005-021966275217" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+          <div>
+            - Trường hợp có sự cố KMM hoặc nguy cơ y tế, đã lập phiếu ghi nhận chưa:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="4692750e-517b-4022-83b3-85f062f6b4e6" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="00028a7e-128c-4934-8c88-154a4f15d2a9" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Nếu không có sự cố:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="19842c67-628d-4293-8515-d41c49427495" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="a2278f9f-683a-4936-a320-c25227d8cf12" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>2. Đã xác nhận (dựa vào phiếu duyệt mổ và hỏi lại bệnh nhân)</div>
+          <div>
+            - Phương pháp phẫu thuật:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="1e2a095a-c63e-4379-9943-705b706c9a9d" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="2e646736-22a3-488b-a496-e2a2c10b7f6c" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Mắt phẫu thuật:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="8645e7f4-d50d-4009-847e-a9d023f03b57" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="d0d93707-160a-40a2-9721-a3f2537c223c" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+        </td>
+        <td rowspan="2">
+          <div>8. Đã trao đổi trong kíp mổ về nguy cơ/các bước PT:</div>
+          <div>
+            - Tiên lượng nguy cơ trong phẫu thuật:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="4d5d9c28-5683-42e5-a86d-f4591461c37d" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="8e77a28e-f187-4340-a35c-55b2064161b3" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Tiên lượng trong gây mê:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="8ae893d5-09a4-4cf5-9989-9a74659b8c9d" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="8ae893d5-09a4-4cf5-9989-9a74659b8c9d" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Phẫu thuật:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="195c8088-75c1-419b-b27b-231a44e54823" data-type="checkbox" />Không gây mê</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="55e09f53-294b-4a5c-b16a-7462d7c588a4" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+        </td>
+        <td rowspan="2">
+          <div>11. Chỉ định và theo dõi sau mổ:</div>
+          <div class="d-grid gap-1">
+            - Tư thế nằm của bệnh nhân:
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="76c3e7f4-b97c-4a3d-b44c-9f69230559f2" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="5648c3b7-786d-495c-9c98-154a4f21d3f9" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="36c34e83-a719-4820-a681-30948c0818d1" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+          <div>
+            - Thuốc bổ sung:
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="8651a24d-801e-4519-866b-4309c625b59a" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="1941d7d0-a92c-4f73-9a3d-6b583f70e5b8" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="7522d11c-16d1-432d-88b4-8395e56e07c8" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+          <div>
+            - Theo dõi đặc biệt:
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="36c3e981-d41a-466a-86c5-e51c68e0d4c8" data-type="checkbox" />Ghi</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="821b023f-548c-4a3d-986b-a21c167d73f4" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="421a719d-718c-4c4d-965a-c51d68a9f6d7" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            3. Tư thế bệnh nhân đã phù hợp với vị trí và loại phẫu thuật
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="2145b20b-468e-4a4b-857c-6582a87b32c6" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="21a36109-7d84-469b-8167-160d5b40d6c1" data-type="checkbox" />Không</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            4. Rửa mắt và sát trùng mắt mổ (đã ghi nhận trong phiếu chuyển bệnh nhân giữa tiền phẫu và phòng mổ)
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="5430b809-514d-44a6-b51e-62419c8d19a4" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="19782a4d-616a-4632-a567-5421a8d6e3c5" data-type="checkbox" />Không</label>
+            </div>
+          </div>
+        </td>
+        <td rowspan="2">
+          <div>
+            <div>9. Kháng sinh phòng nhiễm trùng:</div>
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="560a25e1-857d-41a4-921a-6415a78d21b7" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="1684c316-d6e5-4f2a-b78f-6245d8b76c8f" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="0d321591-6387-4340-9a8c-f093158c3a9f" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+          <div>
+            <div>- Sát khuẩn mắt mổ:</div>
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="e41a65d7-b87d-41a4-b45a-c651e7f8d9b2" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="a87d65b1-64d8-4f76-81a1-94d7c8e9f2a7" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="b165c71d-5a8e-4903-a12b-36f4d78e9b01" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+        </td>
+        <td rowspan="2" class="text-center align-content-start">
+          <strong>QUYẾT ĐỊNH ĐƯỢC THỰC HIỆN KHI CÓ MỤC ĐƯỢC ĐÁNH DẤU (*)</strong>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>5. Trang thiết bị và thuốc cần thiết đã phù hợp với:</div>
+          <div>
+            - Phương pháp phẫu thuật:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="e25b1c9d-83b7-418a-9351-a90f15c4d68e" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="d6a2f8b9-4a92-4f3b-851c-42e8d71c8b32" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Gây mê:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="f4d5b91e-a12d-4c3e-86b1-91a7c8d9e6f3" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="b89c61d5-86a1-42e1-85f2-98e3d6f1c8a1" data-type="checkbox" />Không*</label>
+            </div>
+          </div>
+          <div>
+            - Phẫu thuật:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="a25b1c9d-83b7-418a-9351-a90f15c4d68e" data-type="checkbox" />Không gây mê</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="e6a2f8b9-4a92-4f3b-851c-42e8d71c8b32" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>5. Bệnh nhân có các nguy cơ:</div>
+          <div>
+            - Dị ứng:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="d81b3c9d-6f4e-4f7b-945a-c21d8b3c9e6f" data-type="checkbox" />Không</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="b89c61d5-86a1-42e1-85f2-98e3d6f1c8a1" data-type="checkbox" />Có*</label>
+            </div>
+          </div>
+          <div>
+            - Khó đặt ống thở, mặt nạ:
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="86f4d7b2-1a2c-4f1e-9a1c-3b5a4f7e1b9c" data-type="checkbox" />Không</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="421d8b3c-9e6f-4f1b-8c7a-d21f8a7e9d4a" data-type="checkbox" />Có*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="e7d9a1c2-8b4f-4d3a-b85c-1f6e2c8a7d3c" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+          <div>
+            - Sốc:
+            <div class="d-flex d-grid gap-4 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="9b2c8a1d-5e6f-4d7a-8b1c-3b5a4f7e1b9c" data-type="checkbox" />Không</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-2" data-field="1a7d6e8b-4c9f-4d3a-b85c-1f6e2c8a7d3c" data-type="checkbox" />Có*</label>
+            </div>
+          </div>
+          <div>
+            - Tuân thủ "không ăn-không uống":
+            <div class="d-flex d-grid gap-2 justify-content-center">
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="d6e8b1c9-f4a7-4b3e-8c1a-2d6f4e1b8c7a" data-type="checkbox" />Không*</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="a3c9e6f8-d1a4-4b1e-9c7a-1d6f8a7e9b4c" data-type="checkbox" />Có</label>
+              <label class="d-flex"><input type="checkbox" class="custom-checkbox-small align-self-center me-1" data-field="e8d7c1b3-a9d4-4f1c-8a2e-6f8d7c1b3a9d" data-type="checkbox" />Không áp dụng</label>
+            </div>
+          </div>
+        </td>
+        <td rowspan="2"></td>
+        <td rowspan="2">
+          <div class="d-grid gap-3">
+            <div class="fw-bold text-center">THEO QUY TRÌNH HIỆN HÀNH CỦA BỆNH VIỆN</div>
+            <div>Chúng tôi xác nhận bảng rằng bảng kiểm đã được điền thông
+              tin sau khi đã có trao đổi giữa các thành viên của cả kíp mổ.</div>
+            <div class="d-flex flex-row fw-bold gap-4 justify-content-center">
+              <div>PT viên</div>
+              <div>BS gây mê</div>
+              <div>ĐD phụ mổ</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <em>Người kiểm soát, chịu trách nhiệm trước phẫu thuật viên và
+            bác sỹ gây mê, chỉ đánh dấu vào một nội dung của bảng kiểm khi
+            (1) đã kiểm tra thực tế, (2) đã kiểm tra bằng lời nói trước sự có
+            mặt của nhóm liên quan, (3) nếu các mục có dấu (*) đã được thống nhất trong nhóm.</em>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
