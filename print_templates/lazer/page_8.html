@@ -33,8 +33,9 @@
           class="text-uppercase"
           data-field="patientFullName"
           data-type="text"
-          data-suggestion="tên-bệnh-nhân"
+          data-suggestion="họ-tên"
           data-caption="Tên bệnh nhân"
+          data-shared="patientFullName"
         ></span>
       </div>
       <div class="col-2">Tuổi:
@@ -43,6 +44,7 @@
           data-type="text"
           data-suggestion="tuổi"
           data-caption="Tuổi bệnh nhân"
+          data-shared="patientAge"
         ></span>
       </div>
       <div class="col-2">Giới tính:
@@ -51,6 +53,7 @@
           data-type="text"
           data-suggestion="giới-tính"
           data-caption="Giới tính"
+          data-shared="patientGender"
         ></span>
       </div>
     </div>
@@ -60,13 +63,38 @@
         data-type="text"
         data-suggestion="ngày-sinh"
         data-caption="Ngày sinh"
+        data-shared="patientDob"
       ></span>
     </div>
     <div class="row">
-      <div class="col-4">- Số giường:</div>
-      <div class="col-8">Buồng:</div>
+      <div class="col-4">
+        <span class="me-1">- Số giường:</span>
+        <span
+          data-field="c394c489-3286-4f49-b005-728b78cfc01d"
+          data-type="text"
+          data-suggestion="giường"
+          data-caption="Số giường"
+        ></span>
+      </div>
+      <div class="col-8">
+        <span class="me-1">Buồng:</span>
+        <span
+          data-field="a5b6c2d7-e9f1-4a1d-b7c8-e9f1a5b6c2d7"
+          data-type="text"
+          data-suggestion="buồng"
+          data-caption="Buồng"
+        ></span>
+      </div>
     </div>
-    <div class="me-1">- Chẩn đoán:</div>
+    <div class="me-1">
+      <span class="me-1">- Chẩn đoán:</span>
+      <span
+        data-field="864a7541-657c-40ea-9080-60b61e27a7c9"
+        data-type="text"
+        data-suggestion="chẩn-đoán"
+        data-caption="Chẩn đoán"
+      ></span>
+    </div>
   </div>
 
   <div class="my-2"></div>
