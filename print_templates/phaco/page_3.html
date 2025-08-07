@@ -90,7 +90,8 @@
           class="text-uppercase"
           data-field="patientFullName"
           data-type="text"
-          data-suggestion="tên-bệnh-nhân"
+          data-suggestion="họ-tên"
+          data-shared="patientFullName"
           data-caption="Tên bệnh nhân"
         ></span>
       </td>
@@ -103,6 +104,7 @@
               data-type="text"
               data-suggestion="ngày-sinh"
               data-caption="Ngày sinh"
+              data-shared="patientDob"
             ></span>
           </div>
         </div>
@@ -111,6 +113,7 @@
         <div class="d-flex justify-content-center">
           <span
             data-field="patientAge"
+            data-shared="patientAge"
             data-type="text"
             data-suggestion="tuổi-bệnh-nhân"
             data-caption="Tuổi bệnh nhân"
@@ -125,6 +128,7 @@
             <span class="me-1">3. Giới tính:</span>
             <span
               data-field="patientGender"
+              data-shared="patientGender"
               data-type="text"
               data-suggestion="giới-tính"
               data-caption="Giới tính"
@@ -134,9 +138,10 @@
       </td>
       <td>
         <div>
-          <span>4. Nghề nghiệp</span>
+            <span class="me-1">4. Nghề nghiệp</span>
             <span
             data-field="patientCareer"
+            data-shared="patientCareer"
             data-type="text"
             data-suggestion="nghề-nghiệp"
             data-caption="Nghề nghiệp bệnh nhân"
@@ -172,7 +177,7 @@
         <span>
             5. Dân tộc:&nbsp;
             <span
-              data-field="ethnicity3"
+              data-field="ethnicity"
               data-type="text"
               data-suggestion="dân-tộc"
               data-caption="Dân tộc"
