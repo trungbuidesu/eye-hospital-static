@@ -1,8 +1,4 @@
-<div
-  class="a4-page d-flex flex-column"
-  id="page_9"
-  data-page-index="9"
->
+<div class="a4-page d-flex flex-column" id="page_9" data-page-index="9">
   <style>
     #page11-table,
     #page11-table th,
@@ -21,86 +17,67 @@
   </div>
   <div class="my-4"></div>
   <h5 class="fw-bold text-center">PHIẾU ĐÁNH GIÁ TÌNH TRẠNG DINH DƯỠNG (NRS)</h5>
-  <div class="my-4"></div>        
+  <div class="my-4"></div>
   <div class="d-grid gap-1 px-4">
     <div class="row">
-      <div class="col-8">Họ tên bệnh nhân:
-        <span
-          class="text-uppercase"
-          data-field="patientFullName"
-          data-type="text"
-          data-suggestion="tên-bệnh-nhân"
-          data-caption="Tên bệnh nhân"
-        ></span>
+      <div class="col-8">
+        Họ tên bệnh nhân:
+        <span class="text-uppercase" data-field="patientFullName" data-type="text" data-suggestion="họ-tên" data-caption="Tên bệnh nhân" data-shared="patientFullName"></span>
       </div>
-      <div class="col-4">Giới tính:
-        <span
-          data-field="patientGender"
-          data-type="text"
-          data-suggestion="giới-tính"
-          data-caption="Giới tính"
-        ></span>
+      <div class="col-4">
+        Giới tính:
+        <span data-field="patientGender" data-type="text" data-suggestion="giới-tính" data-caption="Giới tính" data-shared="patientGender"></span>
       </div>
     </div>
     <div class="row">
-      <div class="col-8">Nghề nghiệp:
-        <span
-          data-field="patientCareer"
-          data-type="text"
-          data-suggestion="nghề-nghiệp"
-          data-caption="Nghề nghiệp bệnh nhân"
-        ></span>
+      <div class="col-8">
+        Nghề nghiệp:
+        <span data-field="patientCareer" data-type="text" data-suggestion="nghề-nghiệp" data-caption="Nghề nghiệp bệnh nhân" data-shared="patientCareer"></span>
       </div>
-      <div class="col-4">Năm sinh:
-        <span
-          data-field="patientDobYear"
-          data-type="text"
-          data-suggestion="năm-sinh"
-          data-caption="Năm sinh"
-        ></span>
+      <div class="col-4">
+        Năm sinh:
+        <span data-field="patientDobYear" data-type="text" data-suggestion="năm-sinh" data-caption="Năm sinh" data-shared="patientDobYear"></span>
       </div>
     </div>
     <div>Mã bệnh án:</div>
     <div>
       <span class="me-1">Địa chỉ:</span>
-      <span
-        data-field="patientAddress"
-        data-type="text"
-        data-suggestion="địa-chỉ-bệnh-nhân"
-        data-caption="Địa chỉ bệnh nhân"
-      ></span>
+      <span data-field="patientAddress" data-type="text" data-suggestion="địa-chỉ" data-caption="Địa chỉ bệnh nhân" data-shared="patientAddress"></span>
     </div>
     <div>
       <span me-1>Ngày vào viện:</span>
-      <span
-        data-field="patientAdmissionDate"
-        data-type="text"
-        data-suggestion="ngày-vào-viện"
-        data-caption="Ngày vào viện"
-      ></span>
+      <span data-field="42c86b24-9426-4b8c-b033-9111812d1b82" data-type="text" data-suggestion="ngày-vào-viện" data-caption="Ngày vào viện" data-field-ref="todayDate"></span>
     </div>
-    <div>Chẩn đoán bệnh:</div>
+    <div>
+      <span class="me-1">Chẩn đoán bệnh:</span>
+      <span data-field="a85496a7-0e08-4171-be8d-71b3e1577789" data-type="text" data-suggestion="chẩn-đoán" data-caption="Chẩn đoán bệnh"></span>
+    </div>
     <div class="row">
       <div class="col-6">
-        <div class="me-1">Chiều cao (m):</div>
+        <div class="me-1">
+          <span class="me-1">Chiều cao (m):</span>
+          <span data-field="patientHeight" data-type="text" data-suggestion="chiều-cao" data-caption="Chiều cao bệnh nhân" data-shared="patientHeight"></span>
+        </div>
       </div>
       <div class="col-3">
-        <div class="me-1">Cân nặng (kg):</div>
+        <div class="me-1">
+          <span class="me-1">Cân nặng (kg):</span>
+          <span data-field="patientWeight" data-type="text" data-suggestion="cân-nặng" data-caption="Cân nặng bệnh nhân" data-shared="patientWeight"></span>
+        </div>
       </div>
       <div class="col-3">
-        <div class="me-1">BMI:</div>
+        <span class="me-1">BMI:</span>
+        <span data-field="patientBMI" data-type="text" data-suggestion="BMI" data-caption="BMI bệnh nhân" data-shared="patientBMI"></span>
       </div>
     </div>
   </div>
-
   <div class="my-2"></div>
-
   <table class="border border-dark" id="page11-table">
     <colgroup>
-      <col style="width: 5%;" />
-      <col style="width: 75%;" />
-      <col style="width: 10%;" />
-      <col style="width: 10%;" />
+      <col style="width: 5%" />
+      <col style="width: 75%" />
+      <col style="width: 10%" />
+      <col style="width: 10%" />
     </colgroup>
     <thead>
       <tr>
@@ -113,34 +90,56 @@
       <tr>
         <td class="border border-dark text-center">1</td>
         <td class="border border-dark">Chỉ số BMI của bệnh nhân có dưới mức 20,5 không?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="1e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="2e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
       </tr>
       <tr>
         <td class="border border-dark text-center">2</td>
         <td class="border border-dark">Bệnh nhân có sụt cân trong vòng 3 tháng qua không ?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="3e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="4e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
       </tr>
       <tr>
         <td class="border border-dark text-center">3</td>
         <td class="border border-dark">Ăn uống của bệnh nhân có sụt giảm trong vòng 1 tuần qua không ?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="5e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="6e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
       </tr>
       <tr>
         <td class="border border-dark text-center">4</td>
         <td class="border border-dark">Tình trạng bệnh của bệnh nhân có nặng không?</td>
-        <td class="border border-dark text-center"></td>
-        <td class="border border-dark text-center"></td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="7e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
+        <td class="border border-dark d-flex">
+          <label class="d-flex"><input type="checkbox" class="custom-checkbox align-self-center me-2" data-field="8e21b06f-12d8-4f8e-a94f-4d97d9c6c21e" data-type="checkbox" />Không có bệnh toàn thân</label>
+        </td>
       </tr>
       <tr>
         <td colspan="4" class="border border-dark">
-          <div class="fst-italic">Nếu trả lời "<strong>có</strong>" cho bất kỳ câu hỏi nào ở trên, thì thực hiện sàng lọc giai đoạn 2 (bảng 2).</div>
-          <div class="fst-italic">Nếu câu trả lời "<strong>không</strong>" cho tất cả câu hỏi trên thì  bệnh nhân nên được đánh giá lại sau mỗi tuần.</div>
-          <div class="fst-italic">Nếu bệnh nhân được lên lịch trình mổ lớn, nên xây dựng "<strong>kế hoạch chăm sóc dinh dưỡng</strong>" nhằm phòng tránh các yếu tố nguy cơ.</div>
+          <div class="fst-italic">
+            Nếu trả lời "<strong>có</strong>" cho bất kỳ câu hỏi nào ở trên, thì thực hiện sàng lọc giai đoạn 2 (bảng 2).
+          </div>
+          <div class="fst-italic">
+            Nếu câu trả lời "<strong>không</strong>" cho tất cả câu hỏi trên thì bệnh nhân nên được đánh giá lại sau mỗi tuần.
+          </div>
+          <div class="fst-italic">
+            Nếu bệnh nhân được lên lịch trình mổ lớn, nên xây dựng "<strong>kế hoạch chăm sóc dinh dưỡng</strong>" nhằm phòng tránh các yếu tố nguy cơ.
+          </div>
         </td>
       </tr>
     </tbody>
-  </table>        
+  </table>
 </div>
