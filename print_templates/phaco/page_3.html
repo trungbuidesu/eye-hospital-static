@@ -444,144 +444,44 @@
       </td>
       <td class="border border-dark">
         <div class="d-grid gap-1 p-1">
-          <div class="d-flex d-grid gap-2">
-            <div>17. Chuyển viện:</div>
-            <div>
-              1. Tuyến trên
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              2. Tuyến dưới
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              3. CK
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
+          <div>
+            <span>17. Chuyển viện:</span>
+            <label class="d-inline-flex">1. Tuyến trên<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="b0d5b6f6-6cf0-450e-b8e0-edf065e59458" /></label>
+            <label class="d-inline-flex">2. Tuyến dưới<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="ad2688d7-19b2-4542-97d4-7e1e77649e4b" /></label>
+            <label class="d-inline-flex">3. CK<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="107d9d2a-1784-4181-b9e5-542f6bd5e5c0" /></label>
           </div>
-          <div>- Chuyển đến:
+          <div>
+            <span class="me-1">- Chuyển đến:</span>
             <span
-              data-field="transferTo3"                                                           
+              data-field="31a98a81-d141-4aff-be38-98c1f7ed627a"                                                           
               data-type="text"
               data-suggestion="viện"
               data-caption="Chuyển đến viện"
             ></span>
           </div>
-          <div>18. Ra viện:
+          <div>
+            <span class="me-1">18. Ra viện:</span>
             <span
-              data-field="dischargeTime3"                                                           
+              data-field="09a43376-d2b2-4d8a-9406-945d29f4df24"                                                           
               data-type="text"
               data-suggestion="thời-gian"
-              data-caption="Thời điểm ra viện"
+              data-caption="Thời gian ra viện"
             ></span>
           </div>
-          <div class="d-flex d-grid gap-2 justify-content-center">
-            <div>
-              1. Ra viện
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              2. Xin về
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              3. Bỏ về
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              4. Đưa về
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
+          <div>
+            <label class="d-inline-flex">1. Ra viện<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="b0d5b6f6-6cf0-450e-b8e0-edf065e59458" /></label>
+            <label class="d-inline-flex">2. Xin về<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="ad2688d7-19b2-4542-97d4-7e1e77649e4b" /></label>
+            <label class="d-inline-flex">3. Bỏ về<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="107d9d2a-1784-4181-b9e5-542f6bd5e5c0" /></label>
+            <label class="d-inline-flex">4. Đưa về<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="107d9d2a-1784-4181-b9e5-542f6bd5e5c0" /></label>
           </div>
           <div class="d-flex justify-content-between">
-            <div>19. Tổng số ngày điều trị</div>
-            <div class="d-flex justify-content-center">
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                style="margin-right: 1px;"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                style="margin-right: 1px;"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
+            <span class="me-1">19. Tổng số ngày điều trị:</span>
+            <span
+              data-field="7ccd3254-fdc8-48cb-a72e-d33a0f51abde"                                                           
+              data-type="text"
+              data-suggestion="ngày"
+              data-caption="Tổng số ngày điều trị"
+            ></span>
           </div>
         </div>
       </td>
