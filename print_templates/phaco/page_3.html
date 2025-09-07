@@ -551,7 +551,7 @@
             </div>
             <div>
               <span
-                data-field="f6f0b80f-9f1c-4886-a891-97682f9dea36"
+                data-field="bad7cacb-78d4-4938-886b-6f377527c4cf"
                 data-type="text"
                 data-suggestion="mã"
                 data-caption="Mã 3"
@@ -706,26 +706,26 @@
           <div>26. Kết quả điều trị</div>
           <div class="d-flex">
             <div class="d-flex align-content-center">
-              1. Khỏi&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />
+              1. Khỏi&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" data-field="065e5752-3daf-4491-be1e-a4b8643cfc26"/>
               &nbsp;
-              4. Nặng hơn&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />
+              4. Nặng hơn&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" data-field="6ff8ccfc-8561-4408-b075-e8e2f0f6b1cf"/>
             </div>
           </div>
           <div class="d-flex">
             <div class="d-flex align-content-center">
-              2. Đỡ giảm&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />
+              2. Đỡ giảm&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" data-field="c7e94c6f-45b2-4da3-aa46-f028018bb774"/>
               &nbsp;
-              5. Tử vong&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />
+              5. Tử vong&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" data-field="8c7ad459-6b3f-4891-a414-c85d5200715b"/>
             </div>
           </div>
           <div class="d-flex align-content-center">
-            3. Không thay đổi&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />
+            3. Không thay đổi&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" data-field="f2413774-01ea-4cfd-945e-cac1dd45a44a"/>
           </div>
           <div>27. Giải phẫu bệnh (Khi có sinh thiết)</div>
-          <div class="d-flex align-content-center d-grid">
-            1. Lành tính&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;
-            2. Nghi ngờ&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;
-            3. Ác tính&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;
+          <div>
+            <label class="d-inline-flex">1. Lành tính<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="f758fba8-d81e-4794-90b7-425c0171774d" /></label>
+            <label class="d-inline-flex">2. Nghi ngờ<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="74b8b998-80b8-4632-98ff-c109117c5fab" /></label>
+            <label class="d-inline-flex">3. Ác tính<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="687b01ad-2871-4ae5-9905-f995373b52ae" /></label>
           </div>
         </div>
       </td>
@@ -733,130 +733,39 @@
         <div class="d-grid gap-1 p-1">
           <div class="d-flex justify-content-between">
             <div class="d-flex d-grid gap-4">
-              <span>28. Tình hình tử vong:&nbsp;</span>
+              <span class="me-1">28. Tình hình tử vong:</span>
               <span
-                data-field="deathSituationTime3"
+                data-field="68e83b88-ff71-4a0f-a8af-d76cabf0f8c0"
                 data-type="text"
-                data-suggestion="giờ-phút"
-                data-caption="Giờ, phút"
+                data-suggestion="thời-gian"
+                data-caption="Thời gian tử vong"
               ></span>
-              <span
-                data-field="deathSituationDate3"
-                data-type="text"
-                data-suggestion="ngày-tháng-năm"
-                data-caption="Ngày, tháng, năm"
-              ></span>
-            </div>
-          </div>
-          <div class="d-flex d-grid">
-            1. Do bệnh&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;&nbsp;
-            2. Do tai biến điều trị&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;&nbsp;
-            3. Khác&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;&nbsp;
-          </div>
-          <div class="d-flex">
-            1. Trong 24 giờ vào viện&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;
-            2. Trong 48 giờ vào viện&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;
-            3. Trong 72 giờ vào viện&nbsp;<input type="checkbox" class="custom-checkbox align-self-center" />&nbsp;
-          </div>
-          <div class="d-flex justify-content-between">
-            <div>
-              <div>
-                29. Nguyên nhân chính tử vong:
-                <span
-                  data-field="primaryCauseOfDeath3"
-                  data-type="text"
-                  data-suggestion="nguyên-nhân"
-                  data-caption="Nguyên nhân chính tử vong"
-                ></span>
-              </div>
-            </div>
-            <div class="d-flex d-grid" style="gap: 1px;">
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
             </div>
           </div>
           <div>
-            <div class="d-flex justify-content-between">
-              <div class="d-flex d-grid gap-2 align-items-center">
-                30. Khám nghiệm tử thi
-                <input type="checkbox" class="custom-checkbox align-self-center" />
-                31. Chẩn đoán giải phẫu tử thi:&nbsp;
-              </div>
-              <div class="d-flex d-grid" style="gap: 1px;">
-                <input
-                  readonly
-                  type="text"
-                  class="square-input"
-                  maxlength="1"
-                  inputmode="numeric"
-                  pattern="[0-9]*"
-                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                />
-                <input
-                  readonly
-                  type="text"
-                  class="square-input"
-                  maxlength="1"
-                  inputmode="numeric"
-                  pattern="[0-9]*"
-                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                />
-                <input
-                  readonly
-                  type="text"
-                  class="square-input"
-                  maxlength="1"
-                  inputmode="numeric"
-                  pattern="[0-9]*"
-                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                />
-                <input
-                  readonly
-                  type="text"
-                  class="square-input"
-                  maxlength="1"
-                  inputmode="numeric"
-                  pattern="[0-9]*"
-                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                />
-              </div>
-            </div>
+            <label class="d-inline-flex">1. Do bệnh<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="b2a1193b-2a4d-43e8-836e-06e472b083ff" /></label>
+            <label class="d-inline-flex">2. Do tai biến điều trị<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="71389e74-08c5-4d6c-9970-b586102772be" /></label>
+            <label class="d-inline-flex">3. Khác<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="1e90f8a5-9b8d-470d-914b-f89531fa3822" /></label>
+          </div>
+          <div>
+            <label class="d-inline-flex">1. Trong 24 giờ vào viện<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="cbe2fcec-d469-43e8-89c7-792d74db614a" /></label>
+            <label class="d-inline-flex">2. Trong 48 giờ vào viện<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="467d2fce-2822-4700-8da9-aefb856ab86e" /></label>
+            <label class="d-inline-flex">3. Trong 72 giờ vào viện<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="59b46e1c-222c-4ceb-8f52-4c3021be285e" /></label>
+          </div>
+          <div>
+            <span class="me-1">29. Nguyên nhân chính tử vong:</span>
             <span
-              data-field="autopsyDiagnosis3"
+              data-field="efbb9efb-1870-406b-96b9-af17981cf640"
+              data-type="text"
+              data-suggestion="nguyên-nhân"
+              data-caption="Nguyên nhân chính tử vong"
+            ></span>
+          </div>
+          <div>
+            <label class="d-inline-flex me-1">30. Khám nghiệm tử thi<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="3236ee86-f364-4a7e-bf6e-fa8168dee291" /></label>
+            <span class="me-1">31. Chẩn đoán giải phẫu tử thi:</span>
+            <span
+              data-field="13a5d62f-6858-4f4a-a40a-29cd3b3be8a7"
               data-type="text"
               data-suggestion="chẩn-đoán"
               data-caption="Chẩn đoán giải phẫu tử thi"
@@ -866,7 +775,7 @@
       </td>
     </tr>
   </table>
-
+  <div class="my-1"></div>
   <table class="w-100">
     <colgroup>
       <col style="width: 50%"/>
