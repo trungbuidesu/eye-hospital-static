@@ -17,17 +17,25 @@
       </div>
       <div class="col-3">
         <div>MS: 43/BV - 01</div>
-        <div>Số vào viện:</div>
+        <div>
+          <span class="me-1">Số vào viện:</span>
+          <span
+            data-field="48b48ed8-17f9-44b0-a449-300b1a2fec08"
+            data-type="text"
+            data-suggestion="số"
+            data-caption="Số giường"
+          ></span>
+        </div>
       </div>
     </div>    
 
     <div class="my-2"></div>
     <div class="row">
       <div class="col d-flex justify-content-center">
-        <label class="d-flex">KHOA KHÁM BỆNH<input type="checkbox" class="custom-checkbox align-self-center ms-2" /></label>
+        <label class="d-flex">KHOA KHÁM BỆNH<input type="checkbox" class="custom-checkbox align-self-center ms-2" data-field="df568b32-0193-42ee-9cf4-42e4cc2b5bf3" /></label>
       </div>
       <div class="col d-flex justify-content-center">
-        <label class="d-flex">BUỒNG CẤP CỨU<input type="checkbox" class="custom-checkbox align-self-center ms-2" /></label>
+        <label class="d-flex">BUỒNG CẤP CỨU<input type="checkbox" class="custom-checkbox align-self-center ms-2" data-field="4b47403c-378f-4e9d-8d12-8cceb540f789" /></label>
       </div>
     </div>
     
@@ -35,21 +43,21 @@
 
     <table class="w-100">
       <colgroup>
-        <col style="width: 40%;"/>
-        <col style="width: 10%;"/>
+        <col style="width: 50%;"/>
         <col style="width: 40%;"/>
         <col style="width: 10%;"/>
       </colgroup>
       <tr>
-        <td colspan="3">
+        <td colspan="2">
           <h5 class="fw-bold">I. HÀNH CHÍNH</h5>
         </td>
         <td>
           <div class="text-center">Tuổi</div>
         </td>
       </tr>
+
       <tr>
-        <td colspan="2">
+        <td>
           <div>
             <span class="me-1">1. Họ và tên <span class="fst-italic">(In hoa)</span>:</span>
             <span
@@ -78,7 +86,7 @@
           <div class="text-center">
             <span
               data-field="patientAge"
-              data-shared=""="patientAge"
+              data-shared="patientAge"
               data-type="text"
               data-suggestion="tuổi"
               data-caption="Tuổi bệnh nhân"
@@ -86,8 +94,9 @@
           </div>
         </td>
       </tr>
+
       <tr>
-        <td colspan="2">
+        <td>
           <div>
             <span class="me-1">3. Giới tính:</span>
             <span
@@ -99,7 +108,7 @@
             ></span>
           </div>
         </td>
-        <td>
+        <td colspan="2">
           <div>
             <span class="me-1">4. Nghề nghiệp</span>
             <span
@@ -107,41 +116,33 @@
               data-shared="patientCareer"
               data-type="text"
               data-suggestion="nghề-nghiệp"
-              data-caption="Nghề nghiệp bệnh nhân"
+              data-caption="Nghề nghiệp"
             ></span>
           </div>
         </td>
-        <td>
-          <div class="d-flex justify-content-center">
-            <input type="text" class="square-input" style="margin-right: 1px;" />
-            <input type="text" class="square-input" />
-          </div>
-        </td>
       </tr>
+
       <tr>
         <td>
           <div class="d-flex justify-content-between">
-            <div>5. Dân tộc</div>
+            <div>
+              <span class="me-1">5. Dân tộc</span>
+              <span
+                data-field="a116d7f6-663d-4fc2-b355-558f7a4abd42"
+                data-type="text"
+                data-suggestion="dân-tộc"
+                data-caption="Dân tộc"
+              ></span>
+            </div>
           </div>
         </td>
-        <td>
-          <div class="d-flex justify-content-center">
-            <input type="text" class="square-input" style="margin-right: 1px;" />
-            <input type="text" class="square-input" />
-          </div>
-        </td>
-        <td>
+        <td colspan="2">
           <div>6. Ngoại kiều</div>
         </td>
-        <td>
-          <div class="d-flex justify-content-center">
-            <input type="text" class="square-input" style="margin-right: 1px;" />
-            <input type="text" class="square-input" />
-          </div>
-        </td>
       </tr>
+
       <tr>
-        <td colspan="4">
+        <td colspan="3">
           <div>
             <span class="me-1">7. Địa chỉ:</span>
             <span
@@ -154,74 +155,174 @@
           </div>
         </td>
       </tr>
+
       <tr>
-        <td>8. Nơi làm việc:</td>
-        <td colspan="3">
+        <td>
+          <span class="me-1">8. Nơi làm việc:</span>
+          <span
+            data-field="5dc5ef26-88af-42a1-ac45-efbdccdeedca"
+            data-type="text"
+            data-suggestion="địa-chỉ"
+            data-caption="Nơi-làm-việc"
+          ></span>
+        </td>
+
+        <td colspan="2">
           <div class="d-flex justify-content-between">
             <div>9. Đối tượng</div>
             <div class="d-flex d-grid gap-2">
               <div class="d-flex justify-content-center">
-                <div>1.BHYT&nbsp;</div>
-                <input type="text" class="square-input" />
+                <label class="d-flex justify-content-center">1.BHYT<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="4b7ff716-4fe8-486c-854e-68f78f1a385d"></label>
               </div>
               <div class="d-flex justify-content-center">
-                <div>2.Thu phí&nbsp;</div>
-                <input type="text" class="square-input" />
+                <label class="d-flex justify-content-center">2.Thu phí<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="6c3ad76f-0d3c-4937-bdab-f8609fd30afa"></label>
               </div>
               <div class="d-flex justify-content-center">
-                <div>3.Miễn&nbsp;</div>
-                <input type="text" class="square-input" />
+                <label class="d-flex justify-content-center">3.Miễn<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="f3bb09f4-d05a-4c90-9220-86ab0a387922"></label>
               </div>
               <div class="d-flex justify-content-center">
-                <div>4.Khác&nbsp;</div>
-                <input type="text" class="square-input" />
+                <label class="d-flex justify-content-center">4.Khác<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="f09c71bc-372d-41e0-a348-a3f27073b082"></label>
               </div>
             </div> 
           </div>
         </td>
       </tr>
+
       <tr>
-        <td colspan="2">10. BHYT giá trị đến ngày:</td>
+        <td>
+          <span class="me-1">10. BHYT giá trị đến ngày:</span>
+          <span
+            data-field="f26e946d-e409-4f20-9e3c-146945647c12"
+            data-type="text"
+            data-suggestion="ngày"
+            data-caption="BHYT giá trị đến ngày"
+          ></span>
+        </td>
         <td colspan="2">
           <div class="d-flex justify-content-between">
-            <div>Số thẻ BHYT:</div>
+            <span class="me-1">Số thẻ BHYT:</span>
+            <span
+              data-field="f26e946d-e409-4f20-9e3c-146945647c12"
+              data-type="text"
+              data-suggestion="ngày"
+              data-caption="BHYT giá trị đến ngày"
+            ></span>
           </div>
         </td>
       </tr>
+
       <tr>
-        <td colspan="4">
-          <div class="row">
-            <div class="col-7">11. Họ tên, địa chỉ người nhà khi cần báo tin:</div>
-            <div class="col-5">. Điện thoại số:</div>
-          </div>
+        <td colspan="3">
+          <span class="me-1">11. Họ tên, địa chỉ người nhà khi cần báo tin:</span>
+          <span
+            data-field="71f1a7db-ea76-44f8-b3dd-f983b73a2a46"
+            data-type="text"
+            data-suggestion="thông-tin-liên-lạc"
+            data-caption="Thông tin người nhà bệnh nhân"
+          ></span>
         </td>
       </tr>
+
       <tr>
-        <td colspan="4">
-          12. Đến khám bệnh lúc:
+        <td colspan="3">
+          <span class="me-1">Điện thoại số:</span>
+          <span
+            data-field="e19078bc-95bf-4221-b456-755b248e0f9d"
+            data-type="text"
+            data-suggestion="điện-thoại"
+            data-caption="Điện thoại người nhà bệnh nhân"
+          ></span>
         </td>
       </tr>
+
       <tr>
-        <td colspan="4">
-          13. Chẩn đoán của nơi giới thiệu:
+        <td colspan="3">
+          <span class="me-1">Đến khám bệnh lúc:</span>
+          <span
+            data-field="7d532075-6468-4d29-91b9-097165d0f8d9"
+            data-type="text"
+            data-field-ref="todayDateFull"
+            data-suggestion="thời-gian"
+            data-caption="Đến khám bệnh lúc"
+          ></span>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3">
+          <span class="me-1">13. Chẩn đoán của nơi giới thiệu:</span>
+          <span
+            data-field="af7f4333-abcd-415e-ba1b-32eaed17e8b1"
+            data-type="text"
+            data-suggestion="nội-dung"
+            data-caption="Chẩn đoán của nơi giới thiệu"
+          ></span>
         </td>
       </tr>
     </table>
 
     <div class="my-2"></div>
-    <h5 class="fw-bold">II. LÝ DO VÀO VIỆN:</h5>
+    <div class="fw-bold">
+      <span class="fs-5 me-1 fw-bold">II. LÝ DO VÀO VIỆN:</span>
+      <span
+        data-field="96872be3-0532-44eb-a6e1-7bfc2d854f27"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Lý do vào viện"
+      ></span>
+    </div>
 
 
     <div class="my-2"></div>
-    <h5 class="fw-bold">III. HỎI BỆNH</h5>
+    <div class="fw-bold">
+      <span class="fs-5 me-1 fw-bold">III. HỎI BỆNH</span>
+      <span
+        data-field="fbfcb792-fe3f-48fc-ad37-6355c4a5e7dc"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Hỏi bệnh"
+      ></span>
+    </div>
 
-    <div>1. Quá trình bệnh lý</div>
+    <div>
+      <span class="me-1">1. Quá trình bệnh lý</span>
+      <span
+        data-field="27eeb98e-6668-4854-9e07-8cf9008ea7d0"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Quá trình bệnh lý"
+      ></span>
+    </div>
   
     
     <h5 class="fw-bold">IV. KHÁM XÉT</h5>
-    <div>1. Toàn thân</div>
-    <div>2. Bệnh chuyên khoa</div>
-    <div class="fw-bold">Khám mắt</div>
+    <div>
+      <span class="me-1">1. Toàn thân</span>
+      <span
+        data-field="1d5117a8-c649-401e-a58f-124234bf3d18"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Khám xét toàn thân"
+      ></span>
+    </div>
+    <div>
+      <span class="me-1">2. Bệnh chuyên khoa</span>
+      <span
+        data-field="712a238b-e31c-4513-a7a3-d389f272e9bc"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Bệnh chuyên khoa"
+      ></span>
+    </div>
+    <div style="min-height: 50px;">
+      <span class="me-1 fw-bold">Khám mắt</span>
+      <span
+        data-field="03eb17e8-f2b7-4afc-bccb-bfc497c20ce9"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Khám mắt"
+      ></span>
+    </div>
 
     <table class="w-100">
       <colgroup>
@@ -233,28 +334,117 @@
       <tr>
         <td class="fw-bold">- Thị lực không kính</td>
         <td>
-          <div class="">MP:</div>
-          <div class="">MT:</div>
+          <div class="">
+            <span class="me-1 fw-bold">MP:</span>
+            <span
+              data-field="8982c339-8985-463a-b19b-960c59d729f2"
+              data-type="text"
+              data-suggestion="giá-trị"
+              data-caption="Thị lực mắt phải không kính"
+            ></span>
+          </div>
+          <div class="">
+            <span class="me-1 fw-bold">MT:</span>
+            <span
+              data-field="01ebece3-ddf5-474d-b6f5-375e17b22215"
+              data-type="text"
+              data-suggestion="giá-trị"
+              data-caption="Thị lực mắt trái không kính"
+            ></span>
+          </div>
         </td>
         <td class="fw-bold">- Nhãn áp:</td>
         <td>
-          <div class="">MP:</div>
-          <div class="">MT:</div>
+          <div class="">
+            <span class="me-1 fw-bold">MP:</span>
+            <span
+              data-field="81c79fff-f93b-4ff4-a7f9-c2b40caf603b"
+              data-type="text"
+              data-suggestion="giá-trị"
+              data-caption="Nhãn áp mắt phải"
+            ></span>
+          </div>
+          <div class="">
+            <span class="me-1 fw-bold">MT:</span>
+            <span
+              data-field="fee9ff4a-9361-4a3f-9cf0-bf008b14f317"
+              data-type="text"
+              data-suggestion="giá-trị"
+              data-caption="Nhãn áp mắt trái"
+            ></span>
+          </div>
         </td>
       </tr>
       <tr>
         <td class="fw-bold">- Thị lực có kính</td>
         <td>
-          <div class="">MP:</div>
-          <div class="">MT:</div>
+          <div class="">
+            <span class="me-1 fw-bold">MP:</span>
+            <span
+              data-field="651c8461-61cf-4142-8d67-0a69a9969e02"
+              data-type="text"
+              data-suggestion="giá-trị"
+              data-caption="Thị lực mắt phải có kính"
+            ></span>
+          </div>
+          <div class="">
+            <span class="me-1 fw-bold">MT:</span>
+            <span
+              data-field="0a8d985c-f890-47ae-a2ca-66bb0dd335f6"
+              data-type="text"
+              data-suggestion="giá-trị"
+              data-caption="Thị lực mắt trái có kính"
+            ></span>
+          </div>
         </td>
       </tr>
     </table>
 
-    <div>3. Tóm tắt kết quả lâm sàng</div>
-    <div>4. Chẩn đoán kết quả vào viện</div>
-    <div>5. Cho vào điều trị tại bệnh viện</div>
-    <div>6. Đã xử lý (thuốc, chăm sóc,...)</div>
+    <div style="min-height: 30px;">
+      <span
+        data-field="68426321-bd1a-472d-87eb-50bfbd0dccd8"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Bổ sung"
+      ></span>
+    </div>
+
+    <div>
+      <span class="me-1">3. Tóm tắt kết quả lâm sàng:</span>
+      <span
+        data-field="a3745d94-3446-42d9-b133-e339e778a653"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Tóm tắt kết quả lâm sàng"
+      ></span>
+    </div>
+    <div>
+      <span class="me-1">4. Chẩn đoán vào viện:</span>
+      <span
+        data-field="871f6782-c8d5-4d7e-976c-97963c404725"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Chẩn đoán vào viện"
+      ></span>
+    </div>
+    <div>
+      <span class="me-1">5. Cho vào điều trị tại Bệnh viện:</span>
+      <span
+        data-field="70a25d42-5d18-48b2-a7d7-25609af87012"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Cho vào điều trị tại Bệnh viện"
+      ></span>
+    </div>
+    <div>
+      <span class="me-1">6. Đã xử lý (thuốc, chăm sóc,...):</span>
+      <span
+        data-field="b2fd5fd6-143f-4ad8-b367-c4804450ce23"
+        data-type="text"
+        data-suggestion="nội-dung"
+        data-caption="Nội dung tiền xử lý"
+      ></span>
+    </div>
 
     <table class="w-100">
       <colgroup>
@@ -277,7 +467,16 @@
             </div>
             <div class="fw-bold">BÁC SĨ KHÁM BỆNH</div>
           </div>
-          <div>Họ tên:</div>
+          <div class="px-1">
+            <span class="me-1">Họ tên:</span>
+            <span
+              class="text-uppercase"
+              data-field="afad42b4-aa59-4998-8921-27347603b828"
+              data-type="text"
+              data-suggestion="họ-tên"
+              data-caption="Họ tên bác sỹ khám bệnh"
+            ></span>
+          </div>
         </td>
       </tr>
     </table>
