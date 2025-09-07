@@ -18,23 +18,21 @@
         <div class="text-center">
           <div>SỞ Y TẾ</div>
           <div class="fw-bold">BỆNH VIỆN MẮT VIỆT NHẬT</div>
-          <div class="d-flex flex-row justify-content-center">
-            <span>Khoa:
-              &nbsp;<span
-                data-field="department3"
-                data-type="text"
-                data-suggestion="khoa"
-                data-caption="Khoa"
-              ></span>
-            </span>
-            <span>Giường:
-              &nbsp;<span
-                data-field="bedNo3"
-                data-type="text"
-                data-suggestion="giường"
-                data-caption="Giường"
-              ></span>
-            </span>
+          <div class="d-flex flex-row justify-content-center d-grid gap-4">
+            <span class="me-1">Khoa:</span>
+            <span
+              data-field="54d69935-af14-4103-bae9-a934b5ef1414"
+              data-type="text"
+              data-suggestion="khoa"
+              data-caption="Khoa"
+            ></span>
+            <span class="me-1">Giường:</span>
+            <span
+              data-field="1f832796-effe-434a-ac26-90ac64ec07f6"
+              data-type="text"
+              data-suggestion="giường"
+              data-caption="Giường"
+            ></span>
           </div>
         </div>
       </td>
@@ -46,33 +44,31 @@
       </td>
       <td>
         <div>
-          <span>Số lưu trữ:
-            <span
-              data-field="archiveNumber3"
-              data-type="text"
-              data-suggestion="số-lưu-trữ"
-              data-caption="Số lưu trữ"
-            ></span>
-          </span>
+          <span class="me-1">Số lưu trữ:</span>
+          <span
+            data-field="c3455e32-7f63-4c7c-9d01-e5a83ef9820d"
+            data-type="text"
+            data-suggestion="số-lưu-trữ"
+            data-caption="Số lưu trữ"
+          ></span>
         </div>
         <div>
-          <span>Mã YT:
-            <span
-              data-field="medicalCode3"
-              data-type="text"
-              data-suggestion="mã-y-tế"
-              data-caption="Mã YT"
-            ></span>
-          </span>
+          <span class="me-1">Mã YT:</span>
+          <span
+            data-field="7ee0253f-3561-4c04-ad91-17f73f210099"
+            data-type="text"
+            data-suggestion="mã-y-tế"
+            data-caption="Mã YT"
+          ></span>
         </div>
       </td>
     </tr>
   </table>
+
   <table class="w-100">
     <colgroup>
       <col style="width: 50%;"/>
-      <col style="width: 10%;"/>
-      <col style="width: 50%;"/>
+      <col style="width: 40%;"/>
       <col style="width: 10%;"/>
     </colgroup>
     <tr>
@@ -83,171 +79,105 @@
         <div class="text-center">Tuổi</div>
       </td>
     </tr>
+
     <tr>
-      <td colspan="2">
-        <span class="me-1">1. Họ và tên <i>(In hoa)</i>:</span>
-        <span
-          class="text-uppercase"
-          data-field="patientFullName"
-          data-type="text"
-          data-suggestion="họ-tên"
-          data-shared="patientFullName"
-          data-caption="Tên bệnh nhân"
-        ></span>
-      </td>
       <td>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <span class="me-1">2. Sinh ngày:</span>
-            <span
-              data-field="patientDob"
-              data-type="text"
-              data-suggestion="ngày-sinh"
-              data-caption="Ngày sinh"
-              data-shared="patientDob"
-            ></span>
-          </div>
+        <div>
+          <span class="me-1">1. Họ và tên <span class="fst-italic">(In hoa)</span>:</span>
+          <span
+            class="text-uppercase"
+            data-field="patientFullName"
+            data-shared="patientFullName"
+            data-type="text"
+            data-suggestion="tên-bệnh-nhân"
+            data-caption="Tên bệnh nhân"
+          ></span>
         </div>
       </td>
       <td>
-        <div class="d-flex justify-content-center">
+        <div>
+          <span class="me-1">2. Sinh ngày:</span>
+          <span
+            data-field="patientDob"
+            data-shared="patientDob"
+            data-type="text"
+            data-suggestion="ngày-sinh"
+            data-caption="Ngày sinh"
+          ></span>
+        </div>
+      </td>
+      <td>
+        <div class="text-center">
           <span
             data-field="patientAge"
             data-shared="patientAge"
             data-type="text"
-            data-suggestion="tuổi-bệnh-nhân"
+            data-suggestion="tuổi"
             data-caption="Tuổi bệnh nhân"
           ></span>
         </div>
       </td>
     </tr>
+
     <tr>
-      <td colspan="2">
-        <div class="d-flex align-items-center gap-3">
-          <div>
-            <span class="me-1">3. Giới tính:</span>
-            <span
-              data-field="patientGender"
-              data-shared="patientGender"
-              data-type="text"
-              data-suggestion="giới-tính"
-              data-caption="Giới tính"
-            ></span>
-          </div>
-        </div>
-      </td>
       <td>
         <div>
-            <span class="me-1">4. Nghề nghiệp</span>
-            <span
+          <span class="me-1">3. Giới tính:</span>
+          <span
+            data-field="patientGender"
+            data-shared="patientGender"
+            data-type="text"
+            data-suggestion="giới-tính"
+            data-caption="Giới tính"
+          ></span>
+        </div>
+      </td>
+      <td colspan="2">
+        <div>
+          <span class="me-1">4. Nghề nghiệp:</span>
+          <span
             data-field="patientCareer"
             data-shared="patientCareer"
             data-type="text"
             data-suggestion="nghề-nghiệp"
-            data-caption="Nghề nghiệp bệnh nhân"
+            data-caption="Nghề nghiệp"
           ></span>
         </div>
       </td>
-      <td>
-        <div class="d-flex justify-content-center">
-          <input
-            readonly
-            type="text"
-            class="square-input"
-            style="margin-right: 1px;"
-            maxlength="1"
-            inputmode="numeric" 
-            pattern="[0-9]*"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-          />
-          <input
-            readonly
-            type="text"
-            class="square-input"
-            maxlength="1"
-            inputmode="numeric" 
-            pattern="[0-9]*" 
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-          />
-        </div>
-      </td>
     </tr>
+
     <tr>
       <td>
-        <span>
-            5. Dân tộc:&nbsp;
-            <span
-              data-field="ethnicity"
-              data-type="text"
-              data-suggestion="dân-tộc"
-              data-caption="Dân tộc"
-            ></span>
-        </span>
-      </td>
-      <td>
-        <div class="d-flex justify-content-center">
-          <input
-            readonly
-            type="text"
-            class="square-input"
-            style="margin-right: 1px;"
-            maxlength="1"
-            inputmode="numeric" 
-            pattern="[0-9]*"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-          />
-          <input
-            readonly
-            type="text"
-            class="square-input"
-            maxlength="1"
-            inputmode="numeric" 
-            pattern="[0-9]*" 
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-          />  
+        <div>
+          <span class="me-1">5. Dân tộc:</span>
+          <span
+            data-field="a116d7f6-663d-4fc2-b355-558f7a4abd42"
+            data-type="text"
+            data-suggestion="dân-tộc"
+            data-caption="Dân tộc"
+          ></span>
         </div>
       </td>
-      <td>
-        <span>
-          6. Ngoại kiều:&nbsp;
+      <td colspan="2">
+        <div>
+          <span class="me-1">6. Ngoại kiều:</span>
           <span
-            data-field="nationality3"
+            data-field="46b3eebd-4a1d-4fdb-a076-089eb6e657fd"
             data-type="text"
             data-suggestion="ngoại-kiều"
             data-caption="Ngoại kiều"
           ></span>
-        </span>
-      </td>
-      <td>
-        <div class="d-flex justify-content-center">
-          <input
-            readonly
-            type="text"
-            class="square-input"
-            style="margin-right: 1px;"
-            maxlength="1"
-            inputmode="numeric" 
-            pattern="[0-9]*"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-          />
-          <input
-            readonly
-            type="text"
-            class="square-input"
-            maxlength="1"
-            inputmode="numeric" 
-            pattern="[0-9]*" 
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-          />
         </div>
       </td>
     </tr>
+
     <tr>
-      <td colspan="4">
+      <td colspan="3">
         <div>
           <span class="me-1">7. Địa chỉ:</span>
           <span
             data-field="patientAddress"
+            data-shared="patientAddress"
             data-type="text"
             data-suggestion="địa-chỉ-bệnh-nhân"
             data-caption="Địa chỉ bệnh nhân"
@@ -255,91 +185,84 @@
         </div>
       </td>
     </tr>
+
     <tr>
-      <td>
-        <span>
-          8. Nơi làm việc:&nbsp;
-          <span
-            data-field="patientWorkingAddress3"
-            data-type="text"
-            data-suggestion="nơi-làm-việc"
-            data-caption="Nơi làm việc"
-          ></span>
-        </span>
+      <td class="d-flex">
+        <span class="me-1">8. Nơi làm việc:</span>
+        <span
+          class="flex-grow-1"
+          data-field="5dc5ef26-88af-42a1-ac45-efbdccdeedca"
+          data-type="text"
+          data-suggestion="địa-chỉ"
+          data-caption="Nơi làm việc"
+        ></span>
+        <span class="ms-1 me-1">9. Đối tượng</span>
       </td>
-      <td colspan="3">
+
+      <td colspan="2">
         <div class="d-flex justify-content-between">
-          <div>9. Đối tượng</div>
           <div class="d-flex d-grid gap-2">
             <div class="d-flex justify-content-center">
-              <div>1.BHYT&nbsp;</div>
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric" 
-                pattern="[0-9]*" 
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
+              <label class="d-flex justify-content-center">1.BHYT<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="4b7ff716-4fe8-486c-854e-68f78f1a385d"></label>
             </div>
             <div class="d-flex justify-content-center">
-              <div>2.Thu phí&nbsp;</div>
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric" 
-                pattern="[0-9]*" 
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
+              <label class="d-flex justify-content-center">2.Thu phí<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="6c3ad76f-0d3c-4937-bdab-f8609fd30afa"></label>
             </div>
             <div class="d-flex justify-content-center">
-              <div>3.Miễn&nbsp;</div>
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric" 
-                pattern="[0-9]*" 
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
+              <label class="d-flex justify-content-center">3.Miễn<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="f3bb09f4-d05a-4c90-9220-86ab0a387922"></label>
             </div>
             <div class="d-flex justify-content-center">
-              <div>4.Khác&nbsp;</div>
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric" 
-                pattern="[0-9]*" 
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
+              <label class="d-flex justify-content-center">4.Khác<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="f09c71bc-372d-41e0-a348-a3f27073b082"></label>
             </div>
           </div> 
         </div>
       </td>
     </tr>
+
     <tr>
-      <td colspan="2">
-        <span>10. BHYT giá trị đến:</span>
+      <td>
+        <span class="me-1">10. BHYT giá trị đến ngày:</span>
+        <span
+          data-field="f26e946d-e409-4f20-9e3c-146945647c12"
+          data-type="text"
+          data-suggestion="ngày"
+          data-caption="BHYT giá trị đến ngày"
+        ></span>
       </td>
       <td colspan="2">
-        <div class="d-flex justify-content-between">
-          <span me-1>Số thẻ BHYT:</span>
-
+        <div>
+          <span class="me-1">Số thẻ BHYT:</span>
+          <span
+            data-field="29046e1b-4f6b-41f7-9eee-2865cb204fac"
+            data-type="text"
+            data-suggestion="số-bhyt"
+            data-caption="Số thẻ BHYT"
+          ></span>
         </div>
       </td>
     </tr>
+
     <tr>
-      <td colspan="4">
-        <div class="row">
-          <div class="col-7">11. Họ tên, địa chỉ người nhà khi cần báo tin:</div>
-          <div class="col-5">Điện thoại số:</div>
-        </div>
+      <td colspan="3">
+        <span class="me-1">11. Họ tên, địa chỉ người nhà khi cần báo tin:</span>
+        <span
+          data-field="71f1a7db-ea76-44f8-b3dd-f983b73a2a46"
+          data-type="text"
+          data-suggestion="thông-tin-liên-lạc"
+          data-caption="Thông tin người nhà bệnh nhân"
+        ></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3">
+        <span class="me-1">Điện thoại số:</span>
+        <span
+          data-field="e19078bc-95bf-4221-b456-755b248e0f9d"
+          data-type="text"
+          data-suggestion="điện-thoại"
+          data-caption="Điện thoại người nhà bệnh nhân"
+        ></span>
       </td>
     </tr>
   </table>
@@ -1442,36 +1365,35 @@
         <div class="text-center">
           <div class="fw-bold">Giám đốc bệnh viện</div>
           <div class="mt-5">
-            Họ và tên:&nbsp;
+            <span class="me-1 px-1">Họ và tên:</span>
             <span
-              data-field="hospitalDirectorName3"
+              data-field="a645d850-7570-4f4f-b2a1-2a8f569d91e1"
               data-type="text"
-              data-suggestion="họ-tên-giám-đốc"
+              data-suggestion="họ-tên"
               data-caption="Họ tên giám đốc"
             ></span>
           </div>
         </div>
       </td>
       <td>
-        <div class="text-center">
-          <div
-            data-field="00028a7e-128c-4934-8c88-154a4f15d2a9"
-            data-suggestion="ngày-tháng-năm"
+        <div
+          class="text-center"
+          data-field="00028a7e-128c-4934-8c88-154a4f15d2a9"
+          data-suggestion="ngày-tháng-năm"
+          data-type="text"
+          data-caption="Ngày ký"
+          data-field-ref="todayDateFull"
+        >  
+        </div>
+        <div class="fw-bold text-center">Trưởng khoa</div>
+        <div class="mt-5">
+          <span class="me-1 px-1">Họ và tên:</span>
+          <span
+            data-field="headOfDepartmentName3"
             data-type="text"
-            data-caption="Ngày ký"
-            data-field-ref="todayDateFull"
-          >  
-          </div>
-          <div class="fw-bold">Trưởng khoa</div>
-          <div class="mt-5">
-            Họ và tên:&nbsp;
-            <span
-              data-field="headOfDepartmentName3"
-              data-type="text"
-              data-suggestion="họ-tên-trưởng-khoa"
-              data-caption="Họ tên trưởng khoa"
-            ></span>
-          </div>
+            data-suggestion="họ-tên-trưởng-khoa"
+            data-caption="Họ tên trưởng khoa"
+          ></span>
         </div>
       </td>
     </tr>
