@@ -18,15 +18,16 @@
         <div class="text-center">
           <div>SỞ Y TẾ</div>
           <div class="fw-bold">BỆNH VIỆN MẮT VIỆT NHẬT</div>
-          <div class="d-flex flex-row justify-content-center d-grid gap-4">
+          <div class="d-flex flex-row justify-content-center">
             <span class="me-1">Khoa:</span>
             <span
               data-field="54d69935-af14-4103-bae9-a934b5ef1414"
               data-type="text"
               data-suggestion="khoa"
               data-caption="Khoa"
+              class="me-1"
             ></span>
-            <span class="me-1">Giường:</span>
+            <span class="ms-1 me-1">Giường:</span>
             <span
               data-field="1f832796-effe-434a-ac26-90ac64ec07f6"
               data-type="text"
@@ -281,103 +282,36 @@
         <div class="p-1">
           <span class="me-1">12. Vào viện:</span>
           <span
-            data-field="c126ab10-416c-47bc-8800-dad5dbfb9f31"
+            data-field="f7718757-4d3c-4cc1-8307-96e254fa06a5"
             data-field-ref="todayDate"                                        
             data-type="text"
             data-suggestion="thời-gian"
             data-caption="Thời gian vào viện"
           ></span>
-          <div class="d-flex d-grid gap-2">
-            <div>13. Trực tiếp vào:</div>
-            <div>1. Cấp cứu
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric" 
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              2. KKB
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric" 
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              3. Khoa điều trị
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-          </div>
+        </div>
+        <div>
+          <span>13. Trực tiếp vào:</span>
+          <label class="d-inline-flex">1. Cấp cứu<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="6339049b-4706-4547-9531-73923842c646" /></label>
+          <label class="d-inline-flex">2. KKB<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="acdf86dc-1c2d-4aa9-a9a6-2924420610b0" /></label>
+          <label class="d-inline-flex">3. Khoa điều trị<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="8fe84d44-7d99-4d04-9025-26de2382bcd6" /></label>
         </div>
       </td>
       <td class="border border-dark">
         <div class="p-1">
-          <div class="d-flex d-grid gap-2">
-            <div>14. Nơi giới thiệu:</div>
-            <div>
-              1. Cơ quan y tế
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              2. Tự đến
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-            <div>
-              3. Khác
-              <input
-                readonly
-                type="text"
-                class="square-input"
-                maxlength="1"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
+          <div>
+            <span>14. Nơi giới thiệu:</span>
+            <label class="d-inline-flex">1. Cơ quan y tế<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="519c37ae-3475-47f7-86bf-60e506a73104" /></label>
+            <label class="d-inline-flex">2. Tự đến<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="a7133ed8-b6e1-4336-a936-cbc26d0b7d60" /></label>
+            <label class="d-inline-flex">3. Khác<input type="checkbox" class="custom-checkbox align-self-center ms-1" data-field="9346c53b-fa46-480e-b922-96bb845d9083" /></label>
           </div>
-          <div>- Vào viện do bệnh này lần thứ&nbsp;
-            <input
-              readonly
-              type="text"
-              class="square-input"
-              maxlength="1"
-              inputmode="numeric"
-              pattern="[0-9]*"
-              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-            />
+          <div>
+            <span class="me-1">- Vào viện do bệnh này lần thứ:</span>
+            <span
+              data-field="8ee010ef-be4c-4147-b2a8-e4dfd2991df5"                      
+              data-type="text"
+              data-suggestion="lần"
+              data-caption="Vào viện do bệnh này lần thứ"
+            ></span>
           </div>
         </div>
       </td>
@@ -1362,10 +1296,10 @@
     </colgroup>
     <tr>
       <td>
-        <div class="text-center">
-          <div class="fw-bold">Giám đốc bệnh viện</div>
-          <div class="mt-5">
-            <span class="me-1 px-1">Họ và tên:</span>
+        <div class="">
+          <div class="fw-bold text-center">Giám đốc bệnh viện</div>
+          <div class="mt-5 px-3">
+            <span class="me-1">Họ và tên:</span>
             <span
               data-field="a645d850-7570-4f4f-b2a1-2a8f569d91e1"
               data-type="text"
@@ -1386,8 +1320,8 @@
         >  
         </div>
         <div class="fw-bold text-center">Trưởng khoa</div>
-        <div class="mt-5">
-          <span class="me-1 px-1">Họ và tên:</span>
+        <div class="mt-5 px-3">
+          <span class="me-1">Họ và tên:</span>
           <span
             data-field="headOfDepartmentName3"
             data-type="text"
