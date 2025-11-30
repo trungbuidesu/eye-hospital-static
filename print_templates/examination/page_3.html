@@ -1,0 +1,55 @@
+<div
+  class="a4-page d-flex flex-column"
+  id="page_eye_exam_3"
+  data-page-index="3"
+>
+  <h5 class="fw-bold mb-3">Ảnh chụp bán phần trước</h5>
+
+  <!-- ================================================= -->
+  <!-- SLOT 1 — MẶC ĐỊNH (JS sẽ append slot 2, 3, 4...) -->
+  <!-- ================================================= -->
+  <div class="mb-4 anterior-block" data-conditional-section="anterior">
+    <!-- ẢNH SLOT 1 -->
+    <div
+      class="border border-dark w-100"
+      style="height: 70mm;"
+      data-image-slot="anterior-1"
+      data-caption="Ảnh bán phần trước 1"
+      data-suggestion="ảnh-bán-phần-trước-1"
+    ></div>
+
+    <!-- GHI KẾT QUẢ SLOT 1 -->
+    <div class="mt-2">
+      <span class="fw-bold me-1">Kết quả:</span>
+      <div class="border border-dark p-2" style="min-height: 18mm;">
+        <span
+          data-field="2fe73f2e-dfe4-44c5-a3b9-35d399aced62"
+          data-type="text"
+          data-caption="Kết quả ảnh bán phần trước 1"
+          data-suggestion="kết-quả-ảnh-bán-phần-trước-1"
+        ></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================= -->
+  <!-- JS SẼ TỰ CHÈN:
+       - SLOT 2 (anterior-2)
+       - SLOT 3 (anterior-3)
+       - SLOT 4...
+       Theo JSON canvasImages của bạn -->
+  <!-- ================================================= -->
+
+  <!-- ghi chú thêm (optional) -->
+  <div class="mt-4">
+    <span class="fw-bold me-1">Ghi chú thêm:</span>
+    <div class="border border-dark p-2" style="min-height: 20mm;">
+      <span
+        data-field="944f2101-470c-4d87-80dd-89e01271fe9e"
+        data-type="text"
+        data-caption="Ghi chú thêm"
+        data-suggestion="ghi-chú-thêm"
+      ></span>
+    </div>
+  </div>
+</div>

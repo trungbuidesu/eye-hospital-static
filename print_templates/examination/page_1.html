@@ -1,203 +1,414 @@
-<div class="a4-page" id="page_1" data-page-index="1">
-  <img src="https://raw.githubusercontent.com/trungbuidesu/eye-hospital-static/refs/heads/main/images/logo.webp" alt="watermark" class="watermark-logo">
-  <style>
-    .table-cell {
-      padding: 5px;
-    }
-  </style>
+<div
+  class="a4-page d-flex flex-column"
+  id="page_eye_exam_1"
+  data-page-index="1"
+>
+  <!-- HEADER -->
   <div class="text-center">
-    <div class="text-uppercase">
-      <h2 class="fw-bold">KẾT QUẢ KHÁM MẮT</h2>
+    <h4 class="fw-bold">KẾT QUẢ KHÁM MẮT</h4>
+    <div>
+      Mã số:
+      <span
+        data-field="d0b8b5b4-509d-4a62-a034-283b9bdf8bf5"
+        data-type="text"
+        data-caption="Mã bệnh nhân"
+        data-suggestion="mã-bệnh-nhân"
+      ></span>
     </div>
-    <div class="fw-bold row">
-      <div class="col-3"></div>
+  </div>
+
+  <div class="my-3"></div>
+
+  <!-- THÔNG TIN BỆNH NHÂN -->
+  <div>
+    <h5 class="fw-bold mb-2">Thông tin bệnh nhân</h5>
+
+    <div class="row">
+      <div class="col-6">
+        <span class="me-1 fw-bold">Họ tên:</span>
+        <span
+          data-field="patientFullName"
+          data-type="text"
+          data-caption="Tên bệnh nhân"
+          data-suggestion="tên-bệnh-nhân"
+          data-shared="patientFullName"
+          class="fw-bold"
+        ></span>
+      </div>
+
+      <div class="col-3">
+        <span class="me-1 fw-bold">Tuổi:</span>
+        <span
+          data-field="patientAge"
+          data-type="text"
+          data-caption="Tuổi"
+          data-suggestion="tuổi"
+          data-shared="patientAge"
+          class="fw-bold"
+        ></span>
+      </div>
+
+      <div class="col-3">
+        <span class="me-1 fw-bold">Giới tính:</span>
+        <span
+          data-field="patientGender"
+          data-type="text"
+          data-caption="Giới tính"
+          data-suggestion="giới-tính"
+          data-shared="patientGender"
+          class="fw-bold"
+        ></span>
+      </div>
+    </div>
+
+    <div class="row mt-2">
       <div class="col-4">
-        <span class="me-1 col">Mã số:</span>
+        <span class="me-1 fw-bold">Điện thoại:</span>
+        <span
+          data-field="fcb1d904-d674-4fb5-80b8-171098713fa4"
+          data-type="text"
+          data-caption="Điện thoại"
+          data-suggestion="điện-thoại"
+        ></span>
       </div>
-      <div class="col-4">
-        <span class="text-uppercase col" data-field="5f2d58e6-e9de-4a4f-a31a-eb5c62feda00" data-type="text"
-          data-suggestion="mã-số" data-caption="Mã số khám bệnh"></span>
+
+      <div class="col-8">
+        <span class="me-1 fw-bold">Địa chỉ:</span>
+        <span
+          data-field="c84bb3b1-0294-40d4-b17d-34d1fecdc432"
+          data-type="text"
+          data-caption="Địa chỉ"
+          data-suggestion="địa-chỉ"
+        ></span>
       </div>
-      <div class="col-3"></div>
+    </div>
+
+    <div class="mt-2">
+      <span class="fw-bold me-1">Tiền sử:</span>
+      <span
+        data-field="ac51b6cb-66f5-4427-8622-fbf1df327c20"
+        data-type="text"
+        data-caption="Tiền sử"
+        data-suggestion="tiền-sử"
+      ></span>
+    </div>
+
+    <div class="mt-2">
+      <span class="fw-bold me-1">Lý do khám:</span>
+      <span
+        data-field="71c6fa75-df03-4ca1-8ce8-77d77597e7a2"
+        data-type="text"
+        data-caption="Lý do khám"
+        data-suggestion="lý-do-khám"
+      ></span>
     </div>
   </div>
 
-  <div class="row fw-bold">
-    <div class="col">
-      <span class="me-1">Họ tên:</span>
-      <span class="text-uppercase" data-field="patientFullName" data-type="text" data-suggestion="họ-tên"
-        data-caption="Họ tên bệnh nhân" data-shared="patientFullName"></span>
+  <div class="my-3"></div>
+
+  <!-- BẢNG MP/MT -->
+  <div>
+    <h5 class="fw-bold mb-2">Kết quả khám – MP / MT</h5>
+
+    <table class="w-100 border border-dark">
+      <colgroup>
+        <col style="width: 40%" />
+        <col style="width: 30%" />
+        <col style="width: 30%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="border border-dark text-center">Hạng mục</th>
+          <th class="border border-dark text-center">MP</th>
+          <th class="border border-dark text-center">MT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- OLD GLASS -->
+        <tr>
+          <td class="border border-dark px-2">Độ kính cũ</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="730a9502-75e2-4a30-a3c8-4fd63bd4427c"
+              data-type="text"
+              data-caption="Độ kính cũ MP"
+              data-suggestion="độ-kính-cũ-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="0469860e-7dff-4efa-9aa6-27ec740f7aa6"
+              data-type="text"
+              data-caption="Độ kính cũ MT"
+              data-suggestion="độ-kính-cũ-mt"
+            ></span>
+          </td>
+        </tr>
+
+        <!-- VISION OLD -->
+        <tr>
+          <td class="border border-dark px-2">Thị lực kính cũ</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="065ba735-4e19-4fd2-8017-4e6f055824ab"
+              data-type="text"
+              data-caption="Thị lực kính cũ MP"
+              data-suggestion="thị-lực-kính-cũ-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="57cb80c2-4917-42be-8edc-05bb3da476e7"
+              data-type="text"
+              data-caption="Thị lực kính cũ MT"
+              data-suggestion="thị-lực-kính-cũ-mt"
+            ></span>
+          </td>
+        </tr>
+
+        <!-- VISION NO GLASS -->
+        <tr>
+          <td class="border border-dark px-2">Thị lực không kính</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="c2ce21c8-b434-40b1-a3f5-9d9f66f331f8"
+              data-type="text"
+              data-caption="Thị lực không kính MP"
+              data-suggestion="thị-lực-không-kính-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="a1b076cc-29f3-49bc-bf5d-cbf33ab8867e"
+              data-type="text"
+              data-caption="Thị lực không kính MT"
+              data-suggestion="thị-lực-không-kính-mt"
+            ></span>
+          </td>
+        </tr>
+
+        <!-- REF BEFORE -->
+        <tr>
+          <td class="border border-dark px-2">Khúc xạ trước LĐT</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="1a63364d-d2cf-4213-a501-b41cbbe3eb9a"
+              data-type="text"
+              data-caption="Khúc xạ trước MP"
+              data-suggestion="khúc-xạ-trước-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="967c6515-f3a5-46db-8028-f2d71b9f9b42"
+              data-type="text"
+              data-caption="Khúc xạ trước MT"
+              data-suggestion="khúc-xạ-trước-mt"
+            ></span>
+          </td>
+        </tr>
+
+        <!-- REF AFTER -->
+        <tr>
+          <td class="border border-dark px-2">Khúc xạ sau LĐT</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="8702f87a-5755-4c28-9e91-30e7af8ba4e0"
+              data-type="text"
+              data-caption="Khúc xạ sau MP"
+              data-suggestion="khúc-xạ-sau-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="41e2e29b-9c58-4c02-a2df-853af0e52ce0"
+              data-type="text"
+              data-caption="Khúc xạ sau MT"
+              data-suggestion="khúc-xạ-sau-mt"
+            ></span>
+          </td>
+        </tr>
+
+        <!-- NEAR ADD -->
+        <tr>
+          <td class="border border-dark px-2">Kính nhìn gần (add)</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="d882cdc4-27c6-44d2-9aa0-5adbd8e4f640"
+              data-type="text"
+              data-caption="Add MP"
+              data-suggestion="add-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="9b4c3bf3-f297-4a3d-98e7-cedbebb8620e"
+              data-type="text"
+              data-caption="Add MT"
+              data-suggestion="add-mt"
+            ></span>
+          </td>
+        </tr>
+
+        <!-- PD -->
+        <tr>
+          <td class="border border-dark px-2">Khoảng cách đồng tử</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="24c8c85e-a4b0-4f54-b120-05d7fceb75f3"
+              data-type="text"
+              data-caption="PD MP"
+              data-suggestion="pd-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="6cfd6db5-4eab-4dfd-93a6-09558c20df28"
+              data-type="text"
+              data-caption="PD MT"
+              data-suggestion="pd-mt"
+            ></span>
+          </td>
+        </tr>
+
+        <!-- IOP -->
+        <tr>
+          <td class="border border-dark px-2">Nhãn áp</td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="cf302024-b494-491c-b214-cf30a3285b69"
+              data-type="text"
+              data-caption="Nhãn áp MP"
+              data-suggestion="nhãn-áp-mp"
+            ></span>
+          </td>
+          <td class="border border-dark px-1">
+            <span
+              data-field="bcb28f72-da06-4da3-a54f-58fc15a52920"
+              data-type="text"
+              data-caption="Nhãn áp MT"
+              data-suggestion="nhãn-áp-mt"
+            ></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="my-3"></div>
+
+  <!-- KHÁM MẮT -->
+  <div>
+    <h5 class="fw-bold mb-2">Khám mắt</h5>
+
+    <div>
+      <span class="fw-bold me-1">MP:</span>
+      <span
+        data-field="3226b5f6-7847-4b92-8799-781a31225d40"
+        data-type="text"
+        data-caption="Khám MP"
+        data-suggestion="khám-mp"
+      ></span>
     </div>
-    <div class="col">
-      <span class="me-1">Tuổi:</span>
-      <span data-field="patientAge" data-type="text" data-suggestion="tuổi" data-caption="Tuổi bệnh nhân"
-        data-shared="patientAge"></span>
+
+    <div class="mt-2">
+      <span class="fw-bold me-1">MT:</span>
+      <span
+        data-field="a16abdce-903e-49d5-9926-eaba30887177"
+        data-type="text"
+        data-caption="Khám MT"
+        data-suggestion="khám-mt"
+      ></span>
     </div>
   </div>
-  <div class="row fw-bold">
-    <div class="col">
-      <span class="me-1">Điện thoại:</span>
-      <span data-field="da63194e-e801-45dd-84f6-1bc04d4d2438" data-type="text" data-suggestion="điện-thoại"
-        data-caption="Điện thoại" data-shared="patientMobileNumber"></span>
-    </div>
-    <div class="col">
-      <span class="me-1">Giới tính:</span>
-      <span data-field="patientGender" data-type="text" data-suggestion="giới-tính" data-caption="Giới tính"
-        data-shared="patientGender"></span>
-    </div>
-  </div>
 
-  <div class="row fw-bold">
-    <div class="col">
-      <span class="me-1">Địa chỉ:</span>
-      <span data-field="patientAddress" data-type="text" data-suggestion="địa-chỉ" data-caption="Địa chỉ bệnh nhân"
-        data-shared="patientAddress"></span>
-    </div>
-    <div class="col">
-      <span class="me-1">Mã KH:</span>
-      <span data-field="6a05e225-e4b2-4657-86c4-4a25df918609" data-type="text" data-suggestion="Mã khách hàng"
-        data-caption="Mã khách hàng"></span>
-    </div>
-  </div>
-  <div class="fw-bold">
-    <span class="me-1">Lý do khám:</span>
-    <span data-field="2077d68f-0b90-4f13-986f-ab8ebc90045c" data-type="text" data-suggestion="lý-do"
-      data-caption="Lý do khám"></span>
-  </div>
+  <div class="my-3"></div>
 
-  <div class="my-4"></div>
+  <!-- CHẨN ĐOÁN -->
+  <div>
+    <h5 class="fw-bold mb-2">Chẩn đoán</h5>
 
-  <div class="border border-dark border-2">
-    <div class="row g-0 bg-secondary text-white text-center border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark"></div>
-      <div class="col-3 table-cell border-end border-dark text-uppercase fw-bold">Mắt phải</div>
-      <div class="col-3 table-cell text-uppercase fw-bold">Mắt trái</div>
+    <div>
+      <span class="fw-bold me-1">MP:</span>
+      <span
+        data-field="c6296978-64af-4fe2-b1bb-2cae07c8749e"
+        data-type="text"
+        data-caption="Chẩn đoán MP"
+        data-suggestion="chẩn-đoán-mp"
+      ></span>
     </div>
 
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">Chiều dài trục nhãn cầu (mm)</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="4ce322c8-ab2c-43b8-9e6e-f26ef546c334" data-type="text"
-          data-suggestion="(mm)" data-caption="Chiều dài trục nhãn cầu phải (mm)"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="1bca806c-f79a-4291-a0b4-68076b26e292" data-type="text"
-          data-suggestion="(mm)" data-caption="Chiều dài trục nhãn cầu trái (mm)"></span>
-      </div>
-    </div>
-
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">Độ dày GM trung tâm (μm)</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="556b431d-cda4-4597-9cb0-599fd91f5ebe" data-type="text"
-          data-suggestion="(μm)" data-caption="Độ dày GM trung tâm phải (μm)"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="a7b44ff7-5a77-48a7-9975-8f5478cf852a" data-type="text"
-          data-suggestion="(μm)" data-caption="Độ dày GM trung tâm trái (μm)"></span>
-      </div>
-    </div>
-
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">Kích thước đồng tử (mm)</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="16c71b34-76ca-46b4-ab65-563f0961c693" data-type="text"
-          data-suggestion="(mm)" data-caption="Kích thước đồng tử phải (mm)"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="632ca99b-4fb5-45ae-93c8-9b7780ebb85a" data-type="text"
-          data-suggestion="(mm)" data-caption="Kích thước đồng tử trái (mm)"></span>
-      </div>
-    </div>
-
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">ACD (mm)</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="c7ba5774-c7be-4dec-8c44-166a5d0abd17" data-type="text"
-          data-suggestion="(mm)" data-caption="ACD phải (mm)"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="be371402-3798-449a-9cc8-c4c42b58e3c3" data-type="text"
-          data-suggestion="(mm)" data-caption="ACD trái (mm)"></span>
-      </div>
-    </div>
-
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">Steep K / Flat K (D)</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="d0791d96-b0d6-4106-95fc-4c7e67326fd3" data-type="text"
-          data-suggestion="giá-trị" data-caption="Steep K / Flat K phải (D)"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="6523f79d-4edb-4038-9c77-194e9f4ca83b" data-type="text"
-          data-suggestion="giá-trị" data-caption="Steep K / Flat K trái (D)"></span>
-      </div>
-    </div>
-
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">TL xa không kính</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="08fc4f82-f997-4f56-bda9-b95527a6c759" data-type="text"
-          data-suggestion="thị-lực" data-caption="TL xa không kính phải"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="23683c78-1315-41d9-bffc-00ca0ce884fc" data-type="text"
-          data-suggestion="thị-lực" data-caption="TL xa không kính trái"></span>
-      </div>
-    </div>
-
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">KXCQ trước liệt điều tiết</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="7e34025c-4392-40cb-ba4e-41a8ef28f7e9" data-type="text"
-          data-suggestion="giá-trị" data-caption="KXCQ trước liệt điều tiết phải"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="7b38a256-02f1-4255-a314-70c5f37100a7" data-type="text"
-          data-suggestion="giá-trị" data-caption="KXCQ trước liệt điều tiết trái"></span>
-      </div>
-    </div>
-
-    <div class="row g-0 border-bottom border-dark">
-      <div class="col-6 table-cell border-end border-dark">KXKQ sau liệt điều tiết (Cyclogyl 1%)</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="467a6cb6-f173-420d-bfe6-dff49c13220d" data-type="text"
-          data-suggestion="giá-trị" data-caption="KXKQ sau liệt điều tiết phải"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="cf7a0870-1358-442f-8ce6-47c32f6126aa" data-type="text"
-          data-suggestion="giá-trị" data-caption="KXKQ sau liệt điều tiết trái"></span>
-      </div>
-    </div>
-
-    <div class="row g-0">
-      <div class="col-6 table-cell border-end border-dark">KXCQ sau liệt điều tiết (Cyclogyl 1%)</div>
-      <div class="col-3 table-cell border-end border-dark text-center">
-        <span data-field="b25cae23-505e-4702-a8fe-3d8faed8ab74" data-type="text"
-          data-suggestion="giá-trị" data-caption="KXCQ sau liệt điều tiết phải"></span>
-      </div>
-      <div class="col-3 table-cell text-center">
-        <span data-field="75e84d16-b1b3-4796-aa78-c4bbeb164b50" data-type="text"
-          data-suggestion="giá-trị" data-caption="KXCQ sau liệt điều tiết trái"></span>
-      </div>
+    <div class="mt-2">
+      <span class="fw-bold me-1">MT:</span>
+      <span
+        data-field="120b7463-6cdc-4558-b366-d5a223765bb3"
+        data-type="text"
+        data-caption="Chẩn đoán MT"
+        data-suggestion="chẩn-đoán-mt"
+      ></span>
     </div>
   </div>
 
-  <div class="my-4"></div>
+  <div class="my-3"></div>
 
-  <div class="fw-bold">
-    <span class="me-1">Chẩn đoán:</span>
-    <span data-field="1870bba7-5a89-4f3f-9350-282eb5ce982a" data-type="text" data-suggestion="chẩn-đoán"
-      data-caption="Chẩn đoán"></span>
+  <!-- TƯ VẤN -->
+  <div>
+    <h5 class="fw-bold mb-2">Tư vấn & Xử lý</h5>
+
+    <div class="border border-dark p-2" style="min-height: 25mm;">
+      <span
+        data-field="e107fc10-cc65-4ba8-9ea3-c07b02d7431b"
+        data-type="text"
+        data-caption="Tư vấn"
+        data-suggestion="tư-vấn"
+      ></span>
+    </div>
   </div>
-  <div class="fw-bold">
-    <span class="me-1">Tư vấn xử lý:</span>
-    <span data-field="868ab0ca-df1d-487f-9f3e-aa8482400a0e" data-type="text" data-suggestion="tư-vấn"
-      data-caption="Tư vấn xử lý"></span>
+
+  <div class="my-3"></div>
+
+  <!-- ĐƠN KÍNH -->
+  <div>
+    <h5 class="fw-bold mb-2">Đơn kính</h5>
+
+    <div>
+      <span class="fw-bold me-1">MP:</span>
+      <span
+        data-field="51532cd1-497e-4b8a-b66b-329d2e9ad3f5"
+        data-type="text"
+        data-caption="Đơn kính MP"
+        data-suggestion="đơn-kính-mp"
+      ></span>
+    </div>
+
+    <div class="mt-2">
+      <span class="fw-bold me-1">MT:</span>
+      <span
+        data-field="41abecf9-71c6-462d-9c8a-651e93ba2dbe"
+        data-type="text"
+        data-caption="Đơn kính MT"
+        data-suggestion="đơn-kính-mt"
+      ></span>
+    </div>
   </div>
-  <div class="fw-bold">
-    <span class="me-1">Đơn kính:</span>
-    <span data-field="adcdd996-fd47-4c7c-b9ec-68c2e90942a7" data-type="text" data-suggestion="đơn-kính"
-      data-caption="Đơn kính"></span>
+
+  <div class="my-3"></div>
+
+  <!-- GHI CHÚ -->
+  <div>
+    <h5 class="fw-bold mb-2">Ghi chú</h5>
+
+    <div class="border border-dark p-2" style="min-height: 25mm;">
+      <span
+        data-field="d15afe47-9b5d-4c43-a6ad-3db21ff1fde1"
+        data-type="text"
+        data-caption="Ghi chú"
+        data-suggestion="ghi-chú"
+      ></span>
+    </div>
+
+    <div class="text-end mt-3">
+      <span class="fw-bold">Bác sĩ khám</span>
+    </div>
   </div>
 </div>
