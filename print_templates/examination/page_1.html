@@ -1,19 +1,25 @@
 <div
   class="a4-page d-flex flex-column"
-  id="page_eye_exam_1"
+  id="page_1"
   data-page-index="1"
 >
   <!-- HEADER -->
   <div class="text-center">
-    <h4 class="fw-bold">KẾT QUẢ KHÁM MẮT</h4>
-    <div>
-      Mã số:
-      <span
-        data-field="d0b8b5b4-509d-4a62-a034-283b9bdf8bf5"
-        data-type="text"
-        data-caption="Mã bệnh nhân"
-        data-suggestion="mã-bệnh-nhân"
-      ></span>
+    <div class="text-center">
+      <h4 class="fw-bold">KẾT QUẢ KHÁM MẮT</h4>
+    </div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <span class="me-1">Mã số:</span>
+        <span
+          data-field="d0b8b5b4-509d-4a62-a034-283b9bdf8bf5"
+          data-type="text"
+          data-caption="Mã bệnh nhân"
+          data-suggestion="mã-bệnh-nhân"
+        ></span>
+      </div>
+      <div class="col-4"></div>
     </div>
   </div>
 
@@ -21,7 +27,7 @@
 
   <!-- THÔNG TIN BỆNH NHÂN -->
   <div>
-    <h5 class="fw-bold mb-2">Thông tin bệnh nhân</h5>
+    <h5 class="fw-bold mb-2 text-decoration-underline">THÔNG TIN BỆNH NHÂN</h5>
 
     <div class="row">
       <div class="col-6">
@@ -104,21 +110,20 @@
     </div>
   </div>
 
-  <div class="my-3"></div>
+  <div class="my-2"></div>
 
   <!-- BẢNG MP/MT -->
   <div>
-    <h5 class="fw-bold mb-2">Kết quả khám – MP / MT</h5>
-
+    <h5 class="fw-bold mb-2 text-decoration-underline">KẾT QUẢ KHÁM</h5>
     <table class="w-100 border border-dark">
       <colgroup>
-        <col style="width: 40%" />
         <col style="width: 30%" />
-        <col style="width: 30%" />
+        <col style="width: 35%" />
+        <col style="width: 35%" />
       </colgroup>
       <thead>
         <tr>
-          <th class="border border-dark text-center">Hạng mục</th>
+          <th class="border border-dark text-center"></th>
           <th class="border border-dark text-center">MP</th>
           <th class="border border-dark text-center">MT</th>
         </tr>
@@ -126,8 +131,8 @@
       <tbody>
         <!-- OLD GLASS -->
         <tr>
-          <td class="border border-dark px-2">Độ kính cũ</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">Độ kính cũ</td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="730a9502-75e2-4a30-a3c8-4fd63bd4427c"
               data-type="text"
@@ -135,7 +140,7 @@
               data-suggestion="độ-kính-cũ-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="0469860e-7dff-4efa-9aa6-27ec740f7aa6"
               data-type="text"
@@ -147,8 +152,8 @@
 
         <!-- VISION OLD -->
         <tr>
-          <td class="border border-dark px-2">Thị lực kính cũ</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">Thị lực kính cũ</td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="065ba735-4e19-4fd2-8017-4e6f055824ab"
               data-type="text"
@@ -156,7 +161,7 @@
               data-suggestion="thị-lực-kính-cũ-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="57cb80c2-4917-42be-8edc-05bb3da476e7"
               data-type="text"
@@ -168,8 +173,10 @@
 
         <!-- VISION NO GLASS -->
         <tr>
-          <td class="border border-dark px-2">Thị lực không kính</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">
+            Thị lực không kính
+          </td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="c2ce21c8-b434-40b1-a3f5-9d9f66f331f8"
               data-type="text"
@@ -177,7 +184,7 @@
               data-suggestion="thị-lực-không-kính-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="a1b076cc-29f3-49bc-bf5d-cbf33ab8867e"
               data-type="text"
@@ -189,8 +196,8 @@
 
         <!-- REF BEFORE -->
         <tr>
-          <td class="border border-dark px-2">Khúc xạ trước LĐT</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">Khúc xạ trước LĐT</td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="1a63364d-d2cf-4213-a501-b41cbbe3eb9a"
               data-type="text"
@@ -198,7 +205,7 @@
               data-suggestion="khúc-xạ-trước-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="967c6515-f3a5-46db-8028-f2d71b9f9b42"
               data-type="text"
@@ -210,8 +217,8 @@
 
         <!-- REF AFTER -->
         <tr>
-          <td class="border border-dark px-2">Khúc xạ sau LĐT</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">Khúc xạ sau LĐT</td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="8702f87a-5755-4c28-9e91-30e7af8ba4e0"
               data-type="text"
@@ -219,7 +226,7 @@
               data-suggestion="khúc-xạ-sau-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="41e2e29b-9c58-4c02-a2df-853af0e52ce0"
               data-type="text"
@@ -231,8 +238,10 @@
 
         <!-- NEAR ADD -->
         <tr>
-          <td class="border border-dark px-2">Kính nhìn gần (add)</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">
+            Kính nhìn gần (add)
+          </td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="d882cdc4-27c6-44d2-9aa0-5adbd8e4f640"
               data-type="text"
@@ -240,7 +249,7 @@
               data-suggestion="add-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="9b4c3bf3-f297-4a3d-98e7-cedbebb8620e"
               data-type="text"
@@ -252,8 +261,10 @@
 
         <!-- PD -->
         <tr>
-          <td class="border border-dark px-2">Khoảng cách đồng tử</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">
+            Khoảng cách đồng tử
+          </td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="24c8c85e-a4b0-4f54-b120-05d7fceb75f3"
               data-type="text"
@@ -261,7 +272,7 @@
               data-suggestion="pd-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="6cfd6db5-4eab-4dfd-93a6-09558c20df28"
               data-type="text"
@@ -273,8 +284,8 @@
 
         <!-- IOP -->
         <tr>
-          <td class="border border-dark px-2">Nhãn áp</td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-2 text-center">Nhãn áp</td>
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="cf302024-b494-491c-b214-cf30a3285b69"
               data-type="text"
@@ -282,7 +293,7 @@
               data-suggestion="nhãn-áp-mp"
             ></span>
           </td>
-          <td class="border border-dark px-1">
+          <td class="border border-dark px-1 text-center">
             <span
               data-field="bcb28f72-da06-4da3-a54f-58fc15a52920"
               data-type="text"
@@ -295,10 +306,10 @@
     </table>
   </div>
 
-  <div class="my-3"></div>
+  <div class="my-2"></div>
   <!-- CHẨN ĐOÁN -->
   <div>
-    <h5 class="fw-bold mb-2">Chẩn đoán</h5>
+    <h5 class="fw-bold mb-2 text-decoration-underline">CHẨN ĐOÁN</h5>
 
     <div>
       <span class="fw-bold me-1">MP:</span>
@@ -321,12 +332,12 @@
     </div>
   </div>
 
-  <div class="my-3"></div>
+  <div class="my-1"></div>
   <!-- TƯ VẤN -->
   <div>
-    <h5 class="fw-bold mb-2">Tư vấn & Xử lý</h5>
+    <h5 class="fw-bold mb-2 text-decoration-underline">TƯ VẤN & XỬ LÝ</h5>
 
-    <div class="border border-dark p-2" style="min-height: 25mm;">
+    <div class="border border-dark p-2" style="min-height: 25mm">
       <span
         data-field="e107fc10-cc65-4ba8-9ea3-c07b02d7431b"
         data-type="text"
@@ -336,12 +347,11 @@
     </div>
   </div>
 
-  <div class="my-3"></div>
+  <div class="my-1"></div>
 
   <!-- ĐƠN KÍNH -->
   <div>
-    <h5 class="fw-bold mb-2">Đơn kính</h5>
-
+    <h5 class="fw-bold mb-2 text-decoration-underline">ĐƠN KÍNH</h5>
     <div>
       <span class="fw-bold me-1">MP:</span>
       <span
@@ -363,23 +373,28 @@
     </div>
   </div>
 
-  <div class="my-3"></div>
+  <div class="my-1"></div>
 
   <!-- GHI CHÚ -->
-  <div>
-    <h5 class="fw-bold mb-2">Ghi chú</h5>
-
-    <div class="border border-dark p-2" style="min-height: 25mm;">
-      <span
-        data-field="d15afe47-9b5d-4c43-a6ad-3db21ff1fde1"
-        data-type="text"
-        data-caption="Ghi chú"
-        data-suggestion="ghi-chú"
-      ></span>
+  <div class="row">
+    <div class="col-7">
+      <h5 class="fw-bold mb-2 text-decoration-underline">GHI CHÚ</h5>
+      <div class="border border-dark p-2" style="min-height: 40mm">
+        <span
+          data-field="d15afe47-9b5d-4c43-a6ad-3db21ff1fde1"
+          data-type="text"
+          data-caption="Ghi chú"
+          data-suggestion="ghi-chú"
+        ></span>
+      </div>
     </div>
 
-    <div class="text-end mt-3">
-      <span class="fw-bold">Bác sĩ khám</span>
+    <div class="col-5">
+      <div class="text-end mt-3 text-center">
+        <span class="fw-bold">BÁC SĨ KHÁM</span>
+      </div>
+      <div style="min-height: 30mm"></div>
+      <span class="me-1">Họ tên:</span>
     </div>
   </div>
 </div>
