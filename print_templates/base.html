@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <style>
+      .a4-page {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
   </head>
 
   <body data-view-mode="browser">
@@ -14,19 +19,14 @@
           font-family: 'Tinos';
           src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
           font-weight: normal;
-      }
-
-      /* --- 1. GLOBAL RESET --- */
-      * {
-        box-sizing: border-box; /* Quan trọng: Padding không làm phình kích thước */
-      }
+        }
 
       body {
         margin: 0;
         padding: 0;
-        background-color: #525659; /* Màu nền xám giống trình đọc PDF cho dễ nhìn */
+        overflow: hidden;
+        background-color: #eee;
         font-family: 'Times New Roman', serif;
-        overflow: hidden; /* Chặn scrollbar của body */
       }
 
       .content-container {
@@ -34,126 +34,111 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        /* Cho phép scroll nội dung bên trong container này thay vì body */
-        height: 100vh; 
-        overflow-y: auto; 
       }
 
-      /* --- 2. CẤU HÌNH TRANG A4 (Dùng chung cho cả View và Print) --- */
       .a4-page {
-        /* Kích thước chuẩn A4 */
         width: 210mm;
-        height: 297mm; /* Set cứng height để JS tính toán chính xác */
-        
-        /* Padding chuẩn: 10mm mỗi bên */
-        padding: 10mm; 
-        
+        height: 297mm;
+        padding: 10mm; /* Padding chuẩn */
+        margin: 10mm auto;
         background: white;
-        margin: 0 auto 15px auto; /* Khoảng cách giữa các trang khi view */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
         position: relative;
-        overflow: hidden; /* Ẩn nội dung thừa nếu có lỗi tính toán */
-      }
-
-      /* --- 3. GRID ẢNH --- */
-      .medical-image-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        align-content: start;
-        width: 100%;
-        margin-bottom: 0; /* Tránh margin thừa đẩy layout */
-      }
-      
-      .screenshot-wrapper { 
-        position: relative; 
         display: flex;
         flex-direction: column;
+      }
+
+      .a4-page:last-child {
+        margin-top: 10mm !important;
+        margin-bottom: 0 !important;
+      }
+
+      .a4-page:first-child {
+        margin-top: 0 !important;
+      }
+
+      /* --- CÁC STYLE CŨ GIỮ NGUYÊN --- */
+      .square { width: 10px; height: 10px; border: 1px solid black; }
+      .custom-checkbox { width: 20px; height: 20px; border: 1px solid #000; border-radius: 2px; cursor: pointer; position: relative; appearance: none; -webkit-appearance: none; }
+      .custom-checkbox:checked::after { content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 20px; color: black; pointer-events: none; }
+      .square-input { width: 20px; height: 20px; box-sizing: border-box; font-size: 16px; text-align: center; vertical-align: middle; }
+      .custom-radio { width: 20px; height: 20px; border: 1px solid #000; cursor: pointer; position: relative; appearance: none; -webkit-appearance: none; }
+      .custom-radio:checked::after { content: "✔"; position: absolute; top: -6px; left: -1px; font-size: 20px; color: black; pointer-events: none; border-radius: 0 !important; }
+      .custom-checkbox-small { width: 15px; height: 15px; border: 1px solid #000; border-radius: 2px; cursor: pointer; position: relative; appearance: none; -webkit-appearance: none; }
+      .custom-checkbox-small:checked::after { content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 15px; color: black; pointer-events: none; }
+      
+      /* --- HỆ THỐNG GRID 2x2 CHO ẢNH (MỚI) --- */
+      .page-header {
+        font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
+        flex-shrink: 0;
+      }
+
+      .medical-image-grid {
+        display: grid;
+        width: 100%;
+        flex-grow: 1; 
+        grid-template-columns: 1fr 1fr; /* 2 cột */
+        grid-template-rows: 1fr 1fr;    /* 2 hàng */
+        gap: 10px;
+        /* Giới hạn chiều cao để không bị tràn trang A4 */
+        max-height: calc(297mm - 20mm - 40px); 
+      }
+
+      .screenshot-wrapper {
+        position: relative;
         background: #fff;
         border: 1px solid #ddd;
-        padding: 4px;
-        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
       }
 
-      .screenshot-wrapper img { 
-        width: 100%;       
-        height: auto;     
-        max-height: 380px; 
+      .screenshot-wrapper img {
+        width: 100%; height: 100%;
         object-fit: contain;
         display: block;
-        background: #000;
       }
 
-      .screenshot-wrapper .del-btn {
-        position:absolute; top:-10px; right:-10px; 
-        background:red; color:#fff; border:2px solid #fff; 
-        border-radius:50%; width:24px; height:24px; cursor:pointer;
+      /* Các chế độ hiển thị size */
+      .size-normal { grid-column: span 1; grid-row: span 1; } /* 1x1 */
+      .size-wide { grid-column: span 2; grid-row: span 1; }   /* 1x2 */
+      .size-full { grid-column: span 2; grid-row: span 2; }   /* 2x2 */
+
+      /* Nút điều khiển (Resize/Delete) */
+      .control-btn-group {
+        position: absolute; top: 5px; right: 5px;
+        display: flex; gap: 5px; z-index: 10;
+      }
+      .control-btn {
+        background: rgba(0,0,0,0.6); color: #fff;
+        border: 1px solid #fff; border-radius: 4px;
+        width: 30px; height: 30px;
+        cursor: pointer;
         display: flex; align-items: center; justify-content: center;
-        z-index: 10;
-        font-weight: bold;
+        font-size: 14px; font-weight: bold;
       }
+      .btn-delete { background: #dc3545; }
+      .btn-resize { background: #0d6efd; font-size: 11px; width: auto; padding: 0 8px; }
 
-      /* --- 4. CHECKBOX / INPUT UI --- */
-      .custom-checkbox, .custom-radio, .custom-checkbox-small {
-        appearance: none; -webkit-appearance: none;
-        border: 1px solid #000; cursor: pointer; position: relative; background: transparent;
-      }
-      .custom-checkbox { width: 20px; height: 20px; border-radius: 2px; }
-      .custom-checkbox:checked::after {
-        content: "✔"; position: absolute; font-size: 20px; color: black; 
-        top: -11px; left: -1px; pointer-events: none;
-      }
-      
-      /* --- 5. PRINT CONFIGURATION (Final Match) --- */
+      /* --- PRINT CONFIGURATION --- */
       @media print {
-        @page {
-          size: A4;
-          margin: 0; /* Bắt buộc: Xóa margin máy in để ta tự control bằng CSS */
-        }
-
-        body {
-          background-color: white;
-          overflow: visible;
-          height: auto;
-        }
-
-        .content-container {
-          display: block;
-          width: 100%;
-          height: auto;
-          overflow: visible;
-          padding: 0;
-          margin: 0;
-        }
-
-        .a4-page {
-          margin: 0; /* Xóa margin giữa các trang */
-          box-shadow: none;
-          border: none;
-          
-          /* Kích thước & Padding giữ nguyên y hệt màn hình */
-          width: 210mm;
-          height: 297mm;
-          padding: 10mm;
-          
-          /* Ngắt trang */
-          break-after: page;
-          page-break-after: always;
-        }
-
-        .a4-page:last-child {
-          break-after: auto;
-          page-break-after: auto;
-        }
-
-        /* Ẩn UI thừa */
-        .del-btn { display: none !important; }
-        .screenshot-wrapper { border: none !important; padding: 0 !important; }
+        @page { size: A4; margin: 0; }
+        body { margin: 0; background: white; -webkit-print-color-adjust: exact; }
         
-        /* Fix lỗi Firefox/Chrome in đôi khi bị mất ảnh */
-        img { max-width: 100% !important; page-break-inside: avoid; }
+        .a4-page {
+          width: 100%; height: 297mm;
+          margin: 0 !important; padding: 10mm !important;
+          border: none !important; box-shadow: none !important;
+          page-break-after: always; break-after: page;
+        }
+        .a4-page:last-child { page-break-after: auto; break-after: auto; }
+
+        /* Ẩn các nút khi in */
+        .control-btn-group { display: none !important; }
+        .screenshot-wrapper { border: none !important; }
+        
+        img { display: block !important; visibility: visible !important; }
       }
     </style>
     <div class="content-container"></div>
