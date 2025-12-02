@@ -16,14 +16,17 @@
           font-weight: normal;
       }
 
-      /* --- 1. GLOBAL RESET & SCREEN STYLES (GIAO DIỆN IFRAME) --- */
+      /* --- 1. GLOBAL RESET --- */
+      * {
+        box-sizing: border-box; /* Quan trọng: Padding không làm phình kích thước */
+      }
+
       body {
         margin: 0;
         padding: 0;
-        /* QUAN TRỌNG: hidden để Iframe tự resize theo content mà không hiện scrollbar thừa */
-        overflow: hidden; 
-        background-color: #eee;
+        background-color: #525659; /* Màu nền xám giống trình đọc PDF cho dễ nhìn */
         font-family: 'Times New Roman', serif;
+        overflow: hidden; /* Chặn scrollbar của body */
       }
 
       .content-container {
@@ -31,28 +34,37 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        /* Cho phép scroll nội dung bên trong container này thay vì body */
+        height: 100vh; 
+        overflow-y: auto; 
       }
 
-      /* Style hiển thị trang A4 trên màn hình máy tính */
+      /* --- 2. CẤU HÌNH TRANG A4 (Dùng chung cho cả View và Print) --- */
       .a4-page {
+        /* Kích thước chuẩn A4 */
         width: 210mm;
-        min-height: 297mm; 
-        padding: 10mm; /* Padding này cần khớp với tính toán JS */
-        margin: 5mm auto; /* Khoảng cách giữa các trang trên màn hình */
+        height: 297mm; /* Set cứng height để JS tính toán chính xác */
+        
+        /* Padding chuẩn: 10mm mỗi bên */
+        padding: 10mm; 
+        
         background: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        box-sizing: border-box;
+        margin: 0 auto 15px auto; /* Khoảng cách giữa các trang khi view */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         position: relative;
+        overflow: hidden; /* Ẩn nội dung thừa nếu có lỗi tính toán */
       }
 
-      /* --- 2. IMAGE GRID STYLES (Dùng chung) --- */
+      /* --- 3. GRID ẢNH --- */
       .medical-image-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 15px;
         align-content: start;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 0; /* Tránh margin thừa đẩy layout */
       }
       
       .screenshot-wrapper { 
@@ -62,9 +74,7 @@
         background: #fff;
         border: 1px solid #ddd;
         padding: 4px;
-        box-sizing: border-box; 
         height: fit-content;
-        min-height: 250px; 
       }
 
       .screenshot-wrapper img { 
@@ -84,74 +94,66 @@
         z-index: 10;
         font-weight: bold;
       }
-      
-      /* --- 3. INPUT COMPONENTS (CHECKBOX, RADIO...) --- */
-      .square { width: 10px; height: 10px; border: 1px solid black; }
+
+      /* --- 4. CHECKBOX / INPUT UI --- */
       .custom-checkbox, .custom-radio, .custom-checkbox-small {
         appearance: none; -webkit-appearance: none;
         border: 1px solid #000; cursor: pointer; position: relative; background: transparent;
       }
       .custom-checkbox { width: 20px; height: 20px; border-radius: 2px; }
-      .custom-radio { width: 20px; height: 20px; border-radius: 50%; }
-      .custom-checkbox-small { width: 15px; height: 15px; border-radius: 2px; }
-
-      .custom-checkbox:checked::after, .custom-checkbox-small:checked::after, .custom-radio:checked::after {
-        content: "✔"; position: absolute; font-size: 20px; color: black; pointer-events: none;
-        top: -11px; left: -1px;
+      .custom-checkbox:checked::after {
+        content: "✔"; position: absolute; font-size: 20px; color: black; 
+        top: -11px; left: -1px; pointer-events: none;
       }
-      .custom-radio:checked::after { top: -6px; border-radius: 0; }
-      .custom-checkbox-small:checked::after { font-size: 15px; }
-
-      .watermark-logo {
-        position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-        opacity: 0.05; width: 400px; z-index: 0; pointer-events: none;
-      }
-
-      /* --- 4. PRINT CONFIGURATION (FIX LỖI IN) --- */
+      
+      /* --- 5. PRINT CONFIGURATION (Final Match) --- */
       @media print {
         @page {
           size: A4;
-          margin: 0; /* Xóa margin của trình duyệt để nội dung full trang */
+          margin: 0; /* Bắt buộc: Xóa margin máy in để ta tự control bằng CSS */
         }
 
         body {
-          margin: 0;
-          padding: 0;
           background-color: white;
-          -webkit-print-color-adjust: exact;
+          overflow: visible;
+          height: auto;
         }
 
         .content-container {
-          display: block; /* Tránh flexbox gây lỗi ngắt trang */
+          display: block;
+          width: 100%;
+          height: auto;
+          overflow: visible;
+          padding: 0;
+          margin: 0;
         }
 
         .a4-page {
-          width: 100% !important;
-          height: auto !important; /* Để auto để nội dung không bị force stretch */
-          margin: 0 !important;
-          border: none !important;
-          box-shadow: none !important;
+          margin: 0; /* Xóa margin giữa các trang */
+          box-shadow: none;
+          border: none;
           
-          /* Padding khi in: Cần tính toán để khớp với SAFE_PAGE_HEIGHT trong JS */
-          /* 10mm trên dưới = ~38px x 2 = 76px */
-          padding: 10mm !important; 
+          /* Kích thước & Padding giữ nguyên y hệt màn hình */
+          width: 210mm;
+          height: 297mm;
+          padding: 10mm;
           
-          /* Lệnh ngắt trang bắt buộc */
+          /* Ngắt trang */
           break-after: page;
           page-break-after: always;
-          display: block;
         }
 
-        /* Trang cuối không ngắt */
         .a4-page:last-child {
           break-after: auto;
           page-break-after: auto;
         }
 
         /* Ẩn UI thừa */
-        .screenshot-wrapper .del-btn { display: none !important; }
-        .screenshot-wrapper { border: none !important; padding: 0 !important; break-inside: avoid; }
-        img { display: block !important; visibility: visible !important; page-break-inside: avoid; }
+        .del-btn { display: none !important; }
+        .screenshot-wrapper { border: none !important; padding: 0 !important; }
+        
+        /* Fix lỗi Firefox/Chrome in đôi khi bị mất ảnh */
+        img { max-width: 100% !important; page-break-inside: avoid; }
       }
     </style>
     <div class="content-container"></div>
