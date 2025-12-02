@@ -2,11 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <style>
-      .a4-page {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-    </style>
   </head>
 
   <body data-view-mode="browser">
@@ -14,47 +9,46 @@
       integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-
     <style>
       @font-face {
           font-family: 'Tinos';
           src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
           font-weight: normal;
-        }
+      }
 
+      /* --- 1. GLOBAL RESET & SCREEN STYLES (GIAO DIỆN IFRAME) --- */
       body {
         margin: 0;
         padding: 0;
-        overflow: auto; /* Đổi thành auto để scroll được nếu cần debug */
+        /* QUAN TRỌNG: hidden để Iframe tự resize theo content mà không hiện scrollbar thừa */
+        overflow: hidden; 
         background-color: #eee;
         font-family: 'Times New Roman', serif;
       }
 
-      /* --- CẤU HÌNH TRANG A4 TRÊN MÀN HÌNH --- */
+      .content-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Style hiển thị trang A4 trên màn hình máy tính */
       .a4-page {
         width: 210mm;
-        min-height: 297mm; /* Dùng min-height thay vì height cứng để tránh nội dung bị che nếu tràn nhẹ */
-        padding: 10mm 10mm; /* Tăng padding chút cho thoáng */
-        margin: 10mm auto;
+        min-height: 297mm; 
+        padding: 10mm; /* Padding này cần khớp với tính toán JS */
+        margin: 5mm auto; /* Khoảng cách giữa các trang trên màn hình */
         background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         box-sizing: border-box;
         position: relative;
-        overflow: hidden; /* Giữ layout gọn gàng */
       }
 
-      .a4-page:last-child {
-        margin-top: 10mm !important;
-        margin-bottom: 10mm !important;
-      }
-
-      .a4-page:first-child {
-        margin-top: 10mm !important;
-      }
-
-      /* --- CSS CHO IMAGE GRID (Đã chuyển từ JS sang đây) --- */
+      /* --- 2. IMAGE GRID STYLES (Dùng chung) --- */
       .medical-image-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* 2 Cột */
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
         align-content: start;
         width: 100%;
@@ -91,169 +85,73 @@
         font-weight: bold;
       }
       
-      /* Style cho Drag & Drop */
-      .dragging-ghost { opacity:0.4; }
-      .dragging-chosen { border:2px solid #0d6efd !important; }
-      .dragging-drag { border:2px dashed #198754 !important; }
-
-      /* --- CÁC ELEMENT UI KHÁC --- */
-      .square {
-        width: 10px;
-        height: 10px;
-        background-color: transparent;
-        border: 1px solid black;
+      /* --- 3. INPUT COMPONENTS (CHECKBOX, RADIO...) --- */
+      .square { width: 10px; height: 10px; border: 1px solid black; }
+      .custom-checkbox, .custom-radio, .custom-checkbox-small {
+        appearance: none; -webkit-appearance: none;
+        border: 1px solid #000; cursor: pointer; position: relative; background: transparent;
       }
+      .custom-checkbox { width: 20px; height: 20px; border-radius: 2px; }
+      .custom-radio { width: 20px; height: 20px; border-radius: 50%; }
+      .custom-checkbox-small { width: 15px; height: 15px; border-radius: 2px; }
 
-      .custom-checkbox {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 20px;
-        height: 20px;
-        border: 1px solid #000;
-        border-radius: 2px;
-        cursor: pointer;
-        position: relative;
-        background-color: transparent;
+      .custom-checkbox:checked::after, .custom-checkbox-small:checked::after, .custom-radio:checked::after {
+        content: "✔"; position: absolute; font-size: 20px; color: black; pointer-events: none;
+        top: -11px; left: -1px;
       }
-
-      .custom-checkbox:checked::after {
-        content: "✔";
-        position: absolute;
-        top: -11px;
-        left: -1px;
-        font-size: 20px;
-        color: black;
-        pointer-events: none;
-        transform-origin: bottom right;
-        transform: translate(3px, 5px);
-      }
-
-      .square-input {
-        width: 20px;
-        height: 20px;
-        box-sizing: border-box;
-        font-size: 16px;
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      .square-input:focus {
-        outline: none !important;
-        box-shadow: none !important;
-      }
-
-      .custom-radio {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 20px;
-        height: 20px;
-        border: 1px solid #000;
-        cursor: pointer;
-        position: relative;
-        background-color: transparent;
-      }
-
-      .custom-radio:checked::after {
-        content: "✔";
-        position: absolute;
-        top: -6px;
-        left: -1px;
-        font-size: 20px;
-        color: black;
-        pointer-events: none;
-        transform-origin: bottom right;
-        transform: translate(3px, 5px);
-        border-radius: 0 !important;
-      }
-
-      .custom-checkbox-small {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 15px;
-        height: 15px;
-        border: 1px solid #000;
-        border-radius: 2px;
-        cursor: pointer;
-        position: relative;
-        background-color: transparent;
-      }
-
-      .custom-checkbox-small:checked::after {
-        content: "✔";
-        position: absolute;
-        top: -11px;
-        left: -1px;
-        font-size: 15px;
-        color: black;
-        pointer-events: none;
-        transform-origin: bottom right;
-        transform: translate(3px, 5px);
-      }
+      .custom-radio:checked::after { top: -6px; border-radius: 0; }
+      .custom-checkbox-small:checked::after { font-size: 15px; }
 
       .watermark-logo {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0.05;
-        width: 400px;
-        height: auto;
-        pointer-events: none;
-        z-index: 0;
+        position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        opacity: 0.05; width: 400px; z-index: 0; pointer-events: none;
       }
 
-      /* --- 🔥 QUAN TRỌNG: CẤU HÌNH IN ẤN (PDF) 🔥 --- */
+      /* --- 4. PRINT CONFIGURATION (FIX LỖI IN) --- */
       @media print {
         @page {
           size: A4;
-          margin: 0; /* Xóa margin mặc định của trình duyệt để ta tự kiểm soát */
+          margin: 0; /* Xóa margin của trình duyệt để nội dung full trang */
         }
 
         body {
           margin: 0;
+          padding: 0;
+          background-color: white;
           -webkit-print-color-adjust: exact;
         }
 
-        img {
-          display: block !important;
-          visibility: visible !important;
+        .content-container {
+          display: block; /* Tránh flexbox gây lỗi ngắt trang */
         }
 
-        /* Thiết lập trang A4 khi in */
         .a4-page {
-          width: 100%;
-          height: auto; /* Để auto để nội dung không bị cắt nếu tràn xíu */
-          padding-top: 5mm !important;
-          padding-bottom: 5mm !important;
-          padding-right: 10mm !important;
-          padding-left: 10mm !important;
+          width: 100% !important;
+          height: auto !important; /* Để auto để nội dung không bị force stretch */
           margin: 0 !important;
-          box-shadow: none !important;
           border: none !important;
+          box-shadow: none !important;
           
-          /* LỆNH QUAN TRỌNG ĐỂ NGẮT TRANG PDF */
+          /* Padding khi in: Cần tính toán để khớp với SAFE_PAGE_HEIGHT trong JS */
+          /* 10mm trên dưới = ~38px x 2 = 76px */
+          padding: 10mm !important; 
+          
+          /* Lệnh ngắt trang bắt buộc */
           break-after: page;
           page-break-after: always;
-          position: relative;
+          display: block;
         }
 
-        /* Trang cuối cùng không cần ngắt thêm 1 trang trắng */
+        /* Trang cuối không ngắt */
         .a4-page:last-child {
           break-after: auto;
           page-break-after: auto;
         }
 
-        /* Ẩn các nút xóa ảnh khi in */
-        .screenshot-wrapper .del-btn {
-          display: none !important;
-        }
-        
-        .screenshot-wrapper {
-          border: none !important; /* Bỏ viền khung ảnh khi in cho đẹp */
-          background: transparent !important;
-          padding: 0 !important;
-          break-inside: avoid; /* Tránh ảnh bị cắt đôi giữa 2 trang */
-        }
+        /* Ẩn UI thừa */
+        .screenshot-wrapper .del-btn { display: none !important; }
+        .screenshot-wrapper { border: none !important; padding: 0 !important; break-inside: avoid; }
+        img { display: block !important; visibility: visible !important; page-break-inside: avoid; }
       }
     </style>
     <div class="content-container"></div>
