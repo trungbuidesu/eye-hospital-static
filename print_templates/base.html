@@ -10,22 +10,27 @@
       crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
+      /* --- 1. GLOBAL SETTINGS (QUAN TRỌNG) --- */
       @font-face {
           font-family: 'Tinos';
           src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
           font-weight: normal;
       }
 
-      /* --- 1. CẤU HÌNH CƠ BẢN (VIEWER MODE) --- */
+      /* Khóa box-sizing để padding không làm vỡ size phần tử */
+      * { 
+        box-sizing: border-box; 
+      }
+
       body {
         margin: 0;
         padding: 0;
-        /* Màu nền xám đậm chuyên nghiệp, giúp mắt tập trung vào trang giấy trắng */
+        /* Màu nền xám đậm giúp nổi bật trang giấy trắng (giống Word/PDF Viewer) */
         background-color: #525659; 
         font-family: 'Times New Roman', serif;
-        /* Cho phép scroll tự nhiên nếu nội dung dài, nhưng ẩn scroll ngang */
+        /* Cho phép cuộn dọc, ẩn cuộn ngang */
+        overflow-y: auto;
         overflow-x: hidden;
-        overflow-y: auto; 
       }
 
       .content-container {
@@ -33,55 +38,54 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 30px 0; /* Khoảng cách trên dưới để trang không dính nóc */
+        /* Khoảng cách trên dưới body để trang không dính sát mép màn hình */
+        padding: 30px 0; 
       }
 
+      /* --- 2. CẤU HÌNH TRANG A4 (FIX LỖI TRÀN & XÊ DỊCH) --- */
       .a4-page {
+        /* Kích thước chuẩn */
         width: 210mm;
-        min-height: 297mm; /* Dùng min-height để không bị cắt nội dung nếu lỡ tràn */
+        height: 297mm; /* Set cứng height để đảm bảo đúng khổ giấy */
         
-        /* PADDING GỐC QUAN TRỌNG: Giữ nguyên để checkbox không bị lệch */
+        /* Padding chuẩn (giống file gốc của bạn) để checkbox không bị lệch */
         padding: 10mm 15mm; 
         
-        /* Tạo dáng trang giấy */
+        /* Giao diện trang giấy */
         background: white;
-        margin: 0 auto 20px auto; /* Các trang cách nhau 20px */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Đổ bóng để tách biệt nền xám */
-        box-sizing: border-box;
+        margin: 0 auto 20px auto; /* Các trang cách nhau 20px, canh giữa */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Đổ bóng tách biệt nền */
+        
         position: relative;
+        display: flex;
+        flex-direction: column;
+        
+        /* 🔥 QUAN TRỌNG: Cắt bỏ mọi nội dung tràn ra khỏi khổ giấy (Fix lỗi vệt xám) */
+        overflow: hidden; 
       }
 
-      /* --- 2. CÁC ELEMENT GỐC (CHECKBOX, RADIO...) - GIỮ NGUYÊN --- */
+      /* --- 3. UI ELEMENTS (CHECKBOX, RADIO...) - GIỮ NGUYÊN TỪ FILE GỐC --- */
       .square { width: 10px; height: 10px; border: 1px solid black; }
       
-      .custom-checkbox {
+      .custom-checkbox, .custom-radio, .custom-checkbox-small {
         appearance: none; -webkit-appearance: none;
-        width: 20px; height: 20px; border: 1px solid #000;
-        border-radius: 2px; cursor: pointer; position: relative; background: transparent;
+        border: 1px solid #000; cursor: pointer; position: relative; background: transparent;
+        margin: 0; display: inline-block; vertical-align: middle;
       }
+      
+      .custom-checkbox { width: 20px; height: 20px; border-radius: 2px; }
       .custom-checkbox:checked::after {
-        content: "✔"; position: absolute; top: -11px; left: -1px;
-        font-size: 20px; color: black; pointer-events: none;
+        content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 20px; color: black; pointer-events: none;
       }
 
-      .custom-radio {
-        appearance: none; -webkit-appearance: none;
-        width: 20px; height: 20px; border: 1px solid #000;
-        cursor: pointer; position: relative; background: transparent;
-      }
+      .custom-radio { width: 20px; height: 20px; border-radius: 50%; }
       .custom-radio:checked::after {
-        content: "✔"; position: absolute; top: -6px; left: -1px;
-        font-size: 20px; color: black; pointer-events: none; border-radius: 0 !important;
+        content: "✔"; position: absolute; top: -6px; left: -1px; font-size: 20px; color: black; pointer-events: none; border-radius: 0 !important;
       }
 
-      .custom-checkbox-small {
-        appearance: none; -webkit-appearance: none;
-        width: 15px; height: 15px; border: 1px solid #000;
-        border-radius: 2px; cursor: pointer; position: relative; background: transparent;
-      }
+      .custom-checkbox-small { width: 15px; height: 15px; border-radius: 2px; }
       .custom-checkbox-small:checked::after {
-        content: "✔"; position: absolute; top: -11px; left: -1px;
-        font-size: 15px; color: black; pointer-events: none;
+        content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 15px; color: black; pointer-events: none;
       }
 
       .square-input {
@@ -95,21 +99,24 @@
         opacity: 0.05; width: 400px; height: auto; pointer-events: none; z-index: 0;
       }
 
-      /* --- 3. CSS CHO TÍNH NĂNG MỚI (GRID ẢNH) --- */
+      /* --- 4. CSS CHO GRID ẢNH 2x2 & NÚT ĐIỀU KHIỂN (YÊU CẦU MỚI) --- */
       .page-header {
         font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
         width: 100%; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px;
+        flex-shrink: 0;
       }
 
       .medical-image-grid {
         display: grid;
         width: 100%;
+        /* Grid 2x2 đều nhau */
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 10px;
-        /* Chiều cao grid = Chiều cao A4 - Padding trên dưới - Header - Footer */
-        height: calc(297mm - 30mm); 
+        gap: 15px;
+        /* Tự động chiếm phần còn lại của trang */
+        flex-grow: 1;
         align-content: start;
+        overflow: hidden;
       }
 
       .screenshot-wrapper {
@@ -118,18 +125,20 @@
         border: 1px solid #ddd;
         display: flex; align-items: center; justify-content: center;
         overflow: hidden;
+        /* Đảm bảo khung ảnh luôn có kích thước, tránh bị bẹp */
+        min-height: 200px; 
       }
 
       .screenshot-wrapper img {
         width: 100%; height: 100%; object-fit: contain; display: block;
       }
 
-      /* Grid sizes */
-      .size-normal { grid-column: span 1; grid-row: span 1; }
-      .size-wide { grid-column: span 2; grid-row: span 1; }
-      .size-full { grid-column: span 2; grid-row: span 2; }
+      /* Classes quản lý kích thước ô (Dùng trong logic React) */
+      .size-normal { grid-column: span 1; grid-row: span 1; } /* 1x1 */
+      .size-wide { grid-column: span 2; grid-row: span 1; }   /* 1x2 */
+      .size-full { grid-column: span 2; grid-row: span 2; }   /* 2x2 */
 
-      /* Nút điều khiển */
+      /* Nút điều khiển (Xóa / Resize) */
       .control-btn-group {
         position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; z-index: 10;
       }
@@ -137,21 +146,21 @@
         background: rgba(0,0,0,0.6); color: #fff; border: 1px solid #fff;
         border-radius: 4px; width: 30px; height: 30px; cursor: pointer;
         display: flex; align-items: center; justify-content: center;
-        font-size: 14px; font-weight: bold;
+        font-size: 12px; font-weight: bold;
       }
       .btn-delete { background: #dc3545; }
-      .btn-resize { background: #0d6efd; font-size: 11px; width: auto; padding: 0 8px; }
+      .btn-resize { background: #0d6efd; width: auto; padding: 0 8px; }
 
-      /* --- 4. CẤU HÌNH IN (QUAN TRỌNG NHẤT) --- */
+      /* --- 5. CẤU HÌNH IN (FIX TRẮNG TRANG, KHÔNG NỀN XÁM) --- */
       @media print {
         @page { 
           size: A4; 
-          margin: 0; /* Xóa lề mặc định của máy in */
+          margin: 0; /* Xóa margin máy in */
         }
 
         body { 
           margin: 0; padding: 0;
-          background-color: white !important; /* In ra giấy trắng */
+          background-color: white !important; /* Bắt buộc nền trắng khi in */
           -webkit-print-color-adjust: exact; 
         }
         
@@ -160,19 +169,30 @@
         }
 
         .a4-page {
-          width: 100%; height: 297mm;
+          width: 100%; 
+          height: 297mm; /* Chiều cao cố định */
           margin: 0 !important; 
-          /* Padding khi in có thể chỉnh nhỏ hơn chút nếu cần, nhưng giữ 10mm cho an toàn */
-          padding: 10mm !important; 
+          
+          /* Padding khi in: Có thể giữ nguyên hoặc chỉnh nhẹ. 
+             Giữ 10mm 15mm để đồng nhất với màn hình */
+          padding: 10mm 15mm !important; 
+          
           border: none !important; 
-          box-shadow: none !important; /* Xóa bóng đổ khi in */
+          box-shadow: none !important; 
+          
+          /* Ngắt trang sạch sẽ */
           page-break-after: always; 
           break-after: page;
+          
+          overflow: hidden;
         }
         
-        .a4-page:last-child { break-after: auto; }
+        .a4-page:last-child { 
+          page-break-after: auto; 
+          break-after: auto; 
+        }
 
-        /* Ẩn các nút khi in */
+        /* Ẩn các thành phần thừa khi in */
         .control-btn-group, .del-btn { display: none !important; }
         .screenshot-wrapper { border: none !important; }
         
