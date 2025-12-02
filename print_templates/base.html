@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="pdfkit-margin-top" content="0" />
+  <meta name="pdfkit-margin-bottom" content="0" />
+  <meta name="pdfkit-margin-left" content="0" />
+  <meta name="pdfkit-margin-right" content="0" />
   </head>
 
   <body data-view-mode="browser">
@@ -128,8 +132,21 @@
       /* ------------------------------------------
          PRINT MODE — CONSISTENT PDF / BROWSER
       -------------------------------------------*/
+      /* ------------------------------------------
+        PRINT MODE — CONSISTENT PDF / BROWSER
+      -------------------------------------------*/
       @media print {
-        @page { size: A4; margin: 0; }
+        @page { 
+          size: A4; 
+          margin: 0; 
+        }
+
+        /* ⭐ PATCH FIX (1): ép html/body margin về 0 để Chrome không thêm 12.7mm */
+        html, body {                     /* PATCH FIX */
+          margin: 0 !important;          /* PATCH FIX */
+          padding: 0 !important;         /* PATCH FIX */
+          zoom: 1 !important;            /* PATCH FIX – tắt shrink-to-fit */
+        }
 
         body {
           background: white !important;
@@ -143,16 +160,17 @@
 
         .a4-page {
           width: 210mm;
-          height: 297mm !important;      /* FIX NÀY ĐẢM BẢO PDF = A4 */
+          height: 297mm !important;      
           padding: 10mm 15mm !important;
           margin: 0 !important;
           box-shadow: none !important;
-          overflow: hidden !important;   /* print phải cắt chuẩn */
+          overflow: hidden !important;   
           page-break-after: always;
         }
 
         .control-btn-group { display: none !important; }
       }
+
     </style>
 
     <div class="content-container"></div>
