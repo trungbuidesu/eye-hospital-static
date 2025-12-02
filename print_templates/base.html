@@ -128,18 +128,21 @@
          PRINT MODE — DÙNG CODE CŨ CỦA BẠN + PATCH FIX
       -------------------------------------------*/
       @media print {
+
         .a4-page {
-          width: 210mm !important;     /* 🔥 FIX CHÍNH */
-          max-width: 210mm !important; /* 🔥 KHÔNG CHO CHROME THU NHỎ */
-          
+          width: 210mm;                   /* không dùng 100% nữa */
+          min-height: 297mm;
           padding-top: 6mm !important;
           padding-bottom: 6mm !important;
           padding-right: 10mm !important;
           padding-left: 10mm !important;
           margin: 0 auto !important;
+          box-shadow: none !important;
 
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
+          /* quan trọng: 1 .a4-page = 1 trang, không tách lưng chừng */
+          page-break-after: always;
+          break-inside: avoid;
+          page-break-inside: avoid;
         }
 
         @page {
