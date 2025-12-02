@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="pdfkit-margin-top" content="0" />
-  <meta name="pdfkit-margin-bottom" content="0" />
-  <meta name="pdfkit-margin-left" content="0" />
-  <meta name="pdfkit-margin-right" content="0" />
+    <meta name="pdfkit-margin-bottom" content="0" />
+    <meta name="pdfkit-margin-left" content="0" />
+    <meta name="pdfkit-margin-right" content="0" />
   </head>
 
   <body data-view-mode="browser">
@@ -20,12 +20,7 @@
           font-weight: normal;
       }
 
-      /* ------------------------------------------
-         GLOBAL FIX — KHÔNG LÀM LỆCH LAYOUT BÊN TRONG
-      -------------------------------------------*/
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
       body {
         margin: 0; padding: 0;
@@ -43,29 +38,18 @@
         padding: 30px 0;
       }
 
-      /* ------------------------------------------
-         FIX 1 — PAGE SHIFT / MẤT NỘI DUNG CUỐI
-         SCREEN MODE DÙNG min-height
-      -------------------------------------------*/
       .a4-page {
         width: 210mm;
-        min-height: 297mm;               /* FIX CHÍNH THỨC */
+        min-height: 297mm;
         padding: 10mm 15mm;
         background: white;
         margin: 0 auto 20px auto;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
-        /* KHÔNG DÙNG FLEX ĐỂ TRÁNH SHIFT KHI PRINT */
         display: block;
-
-        overflow: visible !important;    /* KHÔNG CẮT NỘI DUNG */
+        overflow: visible !important;
         position: relative;
       }
 
-      /* ------------------------------------------
-         FIX CHECKBOX — CONSISTENT 96dpi → 300dpi
-         DÙNG SVG CHECKMARK (KHÔNG DÙNG FONT ✔)
-      -------------------------------------------*/
       .custom-checkbox, .custom-radio, .custom-checkbox-small {
         appearance: none;
         -webkit-appearance: none;
@@ -82,7 +66,6 @@
       .custom-checkbox-small { width: 14px; height: 14px; }
       .custom-radio { width: 16px; height: 16px; border-radius: 50%; }
 
-      /* CHECKMARK SVG (KHÔNG LỆCH DPI) */
       .custom-checkbox:checked::after,
       .custom-checkbox-small:checked::after,
       .custom-radio:checked::after {
@@ -92,13 +75,19 @@
         background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><polyline points='1,6 4,10 11,1' stroke='black' stroke-width='2' fill='none'/></svg>") center/contain no-repeat;
       }
 
-      /* ------------------------------------------
-         GRID HÌNH — NGUYÊN GỐC, KHÔNG SỬA
-      -------------------------------------------*/
       .square { width: 10px; height: 10px; border: 1px solid black; }
       .square-input { width: 20px; height: 20px; text-align: center; vertical-align: middle; }
       .square-input:focus { outline: none !important; box-shadow: none !important; }
-      .watermark-logo { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.05; width: 400px; pointer-events: none; z-index: 0; }
+
+      .watermark-logo {
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.05;
+        width: 400px;
+        pointer-events: none;
+        z-index: 0;
+      }
 
       .page-header {
         font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
@@ -106,7 +95,9 @@
       }
 
       .medical-image-grid {
-        display: grid; width: 100%; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+        display: grid; width: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: 15px;
       }
 
@@ -115,6 +106,7 @@
         display: flex; align-items: center; justify-content: center; overflow: hidden;
         min-height: 200px;
       }
+
       .screenshot-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
       .size-normal { grid-column: span 1; grid-row: span 1; }
@@ -124,16 +116,16 @@
       .control-btn-group { position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; z-index: 10; }
       .control-btn {
         background: rgba(0,0,0,0.6); color: #fff; border: 1px solid #fff; border-radius: 4px;
-        width: 30px; height: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;
+        width: 30px; height: 30px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 12px; font-weight: bold;
       }
+
       .btn-delete { background: #dc3545; }
       .btn-resize { background: #0d6efd; width: auto; padding: 0 8px; }
 
       /* ------------------------------------------
-         PRINT MODE — CONSISTENT PDF / BROWSER
-      -------------------------------------------*/
-      /* ------------------------------------------
-        PRINT MODE — CONSISTENT PDF / BROWSER
+         PRINT MODE — DÙNG CODE CŨ CỦA BẠN + PATCH FIX
       -------------------------------------------*/
       @media print {
         .a4-page {
@@ -143,6 +135,10 @@
           padding-right: 10mm !important;
           padding-left: 10mm !important;
           margin: 0 auto !important;
+
+          /* ⭐ PATCH FIX 1: NGĂN CHROME CHIA TRANG SAI */
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;  /* PATCH FIX */
         }
 
         @page {
@@ -150,11 +146,11 @@
           margin: 0 !important;
         }
 
-        /* ⭐ PATCH FIX (1): ép html/body margin về 0 để Chrome không thêm 12.7mm */
-        html, body {                     /* PATCH FIX */
-          margin: 0 !important;          /* PATCH FIX */
-          padding: 0 !important;         /* PATCH FIX */
-          zoom: 1 !important;            /* PATCH FIX – tắt shrink-to-fit */
+        /* ⭐ PATCH FIX 2: EP CHROME KHÔNG SHIFT 12.7mm */
+        html, body {
+          margin: 0 !important;
+          padding: 0 !important;
+          zoom: 1 !important;     /* tắt shrink-to-fit */
         }
 
         body {
@@ -166,10 +162,9 @@
           padding: 0 !important;
           margin: 0 !important;
         }
-        
+
         .control-btn-group { display: none !important; }
       }
-
     </style>
 
     <div class="content-container"></div>
