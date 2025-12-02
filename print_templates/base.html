@@ -19,20 +19,20 @@
 
       body {
         margin: 0; padding: 0;
-        /* 🔥 THAY ĐỔI 1: Đổi nền xám (#525659) thành trắng để xóa các vạch xám */
-        background-color: white; 
+        background-color: #525659; /* Nền xám khi xem trên web */
         font-family: 'Times New Roman', serif;
+        /* Cho phép body dãn nở tự nhiên để JS tính được height */
         overflow: visible; 
         height: auto;
       }
 
       .content-container {
         width: 100%;
+        /* 🔥 FIX LỖI IFRAME BẸP: Bỏ height: 100vh và overflow đi để iframe tự dãn theo nội dung */
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* 🔥 THAY ĐỔI 2: Xóa padding dọc để nội dung sát lề trên cùng */
-        padding: 0; 
+        padding: 20px 0;
         height: auto; 
       }
 
@@ -42,27 +42,14 @@
         height: 297mm;
         padding: 10mm; 
         background: white;
-        
-        /* 🔥 THAY ĐỔI 3: Xóa margin dọc (10mm -> 0) để các trang dính liền nhau */
-        margin: 0 auto; 
-        
-        /* 🔥 THAY ĐỔI 4: Bỏ bóng đổ để nhìn phẳng và liền mạch hơn */
-        box-shadow: none; 
-        
-        /* Tùy chọn: Thêm đường kẻ mờ dưới đáy mỗi trang để biết đâu là hết trang */
-        border-bottom: 1px dashed #e0e0e0; 
-        
+        margin: 0 auto 15px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         position: relative;
         display: flex;
         flex-direction: column;
         overflow: hidden; 
       }
       
-      /* Ẩn đường kẻ ở trang cuối cùng */
-      .a4-page:last-child {
-        border-bottom: none;
-      }
-
       /* --- HỆ THỐNG GRID 2x2 --- */
       .page-header {
         font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
@@ -82,8 +69,7 @@
       .screenshot-wrapper {
         position: relative;
         background: #fff;
-        /* Thêm viền nhẹ cho ảnh để tách biệt */
-        border: 1px solid #eee; 
+        border: 1px solid #ddd;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -117,7 +103,7 @@
       .btn-delete { background: #dc3545; }
       .btn-resize { background: #0d6efd; font-size: 11px; width: auto; padding: 0 8px; }
 
-      /* --- STYLE INPUT CŨ --- */
+      /* --- STYLE INPUT CŨ (CHECKBOX...) --- */
       .custom-checkbox, .custom-radio, .custom-checkbox-small {
         appearance: none; -webkit-appearance: none;
         border: 1px solid #000; cursor: pointer; position: relative; background: transparent;
@@ -135,19 +121,19 @@
       .watermark-logo { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.05; width: 400px; height: auto; pointer-events: none; z-index: 0; }
 
 
-      /* --- PRINT CONFIGURATION --- */
+      /* --- 🔥 PRINT CONFIGURATION (FIX LỖI IN) 🔥 --- */
       @media print {
         @page { size: A4; margin: 0; }
         
         body { 
           margin: 0; 
           padding: 0;
-          background-color: white !important;
+          background-color: white !important; /* 🔥 Fix lỗi nền xám thành khối đen */
           -webkit-print-color-adjust: exact; 
         }
         
         .content-container {
-          display: block;
+          display: block; /* Tránh lỗi layout flex khi in */
           padding: 0;
           margin: 0;
           background-color: white !important;
@@ -157,12 +143,11 @@
           width: 100%; height: 297mm;
           margin: 0 !important; padding: 10mm !important;
           border: none !important; box-shadow: none !important;
-          /* Khi in thì ẩn luôn đường kẻ phân trang */
-          border-bottom: none !important; 
           page-break-after: always; break-after: page;
         }
         .a4-page:last-child { page-break-after: auto; break-after: auto; }
 
+        /* 🔥 FIX LỖI NÚT VẪN HIỆN: Ẩn toàn bộ group nút */
         .control-btn-group { display: none !important; }
         .screenshot-wrapper { border: none !important; }
         
