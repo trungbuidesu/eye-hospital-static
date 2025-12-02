@@ -2,72 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <style>
-      .a4-page {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-    </style>
   </head>
 
   <body data-view-mode="browser">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
-      integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" />
     
     <style>
       @font-face {
           font-family: 'Tinos';
           src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
           font-weight: normal;
-        }
+      }
+
+      /* --- GLOBAL RESET --- */
+      * { box-sizing: border-box; }
 
       body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #eee;
+        margin: 0; padding: 0;
+        background-color: #525659; /* Nền xám khi xem trên web */
         font-family: 'Times New Roman', serif;
+        /* Cho phép body dãn nở tự nhiên để JS tính được height */
+        overflow: visible; 
+        height: auto;
       }
 
       .content-container {
         width: 100%;
+        /* 🔥 FIX LỖI IFRAME BẸP: Bỏ height: 100vh và overflow đi để iframe tự dãn theo nội dung */
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 20px 0;
+        height: auto; 
       }
 
+      /* --- CẤU HÌNH TRANG A4 --- */
       .a4-page {
         width: 210mm;
         height: 297mm;
-        padding: 10mm; /* Padding chuẩn */
-        margin: 10mm auto;
+        padding: 10mm; 
         background: white;
-        box-sizing: border-box;
+        margin: 0 auto 15px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         position: relative;
         display: flex;
         flex-direction: column;
+        overflow: hidden; 
       }
-
-      .a4-page:last-child {
-        margin-top: 10mm !important;
-        margin-bottom: 0 !important;
-      }
-
-      .a4-page:first-child {
-        margin-top: 0 !important;
-      }
-
-      /* --- CÁC STYLE CŨ GIỮ NGUYÊN --- */
-      .square { width: 10px; height: 10px; border: 1px solid black; }
-      .custom-checkbox { width: 20px; height: 20px; border: 1px solid #000; border-radius: 2px; cursor: pointer; position: relative; appearance: none; -webkit-appearance: none; }
-      .custom-checkbox:checked::after { content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 20px; color: black; pointer-events: none; }
-      .square-input { width: 20px; height: 20px; box-sizing: border-box; font-size: 16px; text-align: center; vertical-align: middle; }
-      .custom-radio { width: 20px; height: 20px; border: 1px solid #000; cursor: pointer; position: relative; appearance: none; -webkit-appearance: none; }
-      .custom-radio:checked::after { content: "✔"; position: absolute; top: -6px; left: -1px; font-size: 20px; color: black; pointer-events: none; border-radius: 0 !important; }
-      .custom-checkbox-small { width: 15px; height: 15px; border: 1px solid #000; border-radius: 2px; cursor: pointer; position: relative; appearance: none; -webkit-appearance: none; }
-      .custom-checkbox-small:checked::after { content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 15px; color: black; pointer-events: none; }
       
-      /* --- HỆ THỐNG GRID 2x2 CHO ẢNH (MỚI) --- */
+      /* --- HỆ THỐNG GRID 2x2 --- */
       .page-header {
         font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
         flex-shrink: 0;
@@ -77,10 +60,9 @@
         display: grid;
         width: 100%;
         flex-grow: 1; 
-        grid-template-columns: 1fr 1fr; /* 2 cột */
-        grid-template-rows: 1fr 1fr;    /* 2 hàng */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: 10px;
-        /* Giới hạn chiều cao để không bị tràn trang A4 */
         max-height: calc(297mm - 20mm - 40px); 
       }
 
@@ -100,12 +82,12 @@
         display: block;
       }
 
-      /* Các chế độ hiển thị size */
-      .size-normal { grid-column: span 1; grid-row: span 1; } /* 1x1 */
-      .size-wide { grid-column: span 2; grid-row: span 1; }   /* 1x2 */
-      .size-full { grid-column: span 2; grid-row: span 2; }   /* 2x2 */
+      /* Classes size */
+      .size-normal { grid-column: span 1; grid-row: span 1; }
+      .size-wide { grid-column: span 2; grid-row: span 1; }
+      .size-full { grid-column: span 2; grid-row: span 2; }
 
-      /* Nút điều khiển (Resize/Delete) */
+      /* Nút điều khiển */
       .control-btn-group {
         position: absolute; top: 5px; right: 5px;
         display: flex; gap: 5px; z-index: 10;
@@ -121,11 +103,42 @@
       .btn-delete { background: #dc3545; }
       .btn-resize { background: #0d6efd; font-size: 11px; width: auto; padding: 0 8px; }
 
-      /* --- PRINT CONFIGURATION --- */
+      /* --- STYLE INPUT CŨ (CHECKBOX...) --- */
+      .custom-checkbox, .custom-radio, .custom-checkbox-small {
+        appearance: none; -webkit-appearance: none;
+        border: 1px solid #000; cursor: pointer; position: relative; background: transparent;
+      }
+      .custom-checkbox { width: 20px; height: 20px; border-radius: 2px; }
+      .custom-checkbox:checked::after {
+        content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 20px; color: black; pointer-events: none;
+      }
+      .square { width: 10px; height: 10px; border: 1px solid black; }
+      .square-input { width: 20px; height: 20px; box-sizing: border-box; font-size: 16px; text-align: center; vertical-align: middle; }
+      .square-input:focus { outline: none !important; box-shadow: none !important; }
+      .custom-radio:checked::after { content: "✔"; position: absolute; top: -6px; left: -1px; font-size: 20px; color: black; pointer-events: none; border-radius: 0 !important; }
+      .custom-checkbox-small { width: 15px; height: 15px; border-radius: 2px; }
+      .custom-checkbox-small:checked::after { content: "✔"; position: absolute; top: -11px; left: -1px; font-size: 15px; color: black; pointer-events: none; }
+      .watermark-logo { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.05; width: 400px; height: auto; pointer-events: none; z-index: 0; }
+
+
+      /* --- 🔥 PRINT CONFIGURATION (FIX LỖI IN) 🔥 --- */
       @media print {
         @page { size: A4; margin: 0; }
-        body { margin: 0; background: white; -webkit-print-color-adjust: exact; }
         
+        body { 
+          margin: 0; 
+          padding: 0;
+          background-color: white !important; /* 🔥 Fix lỗi nền xám thành khối đen */
+          -webkit-print-color-adjust: exact; 
+        }
+        
+        .content-container {
+          display: block; /* Tránh lỗi layout flex khi in */
+          padding: 0;
+          margin: 0;
+          background-color: white !important;
+        }
+
         .a4-page {
           width: 100%; height: 297mm;
           margin: 0 !important; padding: 10mm !important;
@@ -134,7 +147,7 @@
         }
         .a4-page:last-child { page-break-after: auto; break-after: auto; }
 
-        /* Ẩn các nút khi in */
+        /* 🔥 FIX LỖI NÚT VẪN HIỆN: Ẩn toàn bộ group nút */
         .control-btn-group { display: none !important; }
         .screenshot-wrapper { border: none !important; }
         
