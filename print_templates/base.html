@@ -40,14 +40,20 @@
 
       .a4-page {
         width: 210mm;
-        min-height: 297mm;
-        padding: 10mm 15mm;
+        height: 297mm;
+        padding: 5mm 10mm;
+        margin: 10mm auto;
         background: white;
-        margin: 0 auto 20px auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        display: block;
-        overflow: visible !important;
-        position: relative;
+        box-sizing: border-box;
+      }
+
+      .a4-page:last-child {
+        margin-top: 10mm !important;
+        margin-bottom: 0 !important;
+      }
+
+      .a4-page:first-child {
+        margin-top: 0 !important;
       }
 
       .custom-checkbox, .custom-radio, .custom-checkbox-small {
