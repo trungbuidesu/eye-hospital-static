@@ -13,161 +13,157 @@
       integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <style>
-      @font-face {
-          font-family: 'Tinos';
-          src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
-          font-weight: normal;
-      }
+<style>
+    /* =========================================
+       1. GLOBAL ASSETS & FONTS (GIỮ NGUYÊN)
+       ========================================= */
+    @font-face {
+        font-family: 'Tinos';
+        src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
+        font-weight: normal;
+    }
 
-      * { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-      body {
+    body {
         margin: 0; padding: 0;
-        background-color: #525659;
+        background-color: #525659; /* Màu nền xám khi xem trên web */
         font-family: 'Times New Roman', serif;
         overflow-y: auto;
         overflow-x: hidden;
-      }
+    }
 
-      .content-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 0;
-      }
+    /* =========================================
+       2. COMPONENT STYLES (GIỮ NGUYÊN 100%)
+       Checkbox, Radio, Grid ảnh, Nút bấm
+       ========================================= */
+    .custom-checkbox, .custom-radio, .custom-checkbox-small {
+        appearance: none; -webkit-appearance: none;
+        border: 1px solid #000; background: #fff;
+        cursor: pointer; position: relative;
+        display: inline-block; vertical-align: middle; margin-right: 4px;
+    }
+    .custom-checkbox { width: 16px; height: 16px; }
+    .custom-checkbox-small { width: 14px; height: 14px; }
+    .custom-radio { width: 16px; height: 16px; border-radius: 50%; }
 
-      .a4-page {
-        width: 210mm;
-        height: 297mm;
-        padding: 5mm 10mm;
-        margin: 10mm auto;
-        background: white;
-        box-sizing: border-box;
-      }
-
-      .a4-page:last-child {
-        margin-top: 10mm !important;
-        margin-bottom: 0 !important;
-      }
-
-      .a4-page:first-child {
-        margin-top: 0 !important;
-      }
-
-      .custom-checkbox, .custom-radio, .custom-checkbox-small {
-        appearance: none;
-        -webkit-appearance: none;
-        border: 1px solid #000;
-        background: #fff;
-        cursor: pointer;
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 4px;
-      }
-
-      .custom-checkbox { width: 16px; height: 16px; }
-      .custom-checkbox-small { width: 14px; height: 14px; }
-      .custom-radio { width: 16px; height: 16px; border-radius: 50%; }
-
-      .custom-checkbox:checked::after,
-      .custom-checkbox-small:checked::after,
-      .custom-radio:checked::after {
-        content: "";
-        position: absolute;
-        inset: 2px;
+    .custom-checkbox:checked::after,
+    .custom-checkbox-small:checked::after,
+    .custom-radio:checked::after {
+        content: ""; position: absolute; inset: 2px;
         background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><polyline points='1,6 4,10 11,1' stroke='black' stroke-width='2' fill='none'/></svg>") center/contain no-repeat;
-      }
+    }
 
-      .square { width: 10px; height: 10px; border: 1px solid black; }
-      .square-input { width: 20px; height: 20px; text-align: center; vertical-align: middle; }
-      .square-input:focus { outline: none !important; box-shadow: none !important; }
+    .square { width: 10px; height: 10px; border: 1px solid black; }
+    .square-input { width: 20px; height: 20px; text-align: center; vertical-align: middle; }
+    .square-input:focus { outline: none !important; box-shadow: none !important; }
 
-      .watermark-logo {
-        position: fixed;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0.05;
-        width: 400px;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .page-header {
-        font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
-        width: 100%; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px;
-      }
-
-      .medical-image-grid {
+    /* Medical Image Grid Styles */
+    .medical-image-grid {
         display: grid; width: 100%;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 15px;
-      }
-
-      .screenshot-wrapper {
+        grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 15px;
+    }
+    .screenshot-wrapper {
         position: relative; background: #fff; border: 1px solid #ddd;
-        display: flex; align-items: center; justify-content: center; overflow: hidden;
-        min-height: 200px;
-      }
+        display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 200px;
+    }
+    .screenshot-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .size-normal { grid-column: span 1; grid-row: span 1; }
+    .size-wide { grid-column: span 2; grid-row: span 1; }
+    .size-full { grid-column: span 2; grid-row: span 2; }
 
-      .screenshot-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
-
-      .size-normal { grid-column: span 1; grid-row: span 1; }
-      .size-wide { grid-column: span 2; grid-row: span 1; }
-      .size-full { grid-column: span 2; grid-row: span 2; }
-
-      .control-btn-group { position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; z-index: 10; }
-      .control-btn {
+    /* Control Buttons */
+    .control-btn-group { position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; z-index: 10; }
+    .control-btn {
         background: rgba(0,0,0,0.6); color: #fff; border: 1px solid #fff; border-radius: 4px;
         width: 30px; height: 30px; cursor: pointer;
         display: flex; align-items: center; justify-content: center;
         font-size: 12px; font-weight: bold;
-      }
+    }
+    .btn-delete { background: #dc3545; }
+    .btn-resize { background: #0d6efd; width: auto; padding: 0 8px; }
+    .page-header {
+        font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
+        width: 100%; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px;
+    }
 
-      .btn-delete { background: #dc3545; }
-      .btn-resize { background: #0d6efd; width: auto; padding: 0 8px; }
-
-      /* ------------------------------------------
-         PRINT MODE — DÙNG CODE CŨ CỦA BẠN + PATCH FIX
-      -------------------------------------------*/
-      @media print {
+    /* =========================================
+       3. SCREEN MODE (XEM TRÊN WEB)
+       ========================================= */
+    @media screen {
+        .content-container {
+            width: 100%;
+            display: flex; /* Giữ flex để căn giữa màn hình xám */
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+            gap: 20px;
+        }
 
         .a4-page {
-          width: 100%;
-          padding-top: 6mm !important;
-          padding-bottom: 6mm !important;
-          padding-right: 10mm !important;
-          padding-left: 10mm !important;
-          margin: 0 auto !important;
+            width: 210mm;
+            min-height: 297mm; /* Hiển thị chiều dài chuẩn trên màn hình */
+            padding: 6mm 10mm; /* Padding gốc của bạn */
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Hiệu ứng bóng đổ */
         }
+    }
 
+    /* =========================================
+       4. PRINT MODE (FIX BUGS HERE)
+       ========================================= */
+    @media print {
         @page {
-          padding: 0 !important;
-          margin: 0 !important;
+            size: A4;
+            margin: 0; /* Reset lề máy in để CSS tự control */
         }
 
-        /* ⭐ PATCH FIX 2: EP CHROME KHÔNG SHIFT 12.7mm */
         html, body {
-          margin: 0 !important;
-          padding: 0 !important;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: white !important;
         }
 
-        body {
-          background: white !important;
-          -webkit-print-color-adjust: exact;
-        }
-
+        /* [FIX 1] Tắt Flexbox khi in để tránh tính sai chiều cao */
         .content-container {
-          padding: 0 !important;
-          margin: 0 !important;
+            display: block !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .a4-page {
+            width: 210mm;
+            /* [FIX 2] Hack chiều cao an toàn 296mm để tránh trang trắng do làm tròn pixel */
+            height: 296mm; 
+            
+            /* [STYLE PRESERVED] Giữ nguyên padding 6mm/10mm như code gốc của bạn */
+            padding: 6mm 10mm !important; 
+            
+            margin: 0 !important; /* Reset margin để sát lề */
+            background: white !important;
+            box-shadow: none !important;
+            border: none !important;
+
+            /* [FIX 3] Bắt buộc ngắt trang cứng */
+            page-break-after: always;
+            break-after: page;
+            
+            overflow: hidden; /* Cắt phần thừa nếu nội dung quá dài */
+        }
+
+        /* Trang cuối không cần ngắt trang */
+        .a4-page:last-child {
+            page-break-after: auto;
+            break-after: auto;
         }
 
         .control-btn-group { display: none !important; }
-      }
-    </style>
+    }
+  </style>
 
     <div class="content-container"></div>
   </body>
