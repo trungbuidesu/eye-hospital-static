@@ -110,6 +110,18 @@
         }
     }
 
+    .watermark-logo {
+        position: absolute; /* Định vị tuyệt đối */
+        top: 50%; /* Dịch chuyển từ trên xuống 50% */
+        left: 50%; /* Dịch chuyển từ trái sang 50% */
+        transform: translate(-50%, -50%); /* Dịch chuyển ngược lại 50% kích thước của ảnh để căn giữa */
+        z-index: -1; /* Đặt hình ảnh xuống lớp thấp nhất (background) */
+        opacity: 0.1; /* Giảm độ mờ để nó trông giống watermark */
+        width: 70%; /* Ví dụ: điều chỉnh kích thước theo ý muốn */
+        height: auto;
+        pointer-events: none; /* Đảm bảo hình ảnh không chặn các sự kiện click/chọn văn bản */
+    }
+
     /* =========================================
        4. PRINT MODE (FIX BUGS HERE)
        ========================================= */
