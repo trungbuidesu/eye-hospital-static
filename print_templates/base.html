@@ -1,205 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="pdfkit-margin-top" content="0" />
-    <meta name="pdfkit-margin-bottom" content="0" />
-    <meta name="pdfkit-margin-left" content="0" />
-    <meta name="pdfkit-margin-right" content="0" />
-  </head>
 
-  <body data-view-mode="browser">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
-      integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-<style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="pdfkit-margin-top" content="0" />
+  <meta name="pdfkit-margin-bottom" content="0" />
+  <meta name="pdfkit-margin-left" content="0" />
+  <meta name="pdfkit-margin-right" content="0" />
+</head>
+
+<body data-view-mode="browser">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+    integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
     /* =========================================
        1. GLOBAL ASSETS & FONTS (GIỮ NGUYÊN)
        ========================================= */
     @font-face {
-        font-family: 'Tinos';
-        src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
-        font-weight: normal;
+      font-family: 'Tinos';
+      src: url('{BASE_STATIC_HOST}/fonts/tinos/tinos-regular.ttf') format('truetype');
+      font-weight: normal;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
-        margin: 0; padding: 0;
-        background-color: #dbdbdb; /* Màu nền xám khi xem trên web */
-        font-family: 'Times New Roman', serif;
-        overflow-y: auto;
-        overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: #dbdbdb;
+      /* Màu nền xám khi xem trên web */
+      font-family: 'Times New Roman', serif;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     /* =========================================
        2. COMPONENT STYLES (GIỮ NGUYÊN 100%)
        Checkbox, Radio, Grid ảnh, Nút bấm
        ========================================= */
-    .custom-checkbox, .custom-radio, .custom-checkbox-small {
-        appearance: none; -webkit-appearance: none;
-        border: 1px solid #000; background: #fff;
-        cursor: pointer; position: relative;
-        display: inline-block; vertical-align: middle; margin-right: 4px;
+    .custom-checkbox,
+    .custom-radio,
+    .custom-checkbox-small {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid #000;
+      background: #fff;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
     }
-    .custom-checkbox { width: 16px; height: 16px; }
-    .custom-checkbox-small { width: 14px; height: 14px; }
-    .custom-radio { width: 16px; height: 16px; border-radius: 50%; }
+
+    .custom-checkbox {
+      width: 16px;
+      height: 16px;
+    }
+
+    .custom-checkbox-small {
+      width: 14px;
+      height: 14px;
+    }
+
+    .custom-radio {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
 
     .custom-checkbox:checked::after,
     .custom-checkbox-small:checked::after,
     .custom-radio:checked::after {
-        content: ""; position: absolute; inset: 2px;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><polyline points='1,6 4,10 11,1' stroke='black' stroke-width='2' fill='none'/></svg>") center/contain no-repeat;
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><polyline points='1,6 4,10 11,1' stroke='black' stroke-width='2' fill='none'/></svg>") center/contain no-repeat;
     }
 
-    .square { width: 10px; height: 10px; border: 1px solid black; }
-    .square-input { width: 20px; height: 20px; text-align: center; vertical-align: middle; }
-    .square-input:focus { outline: none !important; box-shadow: none !important; }
+    .square {
+      width: 10px;
+      height: 10px;
+      border: 1px solid black;
+    }
+
+    .square-input {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .square-input:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
 
     /* Medical Image Grid Styles */
     .medical-image-grid {
-        display: grid; width: 100%;
-        grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 15px;
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 15px;
     }
+
     .screenshot-wrapper {
-        position: relative; background: #fff; border: 1px solid #ddd;
-        display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 200px;
+      position: relative;
+      background: #fff;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 200px;
     }
-    .screenshot-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
-    .size-normal { grid-column: span 1; grid-row: span 1; }
-    .size-wide { grid-column: span 2; grid-row: span 1; }
-    .size-full { grid-column: span 2; grid-row: span 2; }
+
+    .screenshot-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .size-normal {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .size-wide {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .size-full {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
 
     /* Control Buttons */
-    .control-btn-group { position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; z-index: 10; }
-    .control-btn {
-        background: rgba(0,0,0,0.6); color: #fff; border: 1px solid #fff; border-radius: 4px;
-        width: 30px; height: 30px; cursor: pointer;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 12px; font-weight: bold;
+    .control-btn-group {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      display: flex;
+      gap: 5px;
+      z-index: 10;
     }
-    .btn-delete { background: #dc3545; }
-    .btn-resize { background: #0d6efd; width: auto; padding: 0 8px; }
+
+    .control-btn {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .btn-delete {
+      background: #dc3545;
+    }
+
+    .btn-resize {
+      background: #0d6efd;
+      width: auto;
+      padding: 0 8px;
+    }
+
     .page-header {
-        font-weight: bold; font-size: 16px; margin-bottom: 10px; text-transform: uppercase;
-        width: 100%; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
     }
 
     /* Table Cell Styles - Căn giữa ngang và dọc */
     .table-cell {
-        padding: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        line-height: 1.3;
-        vertical-align: middle;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      line-height: 1.3;
+      vertical-align: middle;
     }
-    .table-cell > span {
-        width: 100%;
-        text-align: center;
-        word-break: break-word;
+
+    .table-cell>span {
+      width: 100%;
+      text-align: center;
+      word-break: break-word;
     }
 
     /* =========================================
        3. SCREEN MODE (XEM TRÊN WEB)
        ========================================= */
     @media screen {
-        .content-container {
-            width: 100%;
-            display: flex; /* Giữ flex để căn giữa màn hình xám */
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 0;
-            gap: 20px;
-        }
+      .content-container {
+        width: 100%;
+        display: flex;
+        /* Giữ flex để căn giữa màn hình xám */
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        gap: 20px;
+      }
 
-        .a4-page {
-            position: relative; /* Cần thiết để watermark-logo định vị đúng */
-            width: 210mm;
-            min-height: 297mm; /* Hiển thị chiều dài chuẩn trên màn hình */
-            padding: 6mm 10mm; /* Padding gốc của bạn */
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Hiệu ứng bóng đổ */
-        }
+      .a4-page {
+        position: relative;
+        z-index: 0;
+        /* Cần thiết để watermark-logo định vị đúng */
+        width: 210mm;
+        min-height: 297mm;
+        /* Hiển thị chiều dài chuẩn trên màn hình */
+        padding: 6mm 10mm;
+        /* Padding gốc của bạn */
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        /* Hiệu ứng bóng đổ */
+      }
     }
 
     .watermark-logo {
-        position: absolute; /* Định vị tuyệt đối */
-        top: 50%; /* Dịch chuyển từ trên xuống 50% */
-        left: 50%; /* Dịch chuyển từ trái sang 50% */
-        transform: translate(-50%, -50%); /* Dịch chuyển ngược lại 50% kích thước của ảnh để căn giữa */
-        z-index: -1; /* Đặt hình ảnh xuống lớp thấp nhất (background) */
-        opacity: 0.1; /* Giảm độ mờ để nó trông giống watermark */
-        width: 70%; /* Ví dụ: điều chỉnh kích thước theo ý muốn */
-        height: auto;
-        pointer-events: none; /* Đảm bảo hình ảnh không chặn các sự kiện click/chọn văn bản */
+      position: absolute;
+      /* Định vị tuyệt đối */
+      top: 50%;
+      /* Dịch chuyển từ trên xuống 50% */
+      left: 50%;
+      /* Dịch chuyển từ trái sang 50% */
+      transform: translate(-50%, -50%);
+      /* Dịch chuyển ngược lại 50% kích thước của ảnh để căn giữa */
+      z-index: -1;
+      /* Đặt hình ảnh xuống lớp thấp nhất (background) */
+      opacity: 0.1;
+      /* Giảm độ mờ để nó trông giống watermark */
+      width: 70%;
+      /* Ví dụ: điều chỉnh kích thước theo ý muốn */
+      height: auto;
+      pointer-events: none;
+      /* Đảm bảo hình ảnh không chặn các sự kiện click/chọn văn bản */
     }
 
     /* =========================================
        4. PRINT MODE (FIX BUGS HERE)
        ========================================= */
     @media print {
-        .watermark-logo {
-            opacity: 0.15; /* Tăng từ 0.1 lên 0.15 khi in nếu muốn rõ hơn */
-        }
-        @page {
-            size: A4;
-            margin: 0; /* Reset lề máy in để CSS tự control */
-        }
+      .watermark-logo {
+        opacity: 0.15;
+        /* Tăng từ 0.1 lên 0.15 khi in nếu muốn rõ hơn */
+      }
 
-        html, body {
-            width: 210mm;
-            height: 297mm;
-            margin: 0 !important;
-            padding: 0 !important;
-            background-color: white !important;
-        }
+      @page {
+        size: A4;
+        margin: 0;
+        /* Reset lề máy in để CSS tự control */
+      }
 
-        /* [FIX 1] Tắt Flexbox khi in để tránh tính sai chiều cao */
-        .content-container {
-            display: block !important;
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: white !important;
+      }
 
-        .a4-page {
-            position: relative !important; /* Cần thiết để watermark-logo định vị đúng */
-            width: 210mm;
-            /* [FIX 2] Hack chiều cao an toàn 296mm để tránh trang trắng do làm tròn pixel */
-            height: 296mm; 
-            
-            /* [STYLE PRESERVED] Giữ nguyên padding 6mm/10mm như code gốc của bạn */
-            padding: 6mm 10mm !important; 
-            
-            margin: 0 !important; /* Reset margin để sát lề */
-            background: white !important;
-            box-shadow: none !important;
-            border: none !important;
+      /* [FIX 1] Tắt Flexbox khi in để tránh tính sai chiều cao */
+      .content-container {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
 
-            /* [FIX 3] Bắt buộc ngắt trang cứng */
-            page-break-after: always;
-            break-after: page;
-            
-            overflow: hidden; /* Cắt phần thừa nếu nội dung quá dài */
-        }
+      .a4-page {
+        position: relative !important;
+        /* Cần thiết để watermark-logo định vị đúng */
+        width: 210mm;
+        /* [FIX 2] Hack chiều cao an toàn 296mm để tránh trang trắng do làm tròn pixel */
+        height: 296mm;
 
-        /* Trang cuối không cần ngắt trang */
-        .a4-page:last-child {
-            page-break-after: auto;
-            break-after: auto;
-        }
+        /* [STYLE PRESERVED] Giữ nguyên padding 6mm/10mm như code gốc của bạn */
+        padding: 6mm 10mm !important;
 
-        .control-btn-group { display: none !important; }
+        margin: 0 !important;
+        /* Reset margin để sát lề */
+        background: white !important;
+        box-shadow: none !important;
+        border: none !important;
+        z-index: 0 !important;
+
+        /* [FIX 3] Bắt buộc ngắt trang cứng */
+        page-break-after: always;
+        break-after: page;
+
+        overflow: hidden;
+        /* Cắt phần thừa nếu nội dung quá dài */
+      }
+
+      /* Trang cuối không cần ngắt trang */
+      .a4-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      .control-btn-group {
+        display: none !important;
+      }
     }
   </style>
 
-    <div class="content-container"></div>
-  </body>
+  <div class="content-container"></div>
+</body>
+
 </html>
