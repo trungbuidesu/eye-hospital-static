@@ -101,6 +101,7 @@
         }
 
         .a4-page {
+            position: relative; /* Cần thiết để watermark-logo định vị đúng */
             width: 210mm;
             min-height: 297mm; /* Hiển thị chiều dài chuẩn trên màn hình */
             padding: 6mm 10mm; /* Padding gốc của bạn */
@@ -126,6 +127,9 @@
        4. PRINT MODE (FIX BUGS HERE)
        ========================================= */
     @media print {
+        .watermark-logo {
+            opacity: 0.15; /* Tăng từ 0.1 lên 0.15 khi in nếu muốn rõ hơn */
+        }
         @page {
             size: A4;
             margin: 0; /* Reset lề máy in để CSS tự control */
@@ -148,6 +152,7 @@
         }
 
         .a4-page {
+            position: relative !important; /* Cần thiết để watermark-logo định vị đúng */
             width: 210mm;
             /* [FIX 2] Hack chiều cao an toàn 296mm để tránh trang trắng do làm tròn pixel */
             height: 296mm; 
